@@ -36,7 +36,7 @@ A JSON file containing an array of jobs with the following schema:
 
 Where:
 
-- ID is an unsigned integer, e.g. `1`.
+- ID is a unique string, which can be an incremental number, e.g. `"1"`.
 - ARRIVAL is a float in the range between 0.0 and the simulator's maximum
   length as defined in the configuration file `config.ini`, e.g. `2.0`.
 - TASKS is an unsigned integer, e.g. `64`. TASKS represents the number of
@@ -44,7 +44,7 @@ Where:
   number of CPUs that the job requires (generally one core per task).
 - MEM is an unsigned integer, e.g. `16`. It stands for the amount of memory
   that the job requires, in MiB.
-- COLOR is a color in hex code, e.g. `#79F1F2`.
+- COLOR is a color in hex code, e.g. `"#79F1F2"`.
 - TIMES is a dictionary that describes the performance model of the job. It's
   indexed by family names (e.g. xeon-e7-v2, atom), and each entry is a
   dictionary that includes execution times in seconds for different
