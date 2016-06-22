@@ -1,0 +1,84 @@
+#!/usr/bin/python
+
+import sys
+import logging
+import configparser
+import json
+
+import scorsa
+import policies
+
+logging.basicConfig(format="%(message)s", level=logging.ERROR)
+
+config = configparser.ConfigParser(delimiters=("="))
+config.read("config.ini")
+
+length = config.getfloat("simulator", "length")
+step = config.getfloat("simulator", "step")
+digits = config.getint("simulator", "digits")
+
+jobs = json.loads(sys.stdin.read())
+families = json.loads(config.get("system", "families"))
+
+index = {job["id"]: job for job in jobs}
+system = {}
+
+arrivals = {} # job IDs indexed by arrival time
+completions = {} # job IDs indexed by completion time
+
+schedule = {} # scheduling decisions indexed by job ID
+order = [] # list of job IDs sorted by start time
+
+pending = [] # current submitted job IDs that haven't been scheduled yet
+available = {} # current available resources indexed by architecture
+
+for f in families:
+    system[f] = {}
+    system[f]["count"] = config.getint("system.%s" % f, "count")
+    system[f]["cores"] = config.getint("system.%s" % f, "cores")
+    system[f]["mem"] = config.getint("system.%s" % f, "mem")
+    available[f] = system[f]["count"]
+
+for j in jobs:
+    s = scorsa.f2step(float(j["arrival"]), step, digits)
+    if not s in arrivals:
+        arrivals[s] = []
+    arrivals[s].append(j["id"])
+
+for s in scorsa.rangef(0.0, length, step, digits):
+    if s in completions:
+        for jid in completions[s]:
+            family = schedule[jid]["family"]
+            cpus = schedule[jid]["cpus"]
+            available[family] += cpus
+
+    if s in arrivals:
+        pending = pending + arrivals[s]
+
+    while True:
+        sched = policies.sched_min_exec(system, available, index, pending)
+
+        if not sched:
+            break
+
+        jid, family, cpus, nodes, time = sched
+
+        pending.remove(jid)
+        available[family] -= cpus
+
+        e = s + scorsa.f2step(time, step, digits)
+
+        schedule[jid] = {}
+        schedule[jid]["family"] = family
+        schedule[jid]["cpus"] = cpus
+        schedule[jid]["nodes"] = nodes
+        schedule[jid]["start"] = s
+        schedule[jid]["end"] = e
+
+        order.append(jid)
+
+        if not e in completions:
+            completions[e] = []
+        completions[e].append(jid)
+
+print json.dumps(schedule)
