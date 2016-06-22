@@ -12,6 +12,7 @@
 
 import sys
 import logging
+import argparse
 import configparser
 import json
 import copy
@@ -25,20 +26,30 @@ import plot
 
 logging.basicConfig(format="%(message)s", level=logging.ERROR)
 
+ap = argparse.ArgumentParser()
+ap.add_argument("-c", "--config", dest="c", required=True,
+                help="System configuration file")
+ap.add_argument("-w", "--workload", dest="w", required=True,
+                help="JSON workload file")
+ap.add_argument("-s", "--schedule", dest="s", required=True,
+                help="JSON schedule file")
+args = ap.parse_args()
+
 config = configparser.ConfigParser(delimiters=("="))
-config.read("config.ini")
+config.read(args.c)
 
 length = config.getfloat("simulator", "length")
 step = config.getfloat("simulator", "step")
 digits = config.getint("simulator", "digits")
-
-jobs = json.loads(sys.stdin.read())
 families = json.loads(config.get("system", "families"))
 
-index = {job["id"]: job for job in jobs}
+with open(args.w) as w:
+    jobs = json.load(w)
 
-with open('schedule.json') as df:
-    schedule = json.load(df)
+with open(args.s) as s:
+    schedule = json.load(s)
+
+index = {job["id"]: job for job in jobs}
 
 for k, v in schedule.iteritems():
     schedule[k]["id"] = k
