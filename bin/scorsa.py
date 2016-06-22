@@ -1,5 +1,3 @@
-import json
-
 def f2step(f, step, digits):
     s = f - (f % step)
     s = s + step if f % step != 0 else s
