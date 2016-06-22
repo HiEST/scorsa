@@ -1,4 +1,13 @@
 #!/usr/bin/python
+# -*- coding: utf-8 -*-
+#
+# scorsa-sched -- Simulate the execution of a workload
+#
+# Given a system configuration, and a workload description, simulate the
+# execution of all the jobs in the workload generating a schedule that
+# includes when and how the jobs are executed.
+#
+# Copyright © 2016 Jordà Polo <jorda.polo@bsc.es>
 
 import sys
 import logging
