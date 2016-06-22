@@ -5,8 +5,10 @@ Architecture][rackscale].
 
 ## Tools
 
-- `bin/scorsa-sched`: Schedule a workload on a system; requires a system
-  configuration, and a workload to run.
+- `bin/scorsa-sched`: Simulate the execution of a workload; requires a system
+  configuration, and a workload description.
+- `bin/scorsa-plot`: Plot a workload schedule; requires a system
+  configuration, a workload description, and a schedule.
 
 ## Data
 
