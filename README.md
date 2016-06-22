@@ -47,8 +47,8 @@ Where:
 - COLOR is a color in hex code, e.g. `#79F1F2`.
 - TIMES is a dictionary that describes the performance model of the job. It's
   indexed by family names (e.g. xeon-e7-v2, atom), and each entry is a
-  dictionary that includes execution times for different configurations of
-  numbers of CPUs per node, e.g:
+  dictionary that includes execution times in seconds for different
+  configurations of numbers of CPUs per node, e.g:
 ```
 "xeon-e7-v2" : {
    "1" : 100.0,
