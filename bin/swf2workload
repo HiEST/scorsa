@@ -1,0 +1,66 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+#
+# swf2workload -- Convert SWF log to scorsa's workload
+#
+# Reads a SWF file from stdin, and writes a Scorsa workload in JSON format to
+# stdout. Penalties for each job are automatically assigned based on the
+# defined "target".
+#
+# Copyright © 2016 Jordà Polo <jorda.polo@bsc.es>
+
+import sys
+import json
+
+fields = {
+    "job_number": 0,
+    "submit_time": 1,
+    "run_time": 3,
+    "proc_request": 7,
+    "mem_request": 9,
+    "status": 10
+}
+
+target = {
+    "up": 0.25,
+    "out": 0.25,
+    "both": 0.25,
+    "no": 0.25
+}
+
+assigned = {k: 0 for k in target.keys()}
+jobs = []
+
+for line in sys.stdin:
+    if line.startswith(";"):
+        continue
+
+    line = line.split()
+    if len(line) == 0:
+        continue
+
+    entry = {}
+    for k, v in fields.iteritems():
+        entry[k] = int(line[v])
+
+    if entry["status"] != 0:
+        continue
+
+    penalty = "no"
+    for k, v in assigned.iteritems():
+        if len(jobs) and float(v) / len(jobs) < target[k]:
+            penalty = k
+            assigned[k] = v + 1
+            break
+
+    job = {}
+    job["id"] = str(entry["job_number"])
+    job["arrival"] = float(entry["submit_time"])
+    job["tasks"] = entry["proc_request"]
+    job["mem"] = entry["mem_request"]
+    job["time"] = float(entry["run_time"])
+    job["penalty"] = penalty
+
+    jobs.append(job)
+
+print json.dumps(jobs)

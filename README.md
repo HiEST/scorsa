@@ -9,6 +9,7 @@ Architecture][rackscale].
   configuration, and a workload description.
 - `bin/scorsa-plot`: Plot a workload schedule; requires a system
   configuration, a workload description, and a schedule.
+- `bin/swf2workload`: Convert SWF log to scorsa's workload file format.
 
 ## Data
 
