@@ -3,9 +3,9 @@
 #
 # scorsa-sched -- Simulate the execution of a workload
 #
-# Given a system configuration, and a workload description, simulate the
-# execution of all the jobs in the workload generating a schedule that
-# includes when and how the jobs are executed.
+# Given a system configuration and layout, and a workload description,
+# simulate the execution of all the jobs in the workload generating a schedule
+# that includes when and where the jobs are executed.
 #
 # Copyright © 2016 Jordà Polo <jorda.polo@bsc.es>
 
@@ -23,6 +23,8 @@ logging.basicConfig(format="%(message)s", level=logging.ERROR)
 ap = argparse.ArgumentParser()
 ap.add_argument("-c", "--config", dest="c", required=True,
                 help="System configuration file")
+ap.add_argument("-l", "--layout", dest="l", required=True,
+                help="System layout file")
 ap.add_argument("-w", "--workload", dest="w", required=True,
                 help="JSON workload file")
 args = ap.parse_args()
@@ -51,10 +53,10 @@ available = {} # current available resources indexed by architecture
 
 for f in families:
     system[f] = {}
-    system[f]["count"] = config.getint("system.%s" % f, "count")
     system[f]["cores"] = config.getint("system.%s" % f, "cores")
     system[f]["mem"] = config.getint("system.%s" % f, "mem")
-    available[f] = system[f]["count"]
+    r = json.loads(config.get("system.%s" % f, "range"))
+    available[f] = range(r[0], r[1])
 
 for j in jobs:
     s = scorsa.f2step(float(j["arrival"]), step, digits)
@@ -78,17 +80,18 @@ for s in scorsa.rangef(0.0, length, step, digits):
         if not sched:
             break
 
-        jid, family, cpus, nodes, time = sched
+        jid, family, num_cpus, num_nodes, time = sched
 
         pending.remove(jid)
-        available[family] -= cpus
+        cpus = available[family][0:num_cpus]
+        available[family] = available[family][num_cpus:]
 
         e = s + scorsa.f2step(time, step, digits)
 
         schedule[jid] = {}
         schedule[jid]["family"] = family
         schedule[jid]["cpus"] = cpus
-        schedule[jid]["nodes"] = nodes
+        schedule[jid]["nodes"] = num_nodes
         schedule[jid]["start"] = s
         schedule[jid]["end"] = e
 

@@ -24,7 +24,7 @@ def sched_min_exec(system, available, jobs, pending):
         if not found:
             continue
 
-        if cpus > available[family]:
+        if cpus > len(available[family]):
             break
 
         return [jid, family, int(cpus), int(nodes), time]
