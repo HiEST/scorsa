@@ -85,7 +85,7 @@ A JSON file containing a dict indexed by job IDs with the following schema:
       "end" : TIME,
       "family" : FAMILY,
       "nodes" : INT,
-      "cpus" : INT,
+      "cpus" : [ CPU, CPU, ... ],
    },
    ...
 }
@@ -99,9 +99,10 @@ Where:
   in the configuration file, e.g. 4.0.
 - FAMILY is a family name as defined by the configuration file, e.g.
   `xeon-e7-v2`.
-- `"nodes"` and `"cpus"` are unsigned integers. The former denotes how many
-  composed nodes were used to run the job, while the latter denotes the amount
-  of CPUs that make up the nodes.
+- `"nodes"` is an unsigned integer that denotes how many composed nodes were
+  used to run the job.
+- `"cpus"` is a list of the unique CPU identifiers that were assigned to the
+  job and make up the composed nodes.
 
 ## Maintainers
 
