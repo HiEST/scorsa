@@ -60,6 +60,19 @@ Where:
 }
 ```
 
+### Layout File
+
+A CSV file containing the layout of CPUs in the system. Each CPU has a unique
+integer identifier. Racks are denoted by columns separated by «|», while
+drawers are denoted by rows separated by «--».
+
+```
+00,01,|,06,|,09
+--,--,|,--,|,--
+02,03,|,07,|,-1
+04,05,|,08,|,-1
+```
+
 ## Maintainers
 
 Jordà Polo `<jorda.polo@bsc.es>`, 2016.
