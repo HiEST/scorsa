@@ -14,6 +14,7 @@ import logging
 import argparse
 import configparser
 import json
+import numpy as np
 
 import scorsa
 import policies
@@ -36,6 +37,8 @@ length = config.getfloat("simulator", "length")
 step = config.getfloat("simulator", "step")
 digits = config.getint("simulator", "digits")
 families = json.loads(config.get("system", "families"))
+
+layout = scorsa.map_layout(np.genfromtxt(args.l, delimiter=',', dtype=None))
 
 with open(args.w) as w:
     jobs = json.load(w)
