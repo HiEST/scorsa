@@ -38,3 +38,13 @@ def map_layout(layout):
         m[cpu_id]["did"] = drawer_id
 
     return m
+
+def distance(procs, a, b):
+    d = 0
+    if a != b:
+	d += 1
+    if procs[a]["did"] != procs[b]["did"]:
+        d += 10
+    if procs[a]["rid"] != procs[b]["rid"]:
+        d += 100
+    return d

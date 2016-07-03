@@ -11,51 +11,19 @@
 import argparse
 import numpy as np
 
+import scorsa
+
 ap = argparse.ArgumentParser()
 ap.add_argument("-l", "--layout", dest="l", required=True,
                 help="System layout file")
 args = ap.parse_args()
 
-data = np.genfromtxt(args.l, delimiter=',', dtype=None)
+layout = scorsa.map_layout(np.genfromtxt(args.l, delimiter=',', dtype=None))
 
-procs = {}
-rack_id = 0
-drawer_id = 0
-
-def distance(a, b):
-    d = 0
-    d += abs(procs[a]["x"] - procs[b]["x"])
-    d += abs(procs[a]["y"] - procs[b]["y"])
-    d += abs(procs[a]["did"] - procs[b]["did"]) * 10
-    if procs[a]["rid"] != procs[b]["rid"]:
-        d += 100
-    return d
-
-for (x,y), value in np.ndenumerate(data):
-    if y == 0:
-        rack_id = 0
-
-    if value == "|":
-        rack_id += 1
-
-    if value == "--" and y == 0:
-        drawer_id += 1
-
-    if value in ["--", "|", "-1"]:
-        continue
-
-    pid = int(value)
-    procs[pid] = {}
-    procs[pid]["x"] = x
-    procs[pid]["y"] = y
-    procs[pid]["rid"] = rack_id
-    procs[pid]["did"] = drawer_id
-
-pids = sorted(procs.keys())
+pids = sorted(layout.keys())
 print "-", " ".join(str(pid) for pid in pids)
-
 for i in pids:
     print i,
     for j in pids:
-        print distance(i, j),
+        print scorsa.distance(layout, i, j),
     print ""
