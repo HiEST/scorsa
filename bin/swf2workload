@@ -11,6 +11,10 @@
 
 import sys
 import json
+import random
+import matplotlib.colors
+
+import plot
 
 fields = {
     "job_number": 0,
@@ -30,6 +34,7 @@ target = {
 
 assigned = {k: 0 for k in target.keys()}
 jobs = []
+hue = random.random()
 
 for line in sys.stdin:
     if line.startswith(";"):
@@ -53,6 +58,9 @@ for line in sys.stdin:
             assigned[k] = v + 1
             break
 
+    hue += 0.618033988749895
+    hue %= 1
+
     job = {}
     job["id"] = str(entry["job_number"])
     job["arrival"] = float(entry["submit_time"])
@@ -60,6 +68,9 @@ for line in sys.stdin:
     job["mem"] = entry["mem_request"]
     job["time"] = float(entry["run_time"])
     job["penalty"] = penalty
+    job["color"] = matplotlib.colors.rgb2hex(hsv2rgb(hue, 0.5, 0.95))
+
+    jobs.append(job)
 
     jobs.append(job)
 

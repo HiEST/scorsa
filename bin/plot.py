@@ -73,3 +73,24 @@ def fill_steps(ax, x, y1, y2=0, step_where='pre', **kwargs):
 
     # now to the plotting part:
     return ax.fill_between(xx, yy1, y2=yy2, **kwargs)
+
+# http://martin.ankerl.com/2009/12/09/how-to-create-random-colors-programmatically/
+def hsv2rgb(h, s, v):
+    h_i = int(h * 6)
+    f = h * 6 - h_i
+    p = v * (1 - s)
+    q = v * (1 - f * s)
+    t = v * (1 - (1 - f) * s)
+    if h_i == 0:
+        r, g, b = v, t, p
+    if h_i == 1:
+        r, g, b = q, v, p
+    if h_i == 2:
+        r, g, b = p, v, t
+    if h_i == 3:
+        r, g, b = p, q, v
+    if h_i == 4:
+        r, g, b = t, p, v
+    if h_i == 5:
+        r, g, b = v, p, q
+    return [r, g, b]
