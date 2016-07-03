@@ -59,13 +59,15 @@ mpl.rcParams['axes.labelsize'] = 'small'
 mpl.rcParams['xtick.labelsize'] = 'small'
 mpl.rcParams['ytick.labelsize'] = 'small'
 
-fig, ax = plt.subplots(len(families), sharex=True, sharey=False)
-ax[-1].set_xlabel('Time (s)')
+fig, ax = plt.subplots(len(families), sharex=True, sharey=False, squeeze=False)
+ax[-1,0].set_xlabel('Time (s)')
 
 for a, f in enumerate(families):
-    ax[a].set_ylabel('Number of CPUs\n(%s)' % (f))
-    ax[a].set_xlim(0.0, length)
-    ax[a].set_ylim(0, config.getint("system.%s" % f, "count"))
+    ax[a,0].set_xlim(0.0, length)
+
+    r = json.loads(config.get("system.%s" % f, "range"))
+    ax[a,0].set_ylabel('Number of CPUs\n(%s)' % (f))
+    ax[a,0].set_ylim(0, len(range(r[0], r[1])))
 
     subs = [s for s in schedule.values() if s["family"] == f]
     order = []
@@ -80,27 +82,31 @@ for a, f in enumerate(families):
         end = schedule[jid]["end"]
         running[jid] = np.zeros(len(x), dtype=np.int)
         for i in scorsa.rangef(start, end, step, digits):
-            running[jid][int(i / 60.0)] = schedule[jid]["cpus"]
+            running[jid][int(i / step)] = len(schedule[jid]["cpus"])
 
     # accumulate running CPUs to plot stepped figure
     arunning = copy.deepcopy(running)
-    for i in running:
-        for j in running:
-            if j >= i:
+
+    for m, i in enumerate(order):
+        for n, j in enumerate(order):
+            if n >= m:
                 break
-            for k in range(len(running[order[0]])):
+            start = schedule[i]["start"]
+            end = schedule[i]["end"]
+            for k in scorsa.rangef(start, end, step, digits):
+                k = int(k / step)
                 arunning[i][k] = arunning[i][k] + running[j][k]
 
     # display submissions
     for jid in order:
         arrival = index[jid]['arrival']
-        ax[a].axvline(arrival - arrival % step, linewidth=0.1, color='#666666',
-                      linestyle='dotted')
+        ax[a,0].axvline(arrival - arrival % step, linewidth=0.1,
+                        color='#666666', linestyle='dotted')
 
-    for jid in order:
+    for jid in reversed(order):
         y = np.array(arunning[jid])
-        ax[a].step(x, y, '-', linewidth=0.01, color='black')
-        plot.fill_steps(ax[a], x, y, 0, step_where="pre",
+        ax[a,0].step(x, y, '-', linewidth=0.01, color='black')
+        plot.fill_steps(ax[a,0], x, y, 0, step_where="pre",
                         facecolor=index[jid]['color'], linewidth=0.0)
 
 plt.tight_layout()
