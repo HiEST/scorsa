@@ -110,8 +110,8 @@ for a, f in enumerate(families):
 
     for jid in reversed(order):
         y = np.array(arunning[jid])
-        ax[a,0].step(x, y, '-', linewidth=0.01, color='black')
-        plot.fill_steps(ax[a,0], x, y, 0, step_where="pre",
+        ax[a,0].step(x, y, '-', linewidth=0.01, color='black', where='post')
+        plot.fill_steps(ax[a,0], x, y, 0, step_where="post",
                         facecolor=index[jid]['color'], linewidth=0.0)
 
 a += 1
@@ -119,7 +119,7 @@ x = [s["time"] for s in stats]
 y = [s["frag"] for s in stats]
 ax[a,0].set_ylabel('Fragmentation')
 ax[a,0].set_ylim(0.0, 1.0)
-ax[a,0].step(x, y, '-')
+ax[a,0].step(x, y, '-', where='post')
 
 plt.tight_layout()
 plt.savefig('plot.pdf', bbox_inches='tight')
