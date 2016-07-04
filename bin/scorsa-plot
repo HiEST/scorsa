@@ -33,6 +33,8 @@ ap.add_argument("-w", "--workload", dest="w", required=True,
                 help="JSON workload file")
 ap.add_argument("-s", "--schedule", dest="s", required=True,
                 help="JSON schedule file")
+ap.add_argument("-t", "--stats", dest="t", required=True,
+                help="JSON stats file")
 args = ap.parse_args()
 
 config = configparser.ConfigParser(delimiters=("="))
@@ -49,6 +51,9 @@ with open(args.w) as w:
 with open(args.s) as s:
     schedule = json.load(s)
 
+with open(args.t) as t:
+    stats = json.load(t)
+
 index = {job["id"]: job for job in jobs}
 
 for k, v in schedule.iteritems():
@@ -59,7 +64,7 @@ mpl.rcParams['axes.labelsize'] = 'small'
 mpl.rcParams['xtick.labelsize'] = 'small'
 mpl.rcParams['ytick.labelsize'] = 'small'
 
-fig, ax = plt.subplots(len(families), sharex=True, sharey=False, squeeze=False)
+_, ax = plt.subplots(len(families)+1, sharex=True, sharey=False, squeeze=False)
 ax[-1,0].set_xlabel('Time (s)')
 
 for a, f in enumerate(families):
@@ -108,6 +113,13 @@ for a, f in enumerate(families):
         ax[a,0].step(x, y, '-', linewidth=0.01, color='black')
         plot.fill_steps(ax[a,0], x, y, 0, step_where="pre",
                         facecolor=index[jid]['color'], linewidth=0.0)
+
+a += 1
+x = [s["time"] for s in stats]
+y = [s["frag"] for s in stats]
+ax[a,0].set_ylabel('Fragmentation')
+ax[a,0].set_ylim(0.0, 1.0)
+ax[a,0].step(x, y, '-')
 
 plt.tight_layout()
 plt.savefig('plot.pdf', bbox_inches='tight')
