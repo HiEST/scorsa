@@ -80,7 +80,7 @@ for s in scorsa.rangef(0.0, length, step, digits):
         pending = pending + arrivals[s]
 
     while True:
-        sched = policies.sched_min_exec(system, available, index, pending)
+        sched = policies.sched_fcfs(system, available, index, pending)
 
         if not sched:
             break
