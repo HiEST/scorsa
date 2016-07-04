@@ -18,6 +18,7 @@ import configparser
 import json
 import numpy as np
 
+from collections import defaultdict
 from itertools import chain
 
 import scorsa
@@ -50,8 +51,8 @@ with open(args.w) as w:
 index = {job["id"]: job for job in jobs}
 system = {}
 
-arrivals = {} # job IDs indexed by arrival time
-completions = {} # job IDs indexed by completion time
+arrivals = defaultdict(list) # job IDs indexed by arrival time
+completions = defaultdict(list) # job IDs indexed by completion time
 
 schedule = {} # scheduling decisions indexed by job ID
 stats = []
@@ -69,8 +70,6 @@ for f in families:
 
 for j in jobs:
     s = scorsa.f2step(float(j["arrival"]), step, digits)
-    if not s in arrivals:
-        arrivals[s] = []
     arrivals[s].append(j["id"])
 
 for s in scorsa.rangef(0.0, length, step, digits):
@@ -84,32 +83,13 @@ for s in scorsa.rangef(0.0, length, step, digits):
     if s in arrivals:
         pending = pending + arrivals[s]
 
-    while True:
-        sched = policies.sched_fcfs(system, available, index, pending)
+    new = policies.sched_fcfs(config, system, index, s, available, pending)
 
-        if not sched:
-            break
-
-        jid, family, num_cpus, num_nodes, time = sched
-
-        pending.remove(jid)
-        cpus = available[family][0:num_cpus]
-        available[family] = available[family][num_cpus:]
-
-        e = s + scorsa.f2step(time, step, digits)
-
-        schedule[jid] = {}
-        schedule[jid]["family"] = family
-        schedule[jid]["cpus"] = cpus
-        schedule[jid]["nodes"] = num_nodes
-        schedule[jid]["start"] = s
-        schedule[jid]["end"] = e
-
+    for jid, sched in new.iteritems():
         running.append(jid)
+        completions[sched["end"]].append(jid)
 
-        if not e in completions:
-            completions[e] = []
-        completions[e].append(jid)
+    schedule.update(new)
 
     # measure fragmentation of free slots, and for each running job,
     # normalized by number of CPUs

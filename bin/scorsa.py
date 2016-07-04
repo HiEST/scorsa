@@ -1,3 +1,5 @@
+from __future__ import division
+
 import numpy as np
 
 from collections import defaultdict
@@ -68,6 +70,6 @@ def fragmentation(layout, subset):
         fragments = []
         for k, group in groupby(enumerate(cids), lambda (i, x): i - x):
             fragments.append(len(map(itemgetter(1), group)))
-        f += 1 - (float(max(fragments))/sum(fragments))
+        f += 1 - max(fragments) / sum(fragments)
 
     return f / len(by_rack)
