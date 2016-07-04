@@ -5,16 +5,20 @@
 #
 # Given a system configuration and layout, and a workload description,
 # simulate the execution of all the jobs in the workload generating a schedule
-# that includes when and where the jobs are executed.
+# that includes when and where the jobs are executed, along with additional
+# stats such as fragmentation.
 #
 # Copyright © 2016 Jordà Polo <jorda.polo@bsc.es>
 
-import sys
+from __future__ import division
+
 import logging
 import argparse
 import configparser
 import json
 import numpy as np
+
+from itertools import chain
 
 import scorsa
 import policies
@@ -50,6 +54,7 @@ arrivals = {} # job IDs indexed by arrival time
 completions = {} # job IDs indexed by completion time
 
 schedule = {} # scheduling decisions indexed by job ID
+stats = []
 
 running = [] # current job IDs being executed
 pending = [] # current submitted job IDs that haven't been scheduled yet
@@ -106,4 +111,18 @@ for s in scorsa.rangef(0.0, length, step, digits):
             completions[e] = []
         completions[e].append(jid)
 
-print json.dumps(schedule)
+    # measure fragmentation of free slots, and for each running job,
+    # normalized by number of CPUs
+    free = list(chain.from_iterable(available.values()))
+    f = scorsa.fragmentation(layout, free) * len(free) / len(layout)
+    for jid in running:
+        cpus = schedule[jid]["cpus"]
+        f += scorsa.fragmentation(layout, cpus) * len(cpus) / len(layout)
+
+    stats.append({"time": s, "frag": f})
+
+with open("schedule.json", "w") as out:
+    json.dump(schedule, out)
+
+with open("stats.json", "w") as out:
+    json.dump(stats, out)
