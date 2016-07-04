@@ -18,7 +18,6 @@ def sched_fcfs(config, system, jobs, curr, available, pending):
         if num_cpus > len(available[family]):
             break
 
-        pending.remove(jid)
         cpus = available[family][0:num_cpus]
         available[family] = available[family][num_cpus:]
 
@@ -31,4 +30,6 @@ def sched_fcfs(config, system, jobs, curr, available, pending):
         schedule[jid]["start"] = curr
         schedule[jid]["end"] = end
 
+    for jid in schedule.keys():
+        pending.remove(jid)
     return schedule
