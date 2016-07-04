@@ -86,7 +86,7 @@ for a, f in enumerate(families):
         start = schedule[jid]["start"]
         end = schedule[jid]["end"]
         running[jid] = np.zeros(len(x), dtype=np.int)
-        for i in scorsa.rangef(start, end, step, digits):
+        for i in scorsa.rangef(start, min(end, length), step, digits):
             running[jid][int(i / step)] = len(schedule[jid]["cpus"])
 
     # accumulate running CPUs to plot stepped figure
@@ -98,7 +98,7 @@ for a, f in enumerate(families):
                 break
             start = schedule[i]["start"]
             end = schedule[i]["end"]
-            for k in scorsa.rangef(start, end, step, digits):
+            for k in scorsa.rangef(start, min(end, length), step, digits):
                 k = int(k / step)
                 arunning[i][k] = arunning[i][k] + running[j][k]
 
