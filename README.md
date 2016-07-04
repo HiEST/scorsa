@@ -44,7 +44,7 @@ A JSON file containing an list of jobs with the following schema:
       "tasks" : TASKS,
       "mem" : MEM,
       "color" : COLOR,
-      "times" : TIMES
+      "times" : TIME
    },
    ...
 ]
@@ -62,17 +62,7 @@ Where:
 - MEM is an unsigned integer, e.g. `16`. It stands for the amount of memory
   that the job requires, in MiB.
 - COLOR is a color in hex code, e.g. `"#79F1F2"`.
-- TIMES is a dictionary that describes the performance model of the job. It's
-  indexed by family names (e.g. `xeon-e7-v2`, `atom`), and each entry is a
-  dictionary that includes execution times in seconds for different
-  configurations of numbers of CPUs per node, e.g.:
-```
-"xeon-e7-v2" : {
-   "1" : 100.0,
-   "2" : 120.0,
-   "4" : 200.0,
-}
-```
+- TIME is a the execution times in seconds, e.g `3200.0`.
 
 ### Schedule File
 
