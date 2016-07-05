@@ -4,6 +4,7 @@ import scorsa
 
 def sched_fcfs(config, system, jobs, curr, available, pending):
     step = config.getfloat("simulator", "step")
+    reshape = config.getfloat("simulator", "reshape")
     digits = config.getint("simulator", "digits")
 
     schedule = {}
@@ -21,7 +22,7 @@ def sched_fcfs(config, system, jobs, curr, available, pending):
         cpus = available[family][0:num_cpus]
         available[family] = available[family][num_cpus:]
 
-        end = curr + scorsa.f2step(time, step, digits)
+        end = curr + scorsa.f2step(reshape + time, step, digits)
 
         schedule[jid] = {}
         schedule[jid]["family"] = family
@@ -32,4 +33,5 @@ def sched_fcfs(config, system, jobs, curr, available, pending):
 
     for jid in schedule.keys():
         pending.remove(jid)
+
     return schedule
