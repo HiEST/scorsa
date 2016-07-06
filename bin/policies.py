@@ -5,11 +5,12 @@ from itertools import chain
 
 import scorsa
 
-def allocate_cpus(free, family, num_cpus):
+def allocate_cpus(config, free, family, num_cpus):
+    reuse = config.getboolean("composition", "reuse")
     ff = free[family]
 
     # 1. Reuse node if available
-    if num_cpus in ff.keys() and len(ff[num_cpus]) > 0:
+    if reuse and num_cpus in ff.keys() and len(ff[num_cpus]) > 0:
         cpus = ff[num_cpus].pop(0)
         return False, cpus
 
@@ -55,7 +56,7 @@ def sched_fcfs(config, curr, jobs, pending, free):
         num_nodes = job["tasks"]
         time = job["time"]
 
-        alloc = allocate_cpus(free, family, num_cpus)
+        alloc = allocate_cpus(config, free, family, num_cpus)
         if alloc == None:
             break
 
