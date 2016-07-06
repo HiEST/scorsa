@@ -43,8 +43,8 @@ def free_cpus(free, family, cpus):
 
 def sched_fcfs(config, curr, jobs, pending, free):
     step = config.getfloat("simulator", "step")
-    reshape = config.getfloat("simulator", "reshape")
     digits = config.getint("simulator", "digits")
+    compose = config.getfloat("composition", "compose")
 
     schedule = {}
 
@@ -61,7 +61,7 @@ def sched_fcfs(config, curr, jobs, pending, free):
 
         recomposed, cpus = alloc
         if recomposed:
-            time = time + reshape
+            time = time + compose
 
         end = curr + scorsa.f2step(time, step, digits)
 
@@ -71,6 +71,7 @@ def sched_fcfs(config, curr, jobs, pending, free):
         schedule[jid]["nodes"] = num_nodes
         schedule[jid]["start"] = curr
         schedule[jid]["end"] = end
+        schedule[jid]["reused"] = not recomposed
 
     for jid in schedule.keys():
         pending.remove(jid)

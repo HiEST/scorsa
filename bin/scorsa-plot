@@ -118,10 +118,12 @@ a += 1
 x = [s["time"] for s in stats]
 f = [s["frag"] for s in stats]
 d = [s["dist"] for s in stats]
+r = [s["reuse"] for s in stats]
 ax[a,0].set_ylabel('Fragmentation & Distance')
 ax[a,0].set_ylim(0.0, 1.0)
 ax[a,0].step(x, f, '-', where='post', label='Fragmentation')
 ax[a,0].step(x, d, '-', where='post', label='Distance')
+ax[a,0].step(x, r, '-', where='post', label='Reuse')
 ax[a,0].legend(prop={'size': 8})
 
 plt.tight_layout()
