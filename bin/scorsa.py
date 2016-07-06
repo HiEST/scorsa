@@ -3,7 +3,7 @@ from __future__ import division
 import numpy as np
 
 from collections import defaultdict
-from itertools import groupby
+from itertools import groupby, chain
 from operator import itemgetter
 
 def f2step(f, step, digits):
@@ -73,3 +73,10 @@ def fragmentation(layout, subset):
         f += 1 - max(fragments) / sum(fragments)
 
     return f / len(by_rack)
+
+def list_free_cpus(free):
+    nodes = []
+    for f in free.values():
+        for l, n in f.iteritems():
+            nodes.append(n)
+    return list(chain.from_iterable(chain.from_iterable(nodes)))
