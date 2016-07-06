@@ -41,7 +41,7 @@ def allocate_cpus(free, family, num_cpus):
 def free_cpus(free, family, cpus):
     free[family][len(cpus)].append(cpus)
 
-def sched_fcfs(config, system, jobs, curr, free, pending):
+def sched_fcfs(config, curr, jobs, pending, free):
     step = config.getfloat("simulator", "step")
     reshape = config.getfloat("simulator", "reshape")
     digits = config.getint("simulator", "digits")
@@ -50,7 +50,7 @@ def sched_fcfs(config, system, jobs, curr, free, pending):
 
     for jid in pending:
         job = jobs[jid]
-        family = system.keys()[0]
+        family = free.keys()[0]
         num_cpus = job["tasks"]
         num_nodes = job["tasks"]
         time = job["time"]

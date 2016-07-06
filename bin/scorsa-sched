@@ -63,9 +63,6 @@ pending = [] # current submitted job IDs that haven't been scheduled yet
 free = {} # current available resources indexed by family
 
 for f in families:
-    system[f] = {}
-    system[f]["cores"] = config.getint("system.%s" % f, "cores")
-    system[f]["mem"] = config.getint("system.%s" % f, "mem")
     r = json.loads(config.get("system.%s" % f, "range"))
     free[f] = defaultdict(list)
     free[f][1] = [[n] for n in range(r[0], r[1])]
@@ -85,7 +82,7 @@ for s in scorsa.rangef(0.0, length, step, digits):
     if s in arrivals:
         pending = pending + arrivals[s]
 
-    new = policies.sched_fcfs(config, system, index, s, free, pending)
+    new = policies.sched_fcfs(config, s, index, pending, free)
 
     for jid, sched in new.iteritems():
         running.append(jid)
