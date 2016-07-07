@@ -74,6 +74,9 @@ def fragmentation(layout, subset):
 
     return f / len(by_rack)
 
+def list_cpus(nodes):
+    return list(chain.from_iterable(nodes))
+
 def list_free_cpus(free):
     nodes = []
     for f in free.values():

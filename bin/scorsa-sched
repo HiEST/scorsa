@@ -19,7 +19,6 @@ import json
 import numpy as np
 
 from collections import defaultdict
-from itertools import chain
 
 import scorsa
 import policies
@@ -95,12 +94,12 @@ for s in scorsa.rangef(0.0, length, step, digits):
     cpus = scorsa.list_free_cpus(free)
     f = scorsa.fragmentation(layout, cpus) * len(cpus) / len(layout)
     for jid in running:
-        cpus = list(chain.from_iterable(schedule[jid]["nodes"]))
+        cpus = scorsa.list_cpus(schedule[jid]["nodes"])
         f += scorsa.fragmentation(layout, cpus) * len(cpus) / len(layout)
 
     d = 0.0
     for jid in running:
-        cpus = list(chain.from_iterable(schedule[jid]["nodes"]))
+        cpus = scorsa.list_cpus(schedule[jid]["nodes"])
         job_dist = scorsa.distance(layout, min(cpus), max(cpus))
         min_dist = scorsa.distance(layout, 0, len(cpus) - 1)
         d += job_dist - min_dist
@@ -108,7 +107,7 @@ for s in scorsa.rangef(0.0, length, step, digits):
 
     r = 0.0
     for jid in running:
-        cpus = list(chain.from_iterable(schedule[jid]["nodes"]))
+        cpus = scorsa.list_cpus(schedule[jid]["nodes"])
         r += len(cpus) / len(layout) if schedule[jid]["reused"] else 0.0
 
     stats.append({"time": s, "frag": f, "dist": d, "reuse": r})

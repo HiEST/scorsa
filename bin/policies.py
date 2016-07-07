@@ -1,7 +1,6 @@
 import math
 
 from collections import defaultdict
-from itertools import chain
 
 import scorsa
 
@@ -37,7 +36,7 @@ def allocate_nodes(config, free, family, num_nodes, node_size):
         ff[1] += [[n] for n in node]
         freed += l
 
-    cpus = list(chain.from_iterable(ff[1][0:num_cpus]))
+    cpus = scorsa.list_cpus(ff[1][0:num_cpus])
     nodes = [cpus[i:i+node_size] for i in range(0, len(cpus), node_size)]
     ff[1] = ff[1][num_cpus:]
     return True, nodes

@@ -17,8 +17,6 @@ import configparser
 import json
 import copy
 
-from itertools import chain
-
 import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
@@ -89,7 +87,7 @@ for a, f in enumerate(families):
         end = schedule[jid]["end"]
         running[jid] = np.zeros(len(x), dtype=np.int)
         for i in scorsa.rangef(start, min(end, length), step, digits):
-            cpus = list(chain.from_iterable(schedule[jid]["nodes"]))
+            cpus = scorsa.list_cpus(schedule[jid]["nodes"])
             running[jid][int(i / step)] = len(cpus)
 
     # accumulate running CPUs to plot stepped figure
