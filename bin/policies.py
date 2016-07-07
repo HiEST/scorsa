@@ -5,14 +5,16 @@ from itertools import chain
 
 import scorsa
 
-def allocate_cpus(config, free, family, num_cpus):
+def allocate_nodes(config, free, family, num_nodes, node_size):
     reuse = config.getboolean("composition", "reuse")
     ff = free[family]
+    num_cpus = num_nodes * node_size
 
     # 1. Reuse node if available
-    if reuse and num_cpus in ff.keys() and len(ff[num_cpus]) > 0:
-        cpus = ff[num_cpus].pop(0)
-        return False, cpus
+    if reuse and node_size in ff.keys() and len(ff[node_size]) >= num_nodes:
+        nodes = ff[node_size][0:num_nodes]
+        ff[node_size] = ff[node_size][num_nodes:]
+        return False, nodes
 
     # 2. Try to compose node from other nodes
     num_free = len(ff[1])
@@ -35,12 +37,14 @@ def allocate_cpus(config, free, family, num_cpus):
         ff[1] += [[n] for n in node]
         freed += l
 
-    cpus = ff[1][0:num_cpus]
+    cpus = list(chain.from_iterable(ff[1][0:num_cpus]))
+    nodes = [cpus[i:i+node_size] for i in range(0, len(cpus), node_size)]
     ff[1] = ff[1][num_cpus:]
-    return True, list(chain.from_iterable(cpus))
+    return True, nodes
 
-def free_cpus(free, family, cpus):
-    free[family][len(cpus)].append(cpus)
+def free_nodes(free, family, nodes):
+    for node in nodes:
+        free[family][len(node)].append(node)
 
 def sched_fcfs(config, curr, jobs, pending, free):
     step = config.getfloat("simulator", "step")
@@ -53,14 +57,15 @@ def sched_fcfs(config, curr, jobs, pending, free):
         job = jobs[jid]
         family = free.keys()[0]
         num_cpus = job["tasks"]
-        num_nodes = job["tasks"]
+        num_nodes = 1 if job["scale"] == "up" else job["tasks"]
+        node_size = num_cpus / num_nodes
         time = job["time"]
 
-        alloc = allocate_cpus(config, free, family, num_cpus)
+        alloc = allocate_nodes(config, free, family, num_nodes, node_size)
         if alloc == None:
             break
 
-        recomposed, cpus = alloc
+        recomposed, nodes = alloc
         if recomposed:
             time = time + compose
 
@@ -68,8 +73,7 @@ def sched_fcfs(config, curr, jobs, pending, free):
 
         schedule[jid] = {}
         schedule[jid]["family"] = family
-        schedule[jid]["cpus"] = cpus
-        schedule[jid]["nodes"] = num_nodes
+        schedule[jid]["nodes"] = nodes
         schedule[jid]["start"] = curr
         schedule[jid]["end"] = end
         schedule[jid]["reused"] = not recomposed

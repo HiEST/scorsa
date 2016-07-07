@@ -75,8 +75,8 @@ for s in scorsa.rangef(0.0, length, step, digits):
     if s in completions:
         for jid in completions[s]:
             family = schedule[jid]["family"]
-            cpus = schedule[jid]["cpus"]
-            policies.free_cpus(free, family, cpus)
+            nodes = schedule[jid]["nodes"]
+            policies.free_nodes(free, family, nodes)
             running.remove(jid)
 
     if s in arrivals:
@@ -95,12 +95,12 @@ for s in scorsa.rangef(0.0, length, step, digits):
     cpus = scorsa.list_free_cpus(free)
     f = scorsa.fragmentation(layout, cpus) * len(cpus) / len(layout)
     for jid in running:
-        cpus = schedule[jid]["cpus"]
+        cpus = list(chain.from_iterable(schedule[jid]["nodes"]))
         f += scorsa.fragmentation(layout, cpus) * len(cpus) / len(layout)
 
     d = 0.0
     for jid in running:
-        cpus = schedule[jid]["cpus"]
+        cpus = list(chain.from_iterable(schedule[jid]["nodes"]))
         job_dist = scorsa.distance(layout, min(cpus), max(cpus))
         min_dist = scorsa.distance(layout, 0, len(cpus) - 1)
         d += job_dist - min_dist
@@ -108,7 +108,7 @@ for s in scorsa.rangef(0.0, length, step, digits):
 
     r = 0.0
     for jid in running:
-        cpus = schedule[jid]["cpus"]
+        cpus = list(chain.from_iterable(schedule[jid]["nodes"]))
         r += len(cpus) / len(layout) if schedule[jid]["reused"] else 0.0
 
     stats.append({"time": s, "frag": f, "dist": d, "reuse": r})
