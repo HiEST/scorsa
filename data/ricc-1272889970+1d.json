@@ -3,7 +3,7 @@
       "tasks" : 1,
       "time" : 144,
       "id" : "799",
-      "penalty" : "no",
+      "scale" : "no",
       "color" : "#c6f279",
       "arrival" : 0,
       "mem" : 1200000
@@ -12,7 +12,7 @@
       "arrival" : 111,
       "mem" : 1200000,
       "id" : "800",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 143,
       "color" : "#f279e9",
       "tasks" : 1
@@ -21,7 +21,7 @@
       "arrival" : 192,
       "mem" : 800000,
       "tasks" : 26,
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "801",
       "time" : 1409,
       "color" : "#79f2d8"
@@ -32,7 +32,7 @@
       "tasks" : 1,
       "color" : "#f2b479",
       "id" : "802",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 391
    },
    {
@@ -41,14 +41,14 @@
       "color" : "#9179f2",
       "id" : "803",
       "time" : 1393,
-      "penalty" : "no",
+      "scale" : "no",
       "tasks" : 20
    },
    {
       "arrival" : 329,
       "mem" : 1200000,
       "tasks" : 1,
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "804",
       "time" : 143,
       "color" : "#85f279"
@@ -56,7 +56,7 @@
    {
       "tasks" : 1,
       "id" : "805",
-      "penalty" : "out",
+      "scale" : "out",
       "time" : 4213,
       "color" : "#f279a8",
       "arrival" : 583,
@@ -66,7 +66,7 @@
       "color" : "#79cbf2",
       "id" : "806",
       "time" : 400,
-      "penalty" : "up",
+      "scale" : "up",
       "tasks" : 1,
       "mem" : 1200000,
       "arrival" : 769
@@ -77,7 +77,7 @@
       "tasks" : 1,
       "color" : "#eff279",
       "id" : "807",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 4219
    },
    {
@@ -85,7 +85,7 @@
       "arrival" : 971,
       "tasks" : 1,
       "color" : "#d379f2",
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "808",
       "time" : 4207
    },
@@ -93,7 +93,7 @@
       "tasks" : 1,
       "id" : "809",
       "time" : 4270,
-      "penalty" : "out",
+      "scale" : "out",
       "color" : "#79f2af",
       "arrival" : 1080,
       "mem" : 1200000
@@ -101,7 +101,7 @@
    {
       "tasks" : 1,
       "id" : "810",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 4245,
       "color" : "#f28c79",
       "arrival" : 1180,
@@ -110,7 +110,7 @@
    {
       "tasks" : 1,
       "id" : "811",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 3382,
       "color" : "#798af2",
       "arrival" : 1324,
@@ -120,7 +120,7 @@
       "tasks" : 1,
       "color" : "#adf279",
       "id" : "812",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 4275,
       "mem" : 1200000,
       "arrival" : 1415
@@ -131,12 +131,12 @@
       "tasks" : 1,
       "time" : 4219,
       "id" : "813",
-      "penalty" : "out",
+      "scale" : "out",
       "color" : "#f279d0"
    },
    {
       "id" : "814",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 4252,
       "color" : "#79f2f1",
       "tasks" : 1,
@@ -146,7 +146,7 @@
    {
       "color" : "#f2cd79",
       "id" : "815",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 123,
       "tasks" : 42,
       "mem" : 1200000,
@@ -156,7 +156,7 @@
       "arrival" : 2060,
       "mem" : 1200000,
       "id" : "816",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 123,
       "color" : "#aa79f2",
       "tasks" : 32
@@ -165,7 +165,7 @@
       "arrival" : 2060,
       "mem" : 1200000,
       "tasks" : 21,
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "817",
       "time" : 123,
       "color" : "#79f287"
@@ -173,7 +173,7 @@
    {
       "id" : "818",
       "time" : 123,
-      "penalty" : "up",
+      "scale" : "up",
       "color" : "#f2798f",
       "tasks" : 28,
       "arrival" : 2060,
@@ -184,7 +184,7 @@
       "color" : "#79b2f2",
       "time" : 123,
       "id" : "819",
-      "penalty" : "no",
+      "scale" : "no",
       "mem" : 1200000,
       "arrival" : 2060
    },
@@ -193,7 +193,7 @@
       "arrival" : 2060,
       "color" : "#d6f279",
       "id" : "820",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 123,
       "tasks" : 16
    },
@@ -202,7 +202,7 @@
       "color" : "#ec79f2",
       "time" : 123,
       "id" : "821",
-      "penalty" : "out",
+      "scale" : "out",
       "mem" : 1200000,
       "arrival" : 2060
    },
@@ -210,7 +210,7 @@
       "arrival" : 2060,
       "mem" : 1200000,
       "tasks" : 42,
-      "penalty" : "up",
+      "scale" : "up",
       "id" : "822",
       "time" : 123,
       "color" : "#79f2c8"
@@ -220,13 +220,13 @@
       "mem" : 1200000,
       "tasks" : 42,
       "id" : "823",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 123,
       "color" : "#f2a579"
    },
    {
       "tasks" : 32,
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "824",
       "time" : 123,
       "color" : "#8279f2",
@@ -236,7 +236,7 @@
    {
       "tasks" : 16,
       "color" : "#94f279",
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "825",
       "time" : 97,
       "mem" : 1200000,
@@ -247,7 +247,7 @@
       "color" : "#f279b7",
       "id" : "826",
       "time" : 97,
-      "penalty" : "up",
+      "scale" : "up",
       "mem" : 1200000,
       "arrival" : 2066
    },
@@ -255,7 +255,7 @@
       "arrival" : 2066,
       "mem" : 1200000,
       "tasks" : 32,
-      "penalty" : "no",
+      "scale" : "no",
       "id" : "827",
       "time" : 97,
       "color" : "#79dbf2"
@@ -266,7 +266,7 @@
       "color" : "#f2e679",
       "id" : "828",
       "time" : 97,
-      "penalty" : "both",
+      "scale" : "both",
       "tasks" : 42
    },
    {
@@ -274,7 +274,7 @@
       "mem" : 1200000,
       "time" : 97,
       "id" : "829",
-      "penalty" : "out",
+      "scale" : "out",
       "color" : "#c379f2",
       "tasks" : 16
    },
@@ -282,7 +282,7 @@
       "arrival" : 2066,
       "mem" : 1200000,
       "tasks" : 32,
-      "penalty" : "up",
+      "scale" : "up",
       "id" : "830",
       "time" : 97,
       "color" : "#79f2a0"
@@ -294,21 +294,21 @@
       "color" : "#f27c79",
       "time" : 97,
       "id" : "831",
-      "penalty" : "no"
+      "scale" : "no"
    },
    {
       "mem" : 1200000,
       "arrival" : 2066,
       "color" : "#7999f2",
       "id" : "832",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 97,
       "tasks" : 32
    },
    {
       "arrival" : 2066,
       "mem" : 1200000,
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "833",
       "time" : 97,
       "color" : "#bcf279",
@@ -316,7 +316,7 @@
    },
    {
       "id" : "834",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 97,
       "color" : "#f279e0",
       "tasks" : 16,
@@ -329,13 +329,13 @@
       "tasks" : 28,
       "id" : "835",
       "time" : 120,
-      "penalty" : "no",
+      "scale" : "no",
       "color" : "#79f2e1"
    },
    {
       "tasks" : 42,
       "color" : "#f2be79",
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "836",
       "time" : 120,
       "mem" : 1200000,
@@ -346,7 +346,7 @@
       "mem" : 1200000,
       "tasks" : 21,
       "id" : "837",
-      "penalty" : "out",
+      "scale" : "out",
       "time" : 120,
       "color" : "#9b79f2"
    },
@@ -356,13 +356,13 @@
       "color" : "#7bf279",
       "id" : "838",
       "time" : 120,
-      "penalty" : "up",
+      "scale" : "up",
       "tasks" : 42
    },
    {
       "tasks" : 16,
       "id" : "839",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 120,
       "color" : "#f2799e",
       "arrival" : 2071,
@@ -372,7 +372,7 @@
       "arrival" : 2071,
       "mem" : 1200000,
       "tasks" : 21,
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "840",
       "time" : 120,
       "color" : "#79c2f2"
@@ -382,14 +382,14 @@
       "color" : "#e5f279",
       "id" : "841",
       "time" : 120,
-      "penalty" : "out",
+      "scale" : "out",
       "mem" : 1200000,
       "arrival" : 2071
    },
    {
       "color" : "#dc79f2",
       "id" : "842",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 120,
       "tasks" : 21,
       "mem" : 1200000,
@@ -399,14 +399,14 @@
       "tasks" : 42,
       "color" : "#79f2b9",
       "id" : "843",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 120,
       "mem" : 1200000,
       "arrival" : 2071
    },
    {
       "id" : "844",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 120,
       "color" : "#f29579",
       "tasks" : 21,
@@ -419,14 +419,14 @@
       "color" : "#7980f2",
       "time" : 90,
       "id" : "845",
-      "penalty" : "out",
+      "scale" : "out",
       "tasks" : 21
    },
    {
       "tasks" : 21,
       "color" : "#a3f279",
       "id" : "846",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 90,
       "mem" : 1200000,
       "arrival" : 2076
@@ -436,7 +436,7 @@
       "mem" : 1200000,
       "tasks" : 32,
       "id" : "847",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 90,
       "color" : "#f279c7"
    },
@@ -445,7 +445,7 @@
       "arrival" : 2076,
       "color" : "#79eaf2",
       "id" : "848",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 90,
       "tasks" : 42
    },
@@ -454,7 +454,7 @@
       "arrival" : 2076,
       "tasks" : 21,
       "color" : "#f2d779",
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "849",
       "time" : 90
    },
@@ -464,7 +464,7 @@
       "color" : "#b479f2",
       "id" : "850",
       "time" : 90,
-      "penalty" : "up",
+      "scale" : "up",
       "tasks" : 16
    },
    {
@@ -473,7 +473,7 @@
       "tasks" : 42,
       "time" : 90,
       "id" : "851",
-      "penalty" : "no",
+      "scale" : "no",
       "color" : "#79f290"
    },
    {
@@ -482,7 +482,7 @@
       "tasks" : 28,
       "color" : "#f27985",
       "id" : "852",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 90
    },
    {
@@ -490,14 +490,14 @@
       "mem" : 1200000,
       "time" : 90,
       "id" : "853",
-      "penalty" : "out",
+      "scale" : "out",
       "color" : "#79a9f2",
       "tasks" : 32
    },
    {
       "arrival" : 2076,
       "mem" : 1200000,
-      "penalty" : "up",
+      "scale" : "up",
       "id" : "854",
       "time" : 90,
       "color" : "#ccf279",
@@ -508,21 +508,21 @@
       "arrival" : 2081,
       "color" : "#f279ef",
       "id" : "855",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 112,
       "tasks" : 28
    },
    {
       "arrival" : 2081,
       "mem" : 1200000,
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "856",
       "time" : 112,
       "color" : "#79f2d2",
       "tasks" : 32
    },
    {
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "857",
       "time" : 112,
       "color" : "#f2af79",
@@ -535,14 +535,14 @@
       "color" : "#8b79f2",
       "id" : "858",
       "time" : 112,
-      "penalty" : "up",
+      "scale" : "up",
       "mem" : 1200000,
       "arrival" : 2081
    },
    {
       "tasks" : 42,
       "color" : "#8af279",
-      "penalty" : "no",
+      "scale" : "no",
       "id" : "859",
       "time" : 112,
       "mem" : 1200000,
@@ -554,7 +554,7 @@
       "color" : "#f279ae",
       "id" : "860",
       "time" : 112,
-      "penalty" : "both",
+      "scale" : "both",
       "tasks" : 28
    },
    {
@@ -564,12 +564,12 @@
       "color" : "#79d1f2",
       "time" : 112,
       "id" : "861",
-      "penalty" : "out"
+      "scale" : "out"
    },
    {
       "tasks" : 21,
       "color" : "#f2f079",
-      "penalty" : "up",
+      "scale" : "up",
       "id" : "862",
       "time" : 111,
       "mem" : 1200000,
@@ -579,7 +579,7 @@
       "color" : "#cd79f2",
       "time" : 112,
       "id" : "863",
-      "penalty" : "no",
+      "scale" : "no",
       "tasks" : 21,
       "mem" : 1200000,
       "arrival" : 2081
@@ -587,14 +587,14 @@
    {
       "color" : "#79f2a9",
       "id" : "864",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 112,
       "tasks" : 32,
       "mem" : 1200000,
       "arrival" : 2081
    },
    {
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "865",
       "time" : 118,
       "color" : "#f28679",
@@ -605,7 +605,7 @@
    {
       "tasks" : 21,
       "id" : "866",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 118,
       "color" : "#7990f2",
       "arrival" : 2086,
@@ -615,7 +615,7 @@
       "tasks" : 32,
       "id" : "867",
       "time" : 118,
-      "penalty" : "no",
+      "scale" : "no",
       "color" : "#b3f279",
       "arrival" : 2086,
       "mem" : 1200000
@@ -623,7 +623,7 @@
    {
       "arrival" : 2086,
       "mem" : 1200000,
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "868",
       "time" : 118,
       "color" : "#f279d6",
@@ -634,7 +634,7 @@
       "arrival" : 2086,
       "color" : "#79f2eb",
       "id" : "869",
-      "penalty" : "out",
+      "scale" : "out",
       "time" : 118,
       "tasks" : 21
    },
@@ -642,7 +642,7 @@
       "tasks" : 42,
       "id" : "870",
       "time" : 118,
-      "penalty" : "up",
+      "scale" : "up",
       "color" : "#f2c879",
       "arrival" : 2086,
       "mem" : 1200000
@@ -651,7 +651,7 @@
       "arrival" : 2086,
       "mem" : 1200000,
       "id" : "871",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 117,
       "color" : "#a479f2",
       "tasks" : 16
@@ -659,7 +659,7 @@
    {
       "arrival" : 2086,
       "mem" : 1200000,
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "872",
       "time" : 118,
       "color" : "#79f281",
@@ -670,14 +670,14 @@
       "color" : "#f27995",
       "id" : "873",
       "time" : 118,
-      "penalty" : "out",
+      "scale" : "out",
       "mem" : 1200000,
       "arrival" : 2086
    },
    {
       "tasks" : 42,
       "id" : "874",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 118,
       "color" : "#79b8f2",
       "arrival" : 2086,
@@ -685,7 +685,7 @@
    },
    {
       "id" : "875",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 95,
       "color" : "#dbf279",
       "tasks" : 32,
@@ -697,7 +697,7 @@
       "arrival" : 2091,
       "color" : "#e679f2",
       "id" : "876",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 94,
       "tasks" : 16
    },
@@ -707,7 +707,7 @@
       "tasks" : 42,
       "time" : 94,
       "id" : "877",
-      "penalty" : "out",
+      "scale" : "out",
       "color" : "#79f2c2"
    },
    {
@@ -715,7 +715,7 @@
       "arrival" : 2091,
       "color" : "#f29f79",
       "id" : "878",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 95,
       "tasks" : 32
    },
@@ -723,7 +723,7 @@
       "arrival" : 2091,
       "mem" : 1200000,
       "id" : "879",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 94,
       "color" : "#7c79f2",
       "tasks" : 42
@@ -734,11 +734,11 @@
       "tasks" : 32,
       "color" : "#9af279",
       "id" : "880",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 94
    },
    {
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "881",
       "time" : 94,
       "color" : "#f279bd",
@@ -753,7 +753,7 @@
       "color" : "#79e1f2",
       "id" : "882",
       "time" : 95,
-      "penalty" : "up"
+      "scale" : "up"
    },
    {
       "mem" : 1200000,
@@ -762,12 +762,12 @@
       "color" : "#f2e179",
       "time" : 94,
       "id" : "883",
-      "penalty" : "no"
+      "scale" : "no"
    },
    {
       "color" : "#bd79f2",
       "id" : "884",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 94,
       "tasks" : 16,
       "mem" : 1200000,
@@ -779,13 +779,13 @@
       "tasks" : 32,
       "time" : 144,
       "id" : "885",
-      "penalty" : "out",
+      "scale" : "out",
       "color" : "#79f29a"
    },
    {
       "tasks" : 21,
       "color" : "#f2797c",
-      "penalty" : "up",
+      "scale" : "up",
       "id" : "886",
       "time" : 144,
       "mem" : 1200000,
@@ -795,13 +795,13 @@
       "tasks" : 16,
       "color" : "#799ff2",
       "id" : "887",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 145,
       "mem" : 1200000,
       "arrival" : 2099
    },
    {
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "888",
       "time" : 145,
       "color" : "#c2f279",
@@ -811,7 +811,7 @@
    },
    {
       "color" : "#f279e6",
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "889",
       "time" : 145,
       "tasks" : 16,
@@ -824,13 +824,13 @@
       "color" : "#79f2db",
       "id" : "890",
       "time" : 144,
-      "penalty" : "up",
+      "scale" : "up",
       "tasks" : 21
    },
    {
       "tasks" : 21,
       "color" : "#f2b879",
-      "penalty" : "no",
+      "scale" : "no",
       "id" : "891",
       "time" : 144,
       "mem" : 1200000,
@@ -840,7 +840,7 @@
       "color" : "#9579f2",
       "id" : "892",
       "time" : 144,
-      "penalty" : "both",
+      "scale" : "both",
       "tasks" : 16,
       "mem" : 1200000,
       "arrival" : 2099
@@ -851,13 +851,13 @@
       "color" : "#81f279",
       "time" : 144,
       "id" : "893",
-      "penalty" : "out",
+      "scale" : "out",
       "tasks" : 42
    },
    {
       "tasks" : 21,
       "color" : "#f279a4",
-      "penalty" : "up",
+      "scale" : "up",
       "id" : "894",
       "time" : 144,
       "mem" : 1200000,
@@ -867,14 +867,14 @@
       "color" : "#79c8f2",
       "time" : 67,
       "id" : "895",
-      "penalty" : "no",
+      "scale" : "no",
       "tasks" : 42,
       "mem" : 1200000,
       "arrival" : 2104
    },
    {
       "id" : "896",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 67,
       "color" : "#ebf279",
       "tasks" : 32,
@@ -885,7 +885,7 @@
       "arrival" : 2104,
       "mem" : 1200000,
       "tasks" : 42,
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "897",
       "time" : 67,
       "color" : "#d679f2"
@@ -894,7 +894,7 @@
       "tasks" : 16,
       "color" : "#79f2b3",
       "id" : "898",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 67,
       "mem" : 1200000,
       "arrival" : 2104
@@ -902,7 +902,7 @@
    {
       "id" : "899",
       "time" : 67,
-      "penalty" : "no",
+      "scale" : "no",
       "color" : "#f29079",
       "tasks" : 32,
       "arrival" : 2104,
@@ -910,7 +910,7 @@
    },
    {
       "tasks" : 21,
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "900",
       "time" : 67,
       "color" : "#7986f2",
@@ -919,7 +919,7 @@
    },
    {
       "id" : "901",
-      "penalty" : "out",
+      "scale" : "out",
       "time" : 67,
       "color" : "#a9f279",
       "tasks" : 32,
@@ -932,12 +932,12 @@
       "tasks" : 42,
       "id" : "902",
       "time" : 67,
-      "penalty" : "up",
+      "scale" : "up",
       "color" : "#f279cd"
    },
    {
       "id" : "903",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 67,
       "color" : "#79f0f2",
       "tasks" : 21,
@@ -947,7 +947,7 @@
    {
       "tasks" : 32,
       "color" : "#f2d179",
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "904",
       "time" : 67,
       "mem" : 1200000,
@@ -959,12 +959,12 @@
       "color" : "#ae79f2",
       "id" : "905",
       "time" : 73,
-      "penalty" : "out",
+      "scale" : "out",
       "tasks" : 42
    },
    {
       "id" : "906",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 73,
       "color" : "#79f28a",
       "tasks" : 21,
@@ -976,14 +976,14 @@
       "arrival" : 2109,
       "color" : "#f2798b",
       "id" : "907",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 73,
       "tasks" : 42
    },
    {
       "tasks" : 42,
       "id" : "908",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 73,
       "color" : "#79aff2",
       "arrival" : 2109,
@@ -994,14 +994,14 @@
       "mem" : 1200000,
       "time" : 73,
       "id" : "909",
-      "penalty" : "out",
+      "scale" : "out",
       "color" : "#d2f279",
       "tasks" : 28
    },
    {
       "color" : "#ef79f2",
       "id" : "910",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 73,
       "tasks" : 42,
       "mem" : 1200000,
@@ -1013,7 +1013,7 @@
       "tasks" : 42,
       "color" : "#79f2cc",
       "id" : "911",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 73
    },
    {
@@ -1021,14 +1021,14 @@
       "arrival" : 2109,
       "color" : "#f2a979",
       "id" : "912",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 73,
       "tasks" : 32
    },
    {
       "tasks" : 42,
       "color" : "#8579f2",
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "913",
       "time" : 73,
       "mem" : 1200000,
@@ -1038,7 +1038,7 @@
       "tasks" : 42,
       "id" : "914",
       "time" : 73,
-      "penalty" : "up",
+      "scale" : "up",
       "color" : "#90f279",
       "arrival" : 2109,
       "mem" : 1200000
@@ -1049,14 +1049,14 @@
       "tasks" : 16,
       "time" : 135,
       "id" : "915",
-      "penalty" : "no",
+      "scale" : "no",
       "color" : "#f279b4"
    },
    {
       "arrival" : 2114,
       "mem" : 1200000,
       "id" : "916",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 136,
       "color" : "#79d7f2",
       "tasks" : 16
@@ -1067,14 +1067,14 @@
       "tasks" : 32,
       "time" : 136,
       "id" : "917",
-      "penalty" : "out",
+      "scale" : "out",
       "color" : "#f2ea79"
    },
    {
       "arrival" : 2114,
       "mem" : 1200000,
       "tasks" : 42,
-      "penalty" : "up",
+      "scale" : "up",
       "id" : "918",
       "time" : 135,
       "color" : "#c779f2"
@@ -1085,7 +1085,7 @@
       "tasks" : 32,
       "color" : "#79f2a3",
       "id" : "919",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 135
    },
    {
@@ -1093,13 +1093,13 @@
       "arrival" : 2114,
       "tasks" : 16,
       "color" : "#f28079",
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "920",
       "time" : 135
    },
    {
       "color" : "#7995f2",
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "921",
       "time" : 136,
       "tasks" : 32,
@@ -1112,11 +1112,11 @@
       "tasks" : 21,
       "id" : "922",
       "time" : 136,
-      "penalty" : "up",
+      "scale" : "up",
       "color" : "#b9f279"
    },
    {
-      "penalty" : "no",
+      "scale" : "no",
       "id" : "923",
       "time" : 110,
       "color" : "#f279dc",
@@ -1128,7 +1128,7 @@
       "color" : "#79f2e5",
       "id" : "924",
       "time" : 110,
-      "penalty" : "both",
+      "scale" : "both",
       "tasks" : 28,
       "mem" : 1200000,
       "arrival" : 2119
@@ -1137,14 +1137,14 @@
       "tasks" : 42,
       "time" : 110,
       "id" : "925",
-      "penalty" : "out",
+      "scale" : "out",
       "color" : "#f2c279",
       "arrival" : 2119,
       "mem" : 1200000
    },
    {
       "tasks" : 16,
-      "penalty" : "up",
+      "scale" : "up",
       "id" : "926",
       "time" : 110,
       "color" : "#9e79f2",
@@ -1157,21 +1157,21 @@
       "tasks" : 16,
       "time" : 110,
       "id" : "927",
-      "penalty" : "no",
+      "scale" : "no",
       "color" : "#79f27b"
    },
    {
       "tasks" : 16,
       "color" : "#f2799b",
       "id" : "928",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 110,
       "mem" : 1200000,
       "arrival" : 2119
    },
    {
       "color" : "#79bef2",
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "929",
       "time" : 110,
       "tasks" : 16,
@@ -1182,7 +1182,7 @@
       "tasks" : 32,
       "color" : "#e1f279",
       "id" : "930",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 110,
       "mem" : 1200000,
       "arrival" : 2119
@@ -1192,7 +1192,7 @@
       "mem" : 1200000,
       "id" : "931",
       "time" : 110,
-      "penalty" : "no",
+      "scale" : "no",
       "color" : "#e079f2",
       "tasks" : 28
    },
@@ -1200,14 +1200,14 @@
       "arrival" : 2119,
       "mem" : 1200000,
       "tasks" : 16,
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "932",
       "time" : 110,
       "color" : "#79f2bc"
    },
    {
       "id" : "933",
-      "penalty" : "out",
+      "scale" : "out",
       "time" : 73,
       "color" : "#f29979",
       "tasks" : 21,
@@ -1220,7 +1220,7 @@
       "color" : "#797cf2",
       "id" : "934",
       "time" : 73,
-      "penalty" : "up",
+      "scale" : "up",
       "tasks" : 21
    },
    {
@@ -1229,11 +1229,11 @@
       "tasks" : 21,
       "color" : "#a0f279",
       "id" : "935",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 73
    },
    {
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "936",
       "time" : 73,
       "color" : "#f279c3",
@@ -1246,7 +1246,7 @@
       "color" : "#79e6f2",
       "id" : "937",
       "time" : 73,
-      "penalty" : "out",
+      "scale" : "out",
       "mem" : 1200000,
       "arrival" : 2298
    },
@@ -1256,7 +1256,7 @@
       "tasks" : 16,
       "color" : "#f2db79",
       "id" : "938",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 73
    },
    {
@@ -1264,7 +1264,7 @@
       "arrival" : 2298,
       "color" : "#b779f2",
       "id" : "939",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 73,
       "tasks" : 21
    },
@@ -1272,7 +1272,7 @@
       "tasks" : 21,
       "color" : "#79f294",
       "id" : "940",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 73,
       "mem" : 1200000,
       "arrival" : 2298
@@ -1282,7 +1282,7 @@
       "color" : "#f27982",
       "time" : 73,
       "id" : "941",
-      "penalty" : "out",
+      "scale" : "out",
       "mem" : 1200000,
       "arrival" : 2298
    },
@@ -1290,7 +1290,7 @@
       "tasks" : 21,
       "color" : "#79a5f2",
       "id" : "942",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 73,
       "mem" : 1200000,
       "arrival" : 2298
@@ -1300,14 +1300,14 @@
       "mem" : 1200000,
       "tasks" : 21,
       "id" : "943",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 60,
       "color" : "#c8f279"
    },
    {
       "tasks" : 21,
       "id" : "944",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 614,
       "color" : "#f279ec",
       "arrival" : 4672,
@@ -1315,7 +1315,7 @@
    },
    {
       "color" : "#79f2d6",
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "945",
       "time" : 485,
       "tasks" : 32,
@@ -1327,7 +1327,7 @@
       "color" : "#f2b279",
       "id" : "946",
       "time" : 601,
-      "penalty" : "up",
+      "scale" : "up",
       "mem" : 1200000,
       "arrival" : 4674
    },
@@ -1336,7 +1336,7 @@
       "mem" : 1200000,
       "time" : 451,
       "id" : "947",
-      "penalty" : "no",
+      "scale" : "no",
       "color" : "#8f79f2",
       "tasks" : 42
    },
@@ -1345,14 +1345,14 @@
       "mem" : 1200000,
       "tasks" : 16,
       "id" : "948",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 559,
       "color" : "#87f279"
    },
    {
       "time" : 470,
       "id" : "949",
-      "penalty" : "out",
+      "scale" : "out",
       "color" : "#f279aa",
       "tasks" : 21,
       "arrival" : 4677,
@@ -1361,7 +1361,7 @@
    {
       "arrival" : 4678,
       "mem" : 1200000,
-      "penalty" : "up",
+      "scale" : "up",
       "id" : "950",
       "time" : 367,
       "color" : "#79cdf2",
@@ -1372,7 +1372,7 @@
       "arrival" : 4680,
       "color" : "#f1f279",
       "id" : "951",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 336,
       "tasks" : 32
    },
@@ -1381,7 +1381,7 @@
       "arrival" : 4681,
       "tasks" : 21,
       "color" : "#d079f2",
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "952",
       "time" : 364
    },
@@ -1390,7 +1390,7 @@
       "arrival" : 4682,
       "tasks" : 32,
       "color" : "#79f2ad",
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "953",
       "time" : 677
    },
@@ -1399,12 +1399,12 @@
       "mem" : 1200000,
       "id" : "954",
       "time" : 551,
-      "penalty" : "up",
+      "scale" : "up",
       "color" : "#f28a79",
       "tasks" : 21
    },
    {
-      "penalty" : "no",
+      "scale" : "no",
       "id" : "955",
       "time" : 220,
       "color" : "#798cf2",
@@ -1418,7 +1418,7 @@
       "color" : "#aff279",
       "id" : "956",
       "time" : 221,
-      "penalty" : "both",
+      "scale" : "both",
       "tasks" : 21
    },
    {
@@ -1426,14 +1426,14 @@
       "mem" : 1200000,
       "time" : 220,
       "id" : "957",
-      "penalty" : "out",
+      "scale" : "out",
       "color" : "#f279d3",
       "tasks" : 21
    },
    {
       "tasks" : 21,
       "color" : "#79f2ef",
-      "penalty" : "up",
+      "scale" : "up",
       "id" : "958",
       "time" : 220,
       "mem" : 1200000,
@@ -1442,7 +1442,7 @@
    {
       "time" : 221,
       "id" : "959",
-      "penalty" : "no",
+      "scale" : "no",
       "color" : "#f2cb79",
       "tasks" : 32,
       "arrival" : 4849,
@@ -1450,7 +1450,7 @@
    },
    {
       "id" : "960",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 220,
       "color" : "#a879f2",
       "tasks" : 16,
@@ -1462,7 +1462,7 @@
       "arrival" : 4849,
       "tasks" : 21,
       "color" : "#79f285",
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "961",
       "time" : 221
    },
@@ -1471,7 +1471,7 @@
       "mem" : 1200000,
       "tasks" : 21,
       "id" : "962",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 221,
       "color" : "#f27991"
    },
@@ -1480,7 +1480,7 @@
       "mem" : 1200000,
       "id" : "963",
       "time" : 324,
-      "penalty" : "no",
+      "scale" : "no",
       "color" : "#79b4f2",
       "tasks" : 16
    },
@@ -1489,7 +1489,7 @@
       "arrival" : 4855,
       "tasks" : 21,
       "color" : "#d8f279",
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "964",
       "time" : 323
    },
@@ -1498,7 +1498,7 @@
       "arrival" : 4855,
       "color" : "#e979f2",
       "id" : "965",
-      "penalty" : "out",
+      "scale" : "out",
       "time" : 324,
       "tasks" : 21
    },
@@ -1506,7 +1506,7 @@
       "color" : "#79f2c6",
       "id" : "966",
       "time" : 324,
-      "penalty" : "up",
+      "scale" : "up",
       "tasks" : 21,
       "mem" : 1200000,
       "arrival" : 4855
@@ -1516,13 +1516,13 @@
       "arrival" : 4855,
       "color" : "#f2a379",
       "id" : "967",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 323,
       "tasks" : 32
    },
    {
       "tasks" : 42,
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "968",
       "time" : 323,
       "color" : "#7f79f2",
@@ -1535,7 +1535,7 @@
       "color" : "#96f279",
       "id" : "969",
       "time" : 324,
-      "penalty" : "out",
+      "scale" : "out",
       "tasks" : 32
    },
    {
@@ -1543,7 +1543,7 @@
       "mem" : 1200000,
       "tasks" : 21,
       "id" : "970",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 323,
       "color" : "#f279ba"
    },
@@ -1552,7 +1552,7 @@
       "mem" : 1200000,
       "tasks" : 42,
       "id" : "971",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 323,
       "color" : "#79ddf2"
    },
@@ -1561,14 +1561,14 @@
       "mem" : 1200000,
       "tasks" : 16,
       "id" : "972",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 226,
       "color" : "#f2e479"
    },
    {
       "time" : 226,
       "id" : "973",
-      "penalty" : "out",
+      "scale" : "out",
       "color" : "#c179f2",
       "tasks" : 21,
       "arrival" : 4859,
@@ -1577,7 +1577,7 @@
    {
       "color" : "#79f29e",
       "id" : "974",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 226,
       "tasks" : 21,
       "mem" : 1200000,
@@ -1587,7 +1587,7 @@
       "arrival" : 4859,
       "mem" : 1200000,
       "id" : "975",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 227,
       "color" : "#f27a79",
       "tasks" : 32
@@ -1598,13 +1598,13 @@
       "tasks" : 32,
       "color" : "#799bf2",
       "id" : "976",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 227
    },
    {
       "arrival" : 4859,
       "mem" : 1200000,
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "977",
       "time" : 227,
       "color" : "#bff279",
@@ -1615,7 +1615,7 @@
       "mem" : 1200000,
       "id" : "978",
       "time" : 227,
-      "penalty" : "up",
+      "scale" : "up",
       "color" : "#f279e2",
       "tasks" : 16
    },
@@ -1626,12 +1626,12 @@
       "color" : "#79f2df",
       "time" : 226,
       "id" : "979",
-      "penalty" : "no"
+      "scale" : "no"
    },
    {
       "tasks" : 16,
       "id" : "980",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 60,
       "color" : "#f2bc79",
       "arrival" : 5012,
@@ -1643,14 +1643,14 @@
       "tasks" : 16,
       "time" : 201,
       "id" : "981",
-      "penalty" : "out",
+      "scale" : "out",
       "color" : "#9879f2"
    },
    {
       "mem" : 1200000,
       "arrival" : 5036,
       "color" : "#7df279",
-      "penalty" : "up",
+      "scale" : "up",
       "id" : "982",
       "time" : 202,
       "tasks" : 21
@@ -1660,13 +1660,13 @@
       "arrival" : 5036,
       "color" : "#f279a1",
       "id" : "983",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 203,
       "tasks" : 32
    },
    {
       "tasks" : 21,
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "984",
       "time" : 201,
       "color" : "#79c4f2",
@@ -1674,7 +1674,7 @@
       "mem" : 1200000
    },
    {
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "985",
       "time" : 201,
       "color" : "#e7f279",
@@ -1687,14 +1687,14 @@
       "color" : "#da79f2",
       "id" : "986",
       "time" : 201,
-      "penalty" : "up",
+      "scale" : "up",
       "mem" : 1200000,
       "arrival" : 5036
    },
    {
       "tasks" : 32,
       "color" : "#79f2b7",
-      "penalty" : "no",
+      "scale" : "no",
       "id" : "987",
       "time" : 202,
       "mem" : 1200000,
@@ -1706,7 +1706,7 @@
       "tasks" : 32,
       "id" : "988",
       "time" : 201,
-      "penalty" : "both",
+      "scale" : "both",
       "color" : "#f29379"
    },
    {
@@ -1716,12 +1716,12 @@
       "color" : "#7982f2",
       "time" : 202,
       "id" : "989",
-      "penalty" : "out"
+      "scale" : "out"
    },
    {
       "tasks" : 32,
       "color" : "#a6f279",
-      "penalty" : "up",
+      "scale" : "up",
       "id" : "990",
       "time" : 258,
       "mem" : 1200000,
@@ -1733,13 +1733,13 @@
       "tasks" : 32,
       "time" : 256,
       "id" : "991",
-      "penalty" : "no",
+      "scale" : "no",
       "color" : "#f279c9"
    },
    {
       "tasks" : 16,
       "id" : "992",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 256,
       "color" : "#79ecf2",
       "arrival" : 5090,
@@ -1748,7 +1748,7 @@
    {
       "tasks" : 21,
       "color" : "#f2d579",
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "993",
       "time" : 227,
       "mem" : 1200000,
@@ -1759,7 +1759,7 @@
       "arrival" : 5123,
       "color" : "#b179f2",
       "id" : "994",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 227,
       "tasks" : 21
    },
@@ -1767,7 +1767,7 @@
       "color" : "#79f28e",
       "id" : "995",
       "time" : 227,
-      "penalty" : "no",
+      "scale" : "no",
       "tasks" : 21,
       "mem" : 1200000,
       "arrival" : 5123
@@ -1775,7 +1775,7 @@
    {
       "tasks" : 32,
       "color" : "#f27988",
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "996",
       "time" : 227,
       "mem" : 1200000,
@@ -1787,7 +1787,7 @@
       "tasks" : 16,
       "color" : "#79abf2",
       "id" : "997",
-      "penalty" : "out",
+      "scale" : "out",
       "time" : 227
    },
    {
@@ -1796,14 +1796,14 @@
       "tasks" : 32,
       "id" : "998",
       "time" : 227,
-      "penalty" : "up",
+      "scale" : "up",
       "color" : "#cef279"
    },
    {
       "arrival" : 5123,
       "mem" : 1200000,
       "id" : "999",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 227,
       "color" : "#f279f2",
       "tasks" : 16
@@ -1812,7 +1812,7 @@
       "arrival" : 6984,
       "mem" : 1200000,
       "tasks" : 32,
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "1000",
       "time" : 60,
       "color" : "#79f2d0"
@@ -1824,12 +1824,12 @@
       "color" : "#f2ac79",
       "id" : "1001",
       "time" : 60,
-      "penalty" : "out"
+      "scale" : "out"
    },
    {
       "color" : "#8979f2",
       "id" : "1002",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 60,
       "tasks" : 32,
       "mem" : 1200000,
@@ -1839,7 +1839,7 @@
       "tasks" : 16,
       "color" : "#8df279",
       "id" : "1003",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 444,
       "mem" : 1200000,
       "arrival" : 9301
@@ -1847,7 +1847,7 @@
    {
       "tasks" : 16,
       "id" : "1004",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 580,
       "color" : "#f279b0",
       "arrival" : 9302,
@@ -1859,7 +1859,7 @@
       "tasks" : 16,
       "time" : 562,
       "id" : "1005",
-      "penalty" : "out",
+      "scale" : "out",
       "color" : "#79d3f2"
    },
    {
@@ -1867,14 +1867,14 @@
       "arrival" : 9305,
       "color" : "#f2ee79",
       "id" : "1006",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 1223,
       "tasks" : 16
    },
    {
       "tasks" : 16,
       "id" : "1007",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 60,
       "color" : "#ca79f2",
       "arrival" : 9306,
@@ -1883,7 +1883,7 @@
    {
       "color" : "#79f2a7",
       "id" : "1008",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 1218,
       "tasks" : 16,
       "mem" : 1200000,
@@ -1892,7 +1892,7 @@
    {
       "arrival" : 9309,
       "mem" : 1200000,
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "1009",
       "time" : 505,
       "color" : "#f28479",
@@ -1902,7 +1902,7 @@
       "tasks" : 16,
       "id" : "1010",
       "time" : 526,
-      "penalty" : "up",
+      "scale" : "up",
       "color" : "#7992f2",
       "arrival" : 9310,
       "mem" : 1200000
@@ -1913,14 +1913,14 @@
       "tasks" : 16,
       "time" : 592,
       "id" : "1011",
-      "penalty" : "no",
+      "scale" : "no",
       "color" : "#b5f279"
    },
    {
       "tasks" : 16,
       "color" : "#f279d9",
       "id" : "1012",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 188,
       "mem" : 1200000,
       "arrival" : 9313
@@ -1931,21 +1931,21 @@
       "color" : "#79f2e9",
       "time" : 60,
       "id" : "1013",
-      "penalty" : "out",
+      "scale" : "out",
       "tasks" : 16
    },
    {
       "mem" : 1200000,
       "arrival" : 9315,
       "color" : "#f2c579",
-      "penalty" : "up",
+      "scale" : "up",
       "id" : "1014",
       "time" : 90,
       "tasks" : 16
    },
    {
       "id" : "1015",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 60,
       "color" : "#a279f2",
       "tasks" : 32,
@@ -1954,7 +1954,7 @@
    },
    {
       "color" : "#79f27f",
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "1016",
       "time" : 60,
       "tasks" : 32,
@@ -1965,7 +1965,7 @@
       "mem" : 1200000,
       "arrival" : 10327,
       "color" : "#f27997",
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "1017",
       "time" : 60,
       "tasks" : 21
@@ -1974,7 +1974,7 @@
       "tasks" : 32,
       "id" : "1018",
       "time" : 301,
-      "penalty" : "up",
+      "scale" : "up",
       "color" : "#79baf2",
       "arrival" : 10381,
       "mem" : 1200000
@@ -1983,7 +1983,7 @@
       "mem" : 1200000,
       "arrival" : 20913,
       "color" : "#def279",
-      "penalty" : "no",
+      "scale" : "no",
       "id" : "1019",
       "time" : 60,
       "tasks" : 32
@@ -1994,7 +1994,7 @@
       "color" : "#e379f2",
       "id" : "1020",
       "time" : 130,
-      "penalty" : "both",
+      "scale" : "both",
       "tasks" : 32
    },
    {
@@ -2002,14 +2002,14 @@
       "mem" : 1200000,
       "time" : 129,
       "id" : "1021",
-      "penalty" : "out",
+      "scale" : "out",
       "color" : "#79f2c0",
       "tasks" : 32
    },
    {
       "tasks" : 32,
       "color" : "#f29d79",
-      "penalty" : "up",
+      "scale" : "up",
       "id" : "1022",
       "time" : 140,
       "mem" : 1200000,
@@ -2019,14 +2019,14 @@
       "color" : "#7979f2",
       "time" : 140,
       "id" : "1023",
-      "penalty" : "no",
+      "scale" : "no",
       "tasks" : 32,
       "mem" : 1200000,
       "arrival" : 21206
    },
    {
       "id" : "1024",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 4174,
       "color" : "#9cf279",
       "tasks" : 32,
@@ -2037,7 +2037,7 @@
       "arrival" : 25240,
       "mem" : 1024000,
       "tasks" : 42,
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "1025",
       "time" : 3391,
       "color" : "#f279bf"
@@ -2045,7 +2045,7 @@
    {
       "color" : "#79e3f2",
       "id" : "1026",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 3828,
       "tasks" : 16,
       "mem" : 1024000,
@@ -2054,7 +2054,7 @@
    {
       "id" : "1027",
       "time" : 4320,
-      "penalty" : "no",
+      "scale" : "no",
       "color" : "#f2de79",
       "tasks" : 21,
       "arrival" : 25630,
@@ -2065,7 +2065,7 @@
       "arrival" : 27528,
       "tasks" : 16,
       "color" : "#bb79f2",
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "1028",
       "time" : 3772
    },
@@ -2074,7 +2074,7 @@
       "mem" : 1024000,
       "tasks" : 32,
       "id" : "1029",
-      "penalty" : "out",
+      "scale" : "out",
       "time" : 3713,
       "color" : "#79f298"
    },
@@ -2085,20 +2085,20 @@
       "color" : "#f2797e",
       "id" : "1030",
       "time" : 67,
-      "penalty" : "up"
+      "scale" : "up"
    },
    {
       "arrival" : 29897,
       "mem" : 1200000,
       "tasks" : 37,
       "id" : "1031",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 60,
       "color" : "#79a1f2"
    },
    {
       "tasks" : 32,
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "1032",
       "time" : 523,
       "color" : "#c5f279",
@@ -2112,7 +2112,7 @@
       "color" : "#f279e8",
       "id" : "1033",
       "time" : 112,
-      "penalty" : "out"
+      "scale" : "out"
    },
    {
       "mem" : 1200000,
@@ -2120,7 +2120,7 @@
       "tasks" : 32,
       "color" : "#79f2d9",
       "id" : "1034",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 60
    },
    {
@@ -2128,7 +2128,7 @@
       "arrival" : 34286,
       "color" : "#f2b679",
       "id" : "1035",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 60,
       "tasks" : 32
    },
@@ -2138,13 +2138,13 @@
       "tasks" : 21,
       "color" : "#9279f2",
       "id" : "1036",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 194
    },
    {
       "time" : 200,
       "id" : "1037",
-      "penalty" : "out",
+      "scale" : "out",
       "color" : "#83f279",
       "tasks" : 16,
       "arrival" : 40086,
@@ -2154,7 +2154,7 @@
       "tasks" : 32,
       "color" : "#f279a6",
       "id" : "1038",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 194,
       "mem" : 1200000,
       "arrival" : 40086
@@ -2163,7 +2163,7 @@
       "tasks" : 16,
       "color" : "#79caf2",
       "id" : "1039",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 194,
       "mem" : 1200000,
       "arrival" : 40086
@@ -2173,13 +2173,13 @@
       "mem" : 1200000,
       "tasks" : 21,
       "id" : "1040",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 194,
       "color" : "#edf279"
    },
    {
       "color" : "#d479f2",
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "1041",
       "time" : 193,
       "tasks" : 16,
@@ -2190,7 +2190,7 @@
       "tasks" : 16,
       "id" : "1042",
       "time" : 194,
-      "penalty" : "up",
+      "scale" : "up",
       "color" : "#79f2b1",
       "arrival" : 40086,
       "mem" : 1200000
@@ -2200,13 +2200,13 @@
       "mem" : 1200000,
       "time" : 195,
       "id" : "1043",
-      "penalty" : "no",
+      "scale" : "no",
       "color" : "#f28d79",
       "tasks" : 21
    },
    {
       "id" : "1044",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 194,
       "color" : "#7988f2",
       "tasks" : 16,
@@ -2217,7 +2217,7 @@
       "tasks" : 21,
       "time" : 279,
       "id" : "1045",
-      "penalty" : "out",
+      "scale" : "out",
       "color" : "#acf279",
       "arrival" : 40332,
       "mem" : 1200000
@@ -2225,7 +2225,7 @@
    {
       "tasks" : 21,
       "color" : "#f279cf",
-      "penalty" : "up",
+      "scale" : "up",
       "id" : "1046",
       "time" : 279,
       "mem" : 1200000,
@@ -2234,7 +2234,7 @@
    {
       "color" : "#79f2f2",
       "id" : "1047",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 278,
       "tasks" : 16,
       "mem" : 1200000,
@@ -2242,7 +2242,7 @@
    },
    {
       "color" : "#f2cf79",
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "1048",
       "time" : 279,
       "tasks" : 21,
@@ -2250,7 +2250,7 @@
       "arrival" : 40332
    },
    {
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "1049",
       "time" : 279,
       "color" : "#ac79f2",
@@ -2262,14 +2262,14 @@
       "color" : "#79f288",
       "id" : "1050",
       "time" : 278,
-      "penalty" : "up",
+      "scale" : "up",
       "tasks" : 21,
       "mem" : 1200000,
       "arrival" : 40332
    },
    {
       "color" : "#f2798d",
-      "penalty" : "no",
+      "scale" : "no",
       "id" : "1051",
       "time" : 279,
       "tasks" : 21,
@@ -2280,7 +2280,7 @@
       "tasks" : 28,
       "id" : "1052",
       "time" : 279,
-      "penalty" : "both",
+      "scale" : "both",
       "color" : "#79b1f2",
       "arrival" : 40332,
       "mem" : 1200000
@@ -2290,12 +2290,12 @@
       "color" : "#d4f279",
       "time" : 288,
       "id" : "1053",
-      "penalty" : "out",
+      "scale" : "out",
       "mem" : 1200000,
       "arrival" : 40574
    },
    {
-      "penalty" : "up",
+      "scale" : "up",
       "id" : "1054",
       "time" : 292,
       "color" : "#ed79f2",
@@ -2306,7 +2306,7 @@
    {
       "time" : 288,
       "id" : "1055",
-      "penalty" : "no",
+      "scale" : "no",
       "color" : "#79f2ca",
       "tasks" : 42,
       "arrival" : 40574,
@@ -2317,14 +2317,14 @@
       "arrival" : 40574,
       "color" : "#f2a679",
       "id" : "1056",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 289,
       "tasks" : 28
    },
    {
       "arrival" : 40574,
       "mem" : 1200000,
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "1057",
       "time" : 289,
       "color" : "#8379f2",
@@ -2335,7 +2335,7 @@
       "arrival" : 40574,
       "color" : "#93f279",
       "id" : "1058",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 288,
       "tasks" : 42
    },
@@ -2343,14 +2343,14 @@
       "color" : "#f279b6",
       "id" : "1059",
       "time" : 288,
-      "penalty" : "no",
+      "scale" : "no",
       "tasks" : 32,
       "mem" : 1200000,
       "arrival" : 40574
    },
    {
       "color" : "#79d9f2",
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "1060",
       "time" : 288,
       "tasks" : 16,
@@ -2361,7 +2361,7 @@
       "arrival" : 40716,
       "mem" : 1200000,
       "id" : "1061",
-      "penalty" : "out",
+      "scale" : "out",
       "time" : 218,
       "color" : "#f2e879",
       "tasks" : 28
@@ -2373,13 +2373,13 @@
       "color" : "#c579f2",
       "id" : "1062",
       "time" : 214,
-      "penalty" : "up"
+      "scale" : "up"
    },
    {
       "arrival" : 40716,
       "mem" : 1200000,
       "id" : "1063",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 214,
       "color" : "#79f2a1",
       "tasks" : 42
@@ -2387,7 +2387,7 @@
    {
       "tasks" : 21,
       "color" : "#f27e79",
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "1064",
       "time" : 217,
       "mem" : 1200000,
@@ -2399,14 +2399,14 @@
       "color" : "#7998f2",
       "id" : "1065",
       "time" : 214,
-      "penalty" : "out",
+      "scale" : "out",
       "tasks" : 16
    },
    {
       "tasks" : 42,
       "color" : "#bbf279",
       "id" : "1066",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 215,
       "mem" : 1200000,
       "arrival" : 40716
@@ -2414,7 +2414,7 @@
    {
       "color" : "#f279de",
       "id" : "1067",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 214,
       "tasks" : 42,
       "mem" : 1200000,
@@ -2424,7 +2424,7 @@
       "tasks" : 32,
       "color" : "#79f2e3",
       "id" : "1068",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 214,
       "mem" : 1200000,
       "arrival" : 40716
@@ -2436,13 +2436,13 @@
       "color" : "#f2bf79",
       "time" : 60,
       "id" : "1069",
-      "penalty" : "out"
+      "scale" : "out"
    },
    {
       "tasks" : 16,
       "color" : "#9c79f2",
       "id" : "1070",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 60,
       "mem" : 1200000,
       "arrival" : 42611
@@ -2451,7 +2451,7 @@
       "tasks" : 32,
       "color" : "#7af279",
       "id" : "1071",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 60,
       "mem" : 1200000,
       "arrival" : 42878
@@ -2461,7 +2461,7 @@
       "mem" : 1200000,
       "tasks" : 16,
       "id" : "1072",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 60,
       "color" : "#f2799d"
    },
@@ -2470,7 +2470,7 @@
       "arrival" : 43126,
       "tasks" : 16,
       "color" : "#79c0f2",
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "1073",
       "time" : 60
    },
@@ -2481,14 +2481,14 @@
       "color" : "#e4f279",
       "id" : "1074",
       "time" : 60,
-      "penalty" : "up"
+      "scale" : "up"
    },
    {
       "arrival" : 43380,
       "mem" : 1200000,
       "time" : 60,
       "id" : "1075",
-      "penalty" : "no",
+      "scale" : "no",
       "color" : "#de79f2",
       "tasks" : 16
    },
@@ -2496,7 +2496,7 @@
       "tasks" : 21,
       "color" : "#79f2ba",
       "id" : "1076",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 60,
       "mem" : 1200000,
       "arrival" : 43557
@@ -2506,13 +2506,13 @@
       "color" : "#f29779",
       "time" : 74,
       "id" : "1077",
-      "penalty" : "out",
+      "scale" : "out",
       "mem" : 1200000,
       "arrival" : 43880
    },
    {
       "tasks" : 21,
-      "penalty" : "up",
+      "scale" : "up",
       "id" : "1078",
       "time" : 60,
       "color" : "#797ff2",
@@ -2521,7 +2521,7 @@
    },
    {
       "id" : "1079",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 60,
       "color" : "#a2f279",
       "tasks" : 21,
@@ -2532,7 +2532,7 @@
       "mem" : 1200000,
       "arrival" : 44228,
       "color" : "#f279c5",
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "1080",
       "time" : 60,
       "tasks" : 32
@@ -2541,7 +2541,7 @@
       "mem" : 1200000,
       "arrival" : 44277,
       "color" : "#79e9f2",
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "1081",
       "time" : 1295,
       "tasks" : 1
@@ -2550,7 +2550,7 @@
       "color" : "#f2d879",
       "id" : "1082",
       "time" : 4266,
-      "penalty" : "up",
+      "scale" : "up",
       "tasks" : 1,
       "mem" : 1200000,
       "arrival" : 44457
@@ -2558,7 +2558,7 @@
    {
       "tasks" : 1,
       "color" : "#b579f2",
-      "penalty" : "no",
+      "scale" : "no",
       "id" : "1083",
       "time" : 4272,
       "mem" : 1200000,
@@ -2570,7 +2570,7 @@
       "tasks" : 8,
       "id" : "1084",
       "time" : 60,
-      "penalty" : "both",
+      "scale" : "both",
       "color" : "#79f292"
    },
    {
@@ -2580,11 +2580,11 @@
       "color" : "#f27984",
       "time" : 2189,
       "id" : "1085",
-      "penalty" : "out"
+      "scale" : "out"
    },
    {
       "color" : "#79a7f2",
-      "penalty" : "up",
+      "scale" : "up",
       "id" : "1086",
       "time" : 2028,
       "tasks" : 8,
@@ -2598,20 +2598,20 @@
       "color" : "#cbf279",
       "time" : 2001,
       "id" : "1087",
-      "penalty" : "no"
+      "scale" : "no"
    },
    {
       "arrival" : 47322,
       "mem" : 1200000,
       "tasks" : 8,
       "id" : "1088",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 1541,
       "color" : "#f279ee"
    },
    {
       "tasks" : 8,
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "1089",
       "time" : 996,
       "color" : "#79f2d3",
@@ -2621,7 +2621,7 @@
    {
       "tasks" : 8,
       "id" : "1090",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 2088,
       "color" : "#f2b079",
       "arrival" : 47324,
@@ -2634,11 +2634,11 @@
       "color" : "#8d79f2",
       "id" : "1091",
       "time" : 2019,
-      "penalty" : "no"
+      "scale" : "no"
    },
    {
       "color" : "#89f279",
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "1092",
       "time" : 1993,
       "tasks" : 8,
@@ -2651,7 +2651,7 @@
       "tasks" : 8,
       "color" : "#f279ac",
       "id" : "1093",
-      "penalty" : "out",
+      "scale" : "out",
       "time" : 1543
    },
    {
@@ -2660,7 +2660,7 @@
       "tasks" : 8,
       "id" : "1094",
       "time" : 1021,
-      "penalty" : "up",
+      "scale" : "up",
       "color" : "#79d0f2"
    },
    {
@@ -2668,14 +2668,14 @@
       "arrival" : 47326,
       "color" : "#f2f179",
       "id" : "1095",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 2086,
       "tasks" : 8
    },
    {
       "tasks" : 8,
       "color" : "#ce79f2",
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "1096",
       "time" : 2043,
       "mem" : 1200000,
@@ -2686,7 +2686,7 @@
       "mem" : 1200000,
       "id" : "1097",
       "time" : 2005,
-      "penalty" : "out",
+      "scale" : "out",
       "color" : "#79f2ab",
       "tasks" : 8
    },
@@ -2696,13 +2696,13 @@
       "tasks" : 8,
       "color" : "#f28779",
       "id" : "1098",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 1563
    },
    {
       "tasks" : 8,
       "id" : "1099",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 1013,
       "color" : "#798ef2",
       "arrival" : 47326,
@@ -2713,7 +2713,7 @@
       "mem" : 1200000,
       "tasks" : 8,
       "id" : "1100",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 2085,
       "color" : "#b2f279"
    },
@@ -2723,12 +2723,12 @@
       "color" : "#f279d5",
       "time" : 2059,
       "id" : "1101",
-      "penalty" : "out",
+      "scale" : "out",
       "tasks" : 8
    },
    {
       "id" : "1102",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 2001,
       "color" : "#79f2ec",
       "tasks" : 8,
@@ -2739,7 +2739,7 @@
       "tasks" : 8,
       "color" : "#f2c979",
       "id" : "1103",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 1542,
       "mem" : 1200000,
       "arrival" : 47327
@@ -2748,7 +2748,7 @@
       "tasks" : 8,
       "color" : "#a679f2",
       "id" : "1104",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 1004,
       "mem" : 1200000,
       "arrival" : 47327
@@ -2757,7 +2757,7 @@
       "arrival" : 47329,
       "mem" : 1200000,
       "tasks" : 8,
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "1105",
       "time" : 2120,
       "color" : "#79f282"
@@ -2766,7 +2766,7 @@
       "color" : "#f27993",
       "id" : "1106",
       "time" : 2048,
-      "penalty" : "up",
+      "scale" : "up",
       "tasks" : 8,
       "mem" : 1200000,
       "arrival" : 47329
@@ -2778,7 +2778,7 @@
       "color" : "#79b7f2",
       "time" : 2006,
       "id" : "1107",
-      "penalty" : "no"
+      "scale" : "no"
    },
    {
       "mem" : 1200000,
@@ -2786,7 +2786,7 @@
       "tasks" : 8,
       "color" : "#daf279",
       "id" : "1108",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 1765
    },
    {
@@ -2795,13 +2795,13 @@
       "tasks" : 8,
       "time" : 1001,
       "id" : "1109",
-      "penalty" : "out",
+      "scale" : "out",
       "color" : "#e779f2"
    },
    {
       "arrival" : 47331,
       "mem" : 1200000,
-      "penalty" : "up",
+      "scale" : "up",
       "id" : "1110",
       "time" : 2080,
       "color" : "#79f2c4",
@@ -2812,12 +2812,12 @@
       "mem" : 1200000,
       "tasks" : 8,
       "id" : "1111",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 2053,
       "color" : "#f2a079"
    },
    {
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "1112",
       "time" : 2016,
       "color" : "#7d79f2",
@@ -2829,7 +2829,7 @@
       "arrival" : 47331,
       "mem" : 1200000,
       "tasks" : 8,
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "1113",
       "time" : 1554,
       "color" : "#98f279"
@@ -2840,11 +2840,11 @@
       "color" : "#f279bc",
       "id" : "1114",
       "time" : 1018,
-      "penalty" : "up",
+      "scale" : "up",
       "tasks" : 8
    },
    {
-      "penalty" : "no",
+      "scale" : "no",
       "id" : "1115",
       "time" : 2193,
       "color" : "#79dff2",
@@ -2858,7 +2858,7 @@
       "color" : "#f2e279",
       "id" : "1116",
       "time" : 2110,
-      "penalty" : "both",
+      "scale" : "both",
       "tasks" : 8
    },
    {
@@ -2868,12 +2868,12 @@
       "color" : "#bf79f2",
       "time" : 2210,
       "id" : "1117",
-      "penalty" : "out"
+      "scale" : "out"
    },
    {
       "tasks" : 8,
       "color" : "#79f29b",
-      "penalty" : "up",
+      "scale" : "up",
       "id" : "1118",
       "time" : 1552,
       "mem" : 1200000,
@@ -2885,7 +2885,7 @@
       "color" : "#f2797a",
       "time" : 1009,
       "id" : "1119",
-      "penalty" : "no",
+      "scale" : "no",
       "tasks" : 8
    },
    {
@@ -2893,14 +2893,14 @@
       "arrival" : 47334,
       "color" : "#799ef2",
       "id" : "1120",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 2187,
       "tasks" : 8
    },
    {
       "arrival" : 47334,
       "mem" : 1200000,
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "1121",
       "time" : 2062,
       "color" : "#c1f279",
@@ -2910,7 +2910,7 @@
       "arrival" : 47334,
       "mem" : 1200000,
       "id" : "1122",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 2008,
       "color" : "#f279e4",
       "tasks" : 8
@@ -2919,14 +2919,14 @@
       "tasks" : 8,
       "id" : "1123",
       "time" : 1551,
-      "penalty" : "no",
+      "scale" : "no",
       "color" : "#79f2dd",
       "arrival" : 47334,
       "mem" : 1200000
    },
    {
       "tasks" : 8,
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "1124",
       "time" : 998,
       "color" : "#f2b979",
@@ -2938,7 +2938,7 @@
       "arrival" : 47351,
       "color" : "#9679f2",
       "id" : "1125",
-      "penalty" : "out",
+      "scale" : "out",
       "time" : 60,
       "tasks" : 8
    },
@@ -2947,7 +2947,7 @@
       "mem" : 1200000,
       "id" : "1126",
       "time" : 60,
-      "penalty" : "up",
+      "scale" : "up",
       "color" : "#7ff279",
       "tasks" : 8
    },
@@ -2955,7 +2955,7 @@
       "tasks" : 56,
       "color" : "#f279a3",
       "id" : "1127",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 280,
       "mem" : 1200000,
       "arrival" : 48201
@@ -2964,7 +2964,7 @@
       "mem" : 1200000,
       "arrival" : 48478,
       "color" : "#79c6f2",
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "1128",
       "time" : 60,
       "tasks" : 1
@@ -2972,7 +2972,7 @@
    {
       "id" : "1129",
       "time" : 60,
-      "penalty" : "out",
+      "scale" : "out",
       "color" : "#e9f279",
       "tasks" : 4,
       "arrival" : 48844,
@@ -2982,7 +2982,7 @@
       "tasks" : 4,
       "color" : "#d879f2",
       "id" : "1130",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 60,
       "mem" : 4000000,
       "arrival" : 48850
@@ -2993,12 +2993,12 @@
       "tasks" : 4,
       "color" : "#79f2b4",
       "id" : "1131",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 60
    },
    {
       "id" : "1132",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 60,
       "color" : "#f29179",
       "tasks" : 4,
@@ -3011,7 +3011,7 @@
       "color" : "#7985f2",
       "time" : 60,
       "id" : "1133",
-      "penalty" : "out",
+      "scale" : "out",
       "tasks" : 4
    },
    {
@@ -3020,13 +3020,13 @@
       "tasks" : 4,
       "color" : "#a8f279",
       "id" : "1134",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 60
    },
    {
       "color" : "#f279cb",
       "id" : "1135",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 60,
       "tasks" : 4,
       "mem" : 4000000,
@@ -3038,14 +3038,14 @@
       "tasks" : 1,
       "color" : "#79eff2",
       "id" : "1136",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 60
    },
    {
       "arrival" : 48886,
       "mem" : 4000000,
       "tasks" : 4,
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "1137",
       "time" : 60,
       "color" : "#f2d379"
@@ -3056,7 +3056,7 @@
       "color" : "#af79f2",
       "id" : "1138",
       "time" : 60,
-      "penalty" : "up",
+      "scale" : "up",
       "tasks" : 4
    },
    {
@@ -3065,13 +3065,13 @@
       "tasks" : 8,
       "time" : 289,
       "id" : "1139",
-      "penalty" : "no",
+      "scale" : "no",
       "color" : "#79f28c"
    },
    {
       "tasks" : 1,
       "id" : "1140",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 60,
       "color" : "#f2798a",
       "arrival" : 48894,
@@ -3083,21 +3083,21 @@
       "color" : "#79adf2",
       "time" : 60,
       "id" : "1141",
-      "penalty" : "out",
+      "scale" : "out",
       "tasks" : 4
    },
    {
       "arrival" : 49307,
       "mem" : 1200000,
       "tasks" : 8,
-      "penalty" : "up",
+      "scale" : "up",
       "id" : "1142",
       "time" : 60,
       "color" : "#d0f279"
    },
    {
       "id" : "1143",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 793,
       "color" : "#f179f2",
       "tasks" : 8,
@@ -3107,7 +3107,7 @@
    {
       "tasks" : 8,
       "color" : "#79f2cd",
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "1144",
       "time" : 60,
       "mem" : 1200000,
@@ -3117,7 +3117,7 @@
       "arrival" : 49612,
       "mem" : 1200000,
       "tasks" : 8,
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "1145",
       "time" : 60,
       "color" : "#f2aa79"
@@ -3128,14 +3128,14 @@
       "tasks" : 32,
       "id" : "1146",
       "time" : 60,
-      "penalty" : "up",
+      "scale" : "up",
       "color" : "#8779f2"
    },
    {
       "mem" : 1200000,
       "arrival" : 49660,
       "color" : "#8ff279",
-      "penalty" : "no",
+      "scale" : "no",
       "id" : "1147",
       "time" : 60,
       "tasks" : 16
@@ -3144,7 +3144,7 @@
       "color" : "#f279b2",
       "id" : "1148",
       "time" : 60,
-      "penalty" : "both",
+      "scale" : "both",
       "tasks" : 8,
       "mem" : 1200000,
       "arrival" : 49694
@@ -3154,14 +3154,14 @@
       "color" : "#79d6f2",
       "time" : 60,
       "id" : "1149",
-      "penalty" : "out",
+      "scale" : "out",
       "mem" : 1200000,
       "arrival" : 49746
    },
    {
       "tasks" : 8,
       "color" : "#f2ec79",
-      "penalty" : "up",
+      "scale" : "up",
       "id" : "1150",
       "time" : 60,
       "mem" : 1200000,
@@ -3171,7 +3171,7 @@
       "tasks" : 16,
       "time" : 60,
       "id" : "1151",
-      "penalty" : "no",
+      "scale" : "no",
       "color" : "#c879f2",
       "arrival" : 49954,
       "mem" : 1200000
@@ -3182,12 +3182,12 @@
       "tasks" : 28,
       "color" : "#79f2a5",
       "id" : "1152",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 216
    },
    {
       "tasks" : 32,
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "1153",
       "time" : 60,
       "color" : "#f28279",
@@ -3199,7 +3199,7 @@
       "arrival" : 50402,
       "color" : "#7994f2",
       "id" : "1154",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 60,
       "tasks" : 8
    },
@@ -3207,7 +3207,7 @@
       "color" : "#b7f279",
       "id" : "1155",
       "time" : 60,
-      "penalty" : "no",
+      "scale" : "no",
       "tasks" : 4,
       "mem" : 4000000,
       "arrival" : 50820
@@ -3215,7 +3215,7 @@
    {
       "arrival" : 50826,
       "mem" : 4000000,
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "1156",
       "time" : 60,
       "color" : "#f279db",
@@ -3223,7 +3223,7 @@
    },
    {
       "id" : "1157",
-      "penalty" : "out",
+      "scale" : "out",
       "time" : 60,
       "color" : "#79f2e6",
       "tasks" : 4,
@@ -3236,7 +3236,7 @@
       "tasks" : 4,
       "id" : "1158",
       "time" : 60,
-      "penalty" : "up",
+      "scale" : "up",
       "color" : "#f2c379"
    },
    {
@@ -3244,13 +3244,13 @@
       "arrival" : 50845,
       "color" : "#a079f2",
       "id" : "1159",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 60,
       "tasks" : 4
    },
    {
       "tasks" : 4,
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "1160",
       "time" : 60,
       "color" : "#79f27c",
@@ -3262,13 +3262,13 @@
       "color" : "#f27999",
       "id" : "1161",
       "time" : 60,
-      "penalty" : "out",
+      "scale" : "out",
       "mem" : 4000000,
       "arrival" : 50857
    },
    {
       "id" : "1162",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 60,
       "color" : "#79bdf2",
       "tasks" : 4,
@@ -3278,7 +3278,7 @@
    {
       "color" : "#e0f279",
       "id" : "1163",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 60,
       "tasks" : 4,
       "mem" : 4000000,
@@ -3287,7 +3287,7 @@
    {
       "color" : "#e179f2",
       "id" : "1164",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 60,
       "tasks" : 4,
       "mem" : 4000000,
@@ -3298,14 +3298,14 @@
       "mem" : 1200000,
       "time" : 60,
       "id" : "1165",
-      "penalty" : "out",
+      "scale" : "out",
       "color" : "#79f2be",
       "tasks" : 8
    },
    {
       "tasks" : 8,
       "id" : "1166",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 60,
       "color" : "#f29b79",
       "arrival" : 51271,
@@ -3314,7 +3314,7 @@
    {
       "tasks" : 4,
       "id" : "1167",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 60,
       "color" : "#797bf2",
       "arrival" : 52365,
@@ -3326,12 +3326,12 @@
       "tasks" : 4,
       "color" : "#9ef279",
       "id" : "1168",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 60
    },
    {
       "color" : "#f279c2",
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "1169",
       "time" : 60,
       "tasks" : 4,
@@ -3345,7 +3345,7 @@
       "color" : "#79e5f2",
       "id" : "1170",
       "time" : 60,
-      "penalty" : "up"
+      "scale" : "up"
    },
    {
       "mem" : 4000000,
@@ -3354,11 +3354,11 @@
       "color" : "#f2dc79",
       "time" : 60,
       "id" : "1171",
-      "penalty" : "no"
+      "scale" : "no"
    },
    {
       "id" : "1172",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 60,
       "color" : "#b979f2",
       "tasks" : 4,
@@ -3369,7 +3369,7 @@
       "tasks" : 4,
       "time" : 60,
       "id" : "1173",
-      "penalty" : "out",
+      "scale" : "out",
       "color" : "#79f295",
       "arrival" : 52401,
       "mem" : 4000000
@@ -3377,7 +3377,7 @@
    {
       "arrival" : 52407,
       "mem" : 4000000,
-      "penalty" : "up",
+      "scale" : "up",
       "id" : "1174",
       "time" : 60,
       "color" : "#f27980",
@@ -3386,7 +3386,7 @@
    {
       "color" : "#79a4f2",
       "id" : "1175",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 60,
       "tasks" : 4,
       "mem" : 4000000,
@@ -3395,14 +3395,14 @@
    {
       "tasks" : 4,
       "color" : "#c7f279",
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "1176",
       "time" : 60,
       "mem" : 4000000,
       "arrival" : 52419
    },
    {
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "1177",
       "time" : 60,
       "color" : "#f279ea",
@@ -3415,7 +3415,7 @@
       "mem" : 1200000,
       "id" : "1178",
       "time" : 60,
-      "penalty" : "up",
+      "scale" : "up",
       "color" : "#79f2d7",
       "tasks" : 16
    },
@@ -3424,7 +3424,7 @@
       "arrival" : 56251,
       "tasks" : 4,
       "color" : "#f2b479",
-      "penalty" : "no",
+      "scale" : "no",
       "id" : "1179",
       "time" : 60
    },
@@ -3434,14 +3434,14 @@
       "tasks" : 4,
       "id" : "1180",
       "time" : 60,
-      "penalty" : "both",
+      "scale" : "both",
       "color" : "#9079f2"
    },
    {
       "tasks" : 4,
       "time" : 60,
       "id" : "1181",
-      "penalty" : "out",
+      "scale" : "out",
       "color" : "#85f279",
       "arrival" : 56263,
       "mem" : 4000000
@@ -3450,7 +3450,7 @@
       "mem" : 4000000,
       "arrival" : 56269,
       "color" : "#f279a9",
-      "penalty" : "up",
+      "scale" : "up",
       "id" : "1182",
       "time" : 60,
       "tasks" : 4
@@ -3461,12 +3461,12 @@
       "color" : "#79ccf2",
       "time" : 60,
       "id" : "1183",
-      "penalty" : "no",
+      "scale" : "no",
       "tasks" : 4
    },
    {
       "id" : "1184",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 60,
       "color" : "#eff279",
       "tasks" : 4,
@@ -3475,7 +3475,7 @@
    },
    {
       "color" : "#d279f2",
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "1185",
       "time" : 60,
       "tasks" : 4,
@@ -3487,14 +3487,14 @@
       "mem" : 4000000,
       "tasks" : 4,
       "id" : "1186",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 60,
       "color" : "#79f2ae"
    },
    {
       "id" : "1187",
       "time" : 60,
-      "penalty" : "no",
+      "scale" : "no",
       "color" : "#f28b79",
       "tasks" : 4,
       "arrival" : 56298,
@@ -3503,7 +3503,7 @@
    {
       "arrival" : 56304,
       "mem" : 4000000,
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "1188",
       "time" : 60,
       "color" : "#798bf2",
@@ -3513,7 +3513,7 @@
       "arrival" : 57109,
       "mem" : 1200000,
       "id" : "1189",
-      "penalty" : "out",
+      "scale" : "out",
       "time" : 60,
       "color" : "#aef279",
       "tasks" : 26
@@ -3524,7 +3524,7 @@
       "tasks" : 8,
       "id" : "1190",
       "time" : 60,
-      "penalty" : "up",
+      "scale" : "up",
       "color" : "#f279d1"
    },
    {
@@ -3533,14 +3533,14 @@
       "tasks" : 8,
       "color" : "#79f2f0",
       "id" : "1191",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 60
    },
    {
       "mem" : 1200000,
       "arrival" : 58627,
       "color" : "#f2cd79",
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "1192",
       "time" : 60,
       "tasks" : 8
@@ -3549,7 +3549,7 @@
       "color" : "#a979f2",
       "id" : "1193",
       "time" : 110,
-      "penalty" : "out",
+      "scale" : "out",
       "tasks" : 8,
       "mem" : 1200000,
       "arrival" : 58700
@@ -3557,7 +3557,7 @@
    {
       "tasks" : 8,
       "id" : "1194",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 60,
       "color" : "#79f286",
       "arrival" : 58780,
@@ -3566,7 +3566,7 @@
    {
       "color" : "#f27990",
       "id" : "1195",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 60,
       "tasks" : 8,
       "mem" : 1200000,
@@ -3577,7 +3577,7 @@
       "arrival" : 58943,
       "color" : "#79b3f2",
       "id" : "1196",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 60,
       "tasks" : 8
    },
@@ -3587,7 +3587,7 @@
       "color" : "#d6f279",
       "time" : 60,
       "id" : "1197",
-      "penalty" : "out",
+      "scale" : "out",
       "tasks" : 23
    },
    {
@@ -3596,13 +3596,13 @@
       "tasks" : 8,
       "color" : "#eb79f2",
       "id" : "1198",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 60
    },
    {
       "color" : "#79f2c7",
       "id" : "1199",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 60,
       "tasks" : 4,
       "mem" : 4000000,
@@ -3611,7 +3611,7 @@
    {
       "tasks" : 4,
       "id" : "1200",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 60,
       "color" : "#f2a479",
       "arrival" : 59121,
@@ -3620,7 +3620,7 @@
    {
       "arrival" : 59127,
       "mem" : 4000000,
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "1201",
       "time" : 60,
       "color" : "#8179f2",
@@ -3630,7 +3630,7 @@
       "color" : "#95f279",
       "id" : "1202",
       "time" : 60,
-      "penalty" : "up",
+      "scale" : "up",
       "tasks" : 4,
       "mem" : 4000000,
       "arrival" : 59133
@@ -3641,14 +3641,14 @@
       "color" : "#f279b8",
       "time" : 60,
       "id" : "1203",
-      "penalty" : "no",
+      "scale" : "no",
       "tasks" : 4
    },
    {
       "arrival" : 59145,
       "mem" : 4000000,
       "id" : "1204",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 60,
       "color" : "#79dcf2",
       "tasks" : 4
@@ -3659,13 +3659,13 @@
       "tasks" : 4,
       "time" : 60,
       "id" : "1205",
-      "penalty" : "out",
+      "scale" : "out",
       "color" : "#f2e679"
    },
    {
       "tasks" : 4,
       "color" : "#c279f2",
-      "penalty" : "up",
+      "scale" : "up",
       "id" : "1206",
       "time" : 60,
       "mem" : 4000000,
@@ -3675,14 +3675,14 @@
       "arrival" : 59162,
       "mem" : 4000000,
       "id" : "1207",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 60,
       "color" : "#79f29f",
       "tasks" : 4
    },
    {
       "tasks" : 4,
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "1208",
       "time" : 60,
       "color" : "#f27c79",
@@ -3691,7 +3691,7 @@
    },
    {
       "color" : "#799af2",
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "1209",
       "time" : 60,
       "tasks" : 8,
@@ -3704,7 +3704,7 @@
       "color" : "#bdf279",
       "id" : "1210",
       "time" : 60,
-      "penalty" : "up",
+      "scale" : "up",
       "tasks" : 8
    },
    {
@@ -3712,7 +3712,7 @@
       "arrival" : 59487,
       "tasks" : 8,
       "color" : "#f279e1",
-      "penalty" : "no",
+      "scale" : "no",
       "id" : "1211",
       "time" : 60
    },
@@ -3721,7 +3721,7 @@
       "color" : "#79f2e0",
       "id" : "1212",
       "time" : 60,
-      "penalty" : "both",
+      "scale" : "both",
       "mem" : 1200000,
       "arrival" : 59716
    },
@@ -3731,12 +3731,12 @@
       "color" : "#f2bd79",
       "time" : 60,
       "id" : "1213",
-      "penalty" : "out",
+      "scale" : "out",
       "tasks" : 8
    },
    {
       "color" : "#9a79f2",
-      "penalty" : "up",
+      "scale" : "up",
       "id" : "1214",
       "time" : 71,
       "tasks" : 8,
@@ -3747,7 +3747,7 @@
       "color" : "#7cf279",
       "time" : 60,
       "id" : "1215",
-      "penalty" : "no",
+      "scale" : "no",
       "tasks" : 16,
       "mem" : 1200000,
       "arrival" : 60166
@@ -3755,7 +3755,7 @@
    {
       "tasks" : 8,
       "id" : "1216",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 793,
       "color" : "#f2799f",
       "arrival" : 60398,
@@ -3766,13 +3766,13 @@
       "arrival" : 60453,
       "tasks" : 8,
       "color" : "#79c2f2",
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "1217",
       "time" : 104
    },
    {
       "id" : "1218",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 358,
       "color" : "#e6f279",
       "tasks" : 8,
@@ -3783,13 +3783,13 @@
       "color" : "#db79f2",
       "id" : "1219",
       "time" : 60,
-      "penalty" : "no",
+      "scale" : "no",
       "tasks" : 4,
       "mem" : 4000000,
       "arrival" : 60618
    },
    {
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "1220",
       "time" : 60,
       "color" : "#79f2b8",
@@ -3801,7 +3801,7 @@
       "arrival" : 60630,
       "mem" : 4000000,
       "id" : "1221",
-      "penalty" : "out",
+      "scale" : "out",
       "time" : 60,
       "color" : "#f29579",
       "tasks" : 4
@@ -3811,7 +3811,7 @@
       "mem" : 4000000,
       "id" : "1222",
       "time" : 60,
-      "penalty" : "up",
+      "scale" : "up",
       "color" : "#7981f2",
       "tasks" : 4
    },
@@ -3819,7 +3819,7 @@
       "tasks" : 4,
       "color" : "#a4f279",
       "id" : "1223",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 60,
       "mem" : 4000000,
       "arrival" : 60642
@@ -3828,7 +3828,7 @@
       "mem" : 4000000,
       "arrival" : 60648,
       "color" : "#f279c8",
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "1224",
       "time" : 60,
       "tasks" : 4
@@ -3836,7 +3836,7 @@
    {
       "id" : "1225",
       "time" : 60,
-      "penalty" : "out",
+      "scale" : "out",
       "color" : "#79ebf2",
       "tasks" : 4,
       "arrival" : 60654,
@@ -3844,7 +3844,7 @@
    },
    {
       "id" : "1226",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 60,
       "color" : "#f2d679",
       "tasks" : 4,
@@ -3854,7 +3854,7 @@
    {
       "tasks" : 8,
       "id" : "1227",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 60,
       "color" : "#b379f2",
       "arrival" : 60661,
@@ -3862,7 +3862,7 @@
    },
    {
       "id" : "1228",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 60,
       "color" : "#79f28f",
       "tasks" : 4,
@@ -3876,13 +3876,13 @@
       "color" : "#f27986",
       "time" : 60,
       "id" : "1229",
-      "penalty" : "out"
+      "scale" : "out"
    },
    {
       "tasks" : 8,
       "color" : "#79a9f2",
       "id" : "1230",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 60,
       "mem" : 1200000,
       "arrival" : 60758
@@ -3891,7 +3891,7 @@
       "tasks" : 8,
       "color" : "#cdf279",
       "id" : "1231",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 120,
       "mem" : 1200000,
       "arrival" : 61288
@@ -3899,7 +3899,7 @@
    {
       "tasks" : 8,
       "id" : "1232",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 531,
       "color" : "#f279f0",
       "arrival" : 61977,
@@ -3907,7 +3907,7 @@
    },
    {
       "tasks" : 8,
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "1233",
       "time" : 60,
       "color" : "#79f2d1",
@@ -3919,7 +3919,7 @@
       "mem" : 1200000,
       "id" : "1234",
       "time" : 60,
-      "penalty" : "up",
+      "scale" : "up",
       "color" : "#f2ae79",
       "tasks" : 8
    },
@@ -3928,14 +3928,14 @@
       "mem" : 1200000,
       "time" : 488,
       "id" : "1235",
-      "penalty" : "no",
+      "scale" : "no",
       "color" : "#8a79f2",
       "tasks" : 42
    },
    {
       "tasks" : 8,
       "id" : "1236",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 60,
       "color" : "#8bf279",
       "arrival" : 62567,
@@ -3947,14 +3947,14 @@
       "tasks" : 8,
       "time" : 60,
       "id" : "1237",
-      "penalty" : "out",
+      "scale" : "out",
       "color" : "#f279af"
    },
    {
       "arrival" : 62671,
       "mem" : 1200000,
       "tasks" : 8,
-      "penalty" : "up",
+      "scale" : "up",
       "id" : "1238",
       "time" : 60,
       "color" : "#79d2f2"
@@ -3964,12 +3964,12 @@
       "mem" : 1200000,
       "tasks" : 8,
       "id" : "1239",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 60,
       "color" : "#f2ef79"
    },
    {
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "1240",
       "time" : 60,
       "color" : "#cc79f2",
@@ -3981,7 +3981,7 @@
       "arrival" : 63221,
       "mem" : 4000000,
       "tasks" : 4,
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "1241",
       "time" : 60,
       "color" : "#79f2a9"
@@ -3991,13 +3991,13 @@
       "mem" : 4000000,
       "id" : "1242",
       "time" : 60,
-      "penalty" : "up",
+      "scale" : "up",
       "color" : "#f28579",
       "tasks" : 4
    },
    {
       "color" : "#7990f2",
-      "penalty" : "no",
+      "scale" : "no",
       "id" : "1243",
       "time" : 60,
       "tasks" : 4,
@@ -4010,7 +4010,7 @@
       "color" : "#b4f279",
       "id" : "1244",
       "time" : 60,
-      "penalty" : "both",
+      "scale" : "both",
       "tasks" : 4
    },
    {
@@ -4018,14 +4018,14 @@
       "color" : "#f279d7",
       "time" : 60,
       "id" : "1245",
-      "penalty" : "out",
+      "scale" : "out",
       "mem" : 4000000,
       "arrival" : 63245
    },
    {
       "tasks" : 4,
       "color" : "#79f2ea",
-      "penalty" : "up",
+      "scale" : "up",
       "id" : "1246",
       "time" : 60,
       "mem" : 4000000,
@@ -4037,13 +4037,13 @@
       "tasks" : 4,
       "time" : 60,
       "id" : "1247",
-      "penalty" : "no",
+      "scale" : "no",
       "color" : "#f2c779"
    },
    {
       "tasks" : 8,
       "id" : "1248",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 60,
       "color" : "#a379f2",
       "arrival" : 63259,
@@ -4053,7 +4053,7 @@
       "arrival" : 63262,
       "mem" : 4000000,
       "tasks" : 4,
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "1249",
       "time" : 60,
       "color" : "#79f280"
@@ -4064,14 +4064,14 @@
       "tasks" : 4,
       "color" : "#f27996",
       "id" : "1250",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 60
    },
    {
       "tasks" : 8,
       "id" : "1251",
       "time" : 60,
-      "penalty" : "no",
+      "scale" : "no",
       "color" : "#79b9f2",
       "arrival" : 63430,
       "mem" : 1200000
@@ -4080,7 +4080,7 @@
       "mem" : 1200000,
       "arrival" : 63479,
       "color" : "#dcf279",
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "1252",
       "time" : 60,
       "tasks" : 8
@@ -4089,7 +4089,7 @@
       "arrival" : 64817,
       "mem" : 1200000,
       "id" : "1253",
-      "penalty" : "out",
+      "scale" : "out",
       "time" : 60,
       "color" : "#e579f2",
       "tasks" : 8
@@ -4099,13 +4099,13 @@
       "color" : "#79f2c2",
       "id" : "1254",
       "time" : 60,
-      "penalty" : "up",
+      "scale" : "up",
       "mem" : 1200000,
       "arrival" : 64993
    },
    {
       "id" : "1255",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 60,
       "color" : "#f29e79",
       "tasks" : 32,
@@ -4114,7 +4114,7 @@
    },
    {
       "tasks" : 16,
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "1256",
       "time" : 60,
       "color" : "#7b79f2",
@@ -4126,7 +4126,7 @@
       "color" : "#9bf279",
       "id" : "1257",
       "time" : 60,
-      "penalty" : "out",
+      "scale" : "out",
       "mem" : 1200000,
       "arrival" : 65283
    },
@@ -4134,7 +4134,7 @@
       "tasks" : 32,
       "color" : "#f279be",
       "id" : "1258",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 60,
       "mem" : 1200000,
       "arrival" : 65296
@@ -4143,7 +4143,7 @@
       "tasks" : 4,
       "color" : "#79e1f2",
       "id" : "1259",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 60,
       "mem" : 4000000,
       "arrival" : 65907
@@ -4152,7 +4152,7 @@
       "arrival" : 65913,
       "mem" : 4000000,
       "id" : "1260",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 60,
       "color" : "#f2e079",
       "tasks" : 4
@@ -4163,7 +4163,7 @@
       "color" : "#bc79f2",
       "time" : 60,
       "id" : "1261",
-      "penalty" : "out",
+      "scale" : "out",
       "tasks" : 4
    },
    {
@@ -4171,7 +4171,7 @@
       "mem" : 4000000,
       "tasks" : 4,
       "id" : "1262",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 60,
       "color" : "#79f299"
    },
@@ -4179,7 +4179,7 @@
       "arrival" : 65931,
       "mem" : 4000000,
       "id" : "1263",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 60,
       "color" : "#f2797d",
       "tasks" : 4
@@ -4187,7 +4187,7 @@
    {
       "color" : "#79a0f2",
       "id" : "1264",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 60,
       "tasks" : 4,
       "mem" : 4000000,
@@ -4195,7 +4195,7 @@
    },
    {
       "tasks" : 4,
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "1265",
       "time" : 60,
       "color" : "#c3f279",
@@ -4208,14 +4208,14 @@
       "color" : "#f279e7",
       "id" : "1266",
       "time" : 60,
-      "penalty" : "up",
+      "scale" : "up",
       "tasks" : 4
    },
    {
       "tasks" : 4,
       "time" : 60,
       "id" : "1267",
-      "penalty" : "no",
+      "scale" : "no",
       "color" : "#79f2db",
       "arrival" : 65955,
       "mem" : 4000000
@@ -4224,7 +4224,7 @@
       "arrival" : 65961,
       "mem" : 4000000,
       "id" : "1268",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 60,
       "color" : "#f2b779",
       "tasks" : 4
@@ -4233,7 +4233,7 @@
       "tasks" : 8,
       "time" : 115,
       "id" : "1269",
-      "penalty" : "out",
+      "scale" : "out",
       "color" : "#9479f2",
       "arrival" : 66291,
       "mem" : 1200000
@@ -4242,7 +4242,7 @@
       "arrival" : 66367,
       "mem" : 1200000,
       "tasks" : 8,
-      "penalty" : "up",
+      "scale" : "up",
       "id" : "1270",
       "time" : 180,
       "color" : "#82f279"
@@ -4250,7 +4250,7 @@
    {
       "tasks" : 36,
       "id" : "1271",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 1439,
       "color" : "#f279a5",
       "arrival" : 66896,
@@ -4261,12 +4261,12 @@
       "arrival" : 67913,
       "tasks" : 8,
       "color" : "#79c8f2",
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "1272",
       "time" : 60
    },
    {
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "1273",
       "time" : 60,
       "color" : "#ecf279",
@@ -4280,12 +4280,12 @@
       "tasks" : 8,
       "id" : "1274",
       "time" : 60,
-      "penalty" : "up",
+      "scale" : "up",
       "color" : "#d579f2"
    },
    {
       "color" : "#79f2b2",
-      "penalty" : "no",
+      "scale" : "no",
       "id" : "1275",
       "time" : 60,
       "tasks" : 8,
@@ -4296,7 +4296,7 @@
       "color" : "#f28f79",
       "id" : "1276",
       "time" : 2196,
-      "penalty" : "both",
+      "scale" : "both",
       "tasks" : 1,
       "mem" : 1200000,
       "arrival" : 68401
@@ -4306,14 +4306,14 @@
       "mem" : 1200000,
       "time" : 60,
       "id" : "1277",
-      "penalty" : "out",
+      "scale" : "out",
       "color" : "#7987f2",
       "tasks" : 8
    },
    {
       "arrival" : 68561,
       "mem" : 1200000,
-      "penalty" : "up",
+      "scale" : "up",
       "id" : "1278",
       "time" : 60,
       "color" : "#aaf279",
@@ -4324,14 +4324,14 @@
       "color" : "#f279ce",
       "time" : 1356,
       "id" : "1279",
-      "penalty" : "no",
+      "scale" : "no",
       "mem" : 1200000,
       "arrival" : 68811
    },
    {
       "tasks" : 8,
       "id" : "1280",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 60,
       "color" : "#79f1f2",
       "arrival" : 68990,
@@ -4341,7 +4341,7 @@
       "mem" : 1200000,
       "arrival" : 69148,
       "color" : "#f2d079",
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "1281",
       "time" : 1540,
       "tasks" : 1
@@ -4349,7 +4349,7 @@
    {
       "color" : "#ad79f2",
       "id" : "1282",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 109,
       "tasks" : 8,
       "mem" : 1200000,
@@ -4360,14 +4360,14 @@
       "mem" : 1200000,
       "id" : "1283",
       "time" : 1219,
-      "penalty" : "no",
+      "scale" : "no",
       "color" : "#79f28a",
       "tasks" : 1
    },
    {
       "tasks" : 8,
       "color" : "#f2798c",
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "1284",
       "time" : 60,
       "mem" : 1200000,
@@ -4376,7 +4376,7 @@
    {
       "tasks" : 8,
       "id" : "1285",
-      "penalty" : "out",
+      "scale" : "out",
       "time" : 60,
       "color" : "#79aff2",
       "arrival" : 69383,
@@ -4388,14 +4388,14 @@
       "tasks" : 1,
       "id" : "1286",
       "time" : 1193,
-      "penalty" : "up",
+      "scale" : "up",
       "color" : "#d3f279"
    },
    {
       "arrival" : 69549,
       "mem" : 1200000,
       "id" : "1287",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 60,
       "color" : "#ee79f2",
       "tasks" : 8
@@ -4404,7 +4404,7 @@
       "mem" : 1200000,
       "arrival" : 69667,
       "color" : "#79f2cb",
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "1288",
       "time" : 60,
       "tasks" : 8
@@ -4413,7 +4413,7 @@
       "tasks" : 8,
       "id" : "1289",
       "time" : 60,
-      "penalty" : "out",
+      "scale" : "out",
       "color" : "#f2a879",
       "arrival" : 69703,
       "mem" : 1200000
@@ -4424,12 +4424,12 @@
       "tasks" : 16,
       "color" : "#8479f2",
       "id" : "1290",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 60
    },
    {
       "id" : "1291",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 1460,
       "color" : "#91f279",
       "tasks" : 1,
@@ -4439,7 +4439,7 @@
    {
       "tasks" : 16,
       "id" : "1292",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 60,
       "color" : "#f279b5",
       "arrival" : 69927,
@@ -4451,13 +4451,13 @@
       "tasks" : 8,
       "time" : 60,
       "id" : "1293",
-      "penalty" : "out",
+      "scale" : "out",
       "color" : "#79d8f2"
    },
    {
       "color" : "#f2e979",
       "id" : "1294",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 181,
       "tasks" : 32,
       "mem" : 1200000,
@@ -4468,7 +4468,7 @@
       "arrival" : 70158,
       "color" : "#c679f2",
       "id" : "1295",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 60,
       "tasks" : 8
    },
@@ -4476,14 +4476,14 @@
       "arrival" : 70233,
       "mem" : 1200000,
       "id" : "1296",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 60,
       "color" : "#79f2a3",
       "tasks" : 16
    },
    {
       "color" : "#f27f79",
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "1297",
       "time" : 1908,
       "tasks" : 1,
@@ -4494,7 +4494,7 @@
       "tasks" : 16,
       "id" : "1298",
       "time" : 60,
-      "penalty" : "up",
+      "scale" : "up",
       "color" : "#7996f2",
       "arrival" : 70391,
       "mem" : 1200000
@@ -4505,7 +4505,7 @@
       "tasks" : 1,
       "time" : 1629,
       "id" : "1299",
-      "penalty" : "no",
+      "scale" : "no",
       "color" : "#baf279"
    },
    {
@@ -4513,7 +4513,7 @@
       "arrival" : 70473,
       "color" : "#f279dd",
       "id" : "1300",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 2110,
       "tasks" : 8
    },
@@ -4522,14 +4522,14 @@
       "color" : "#79f2e4",
       "time" : 1340,
       "id" : "1301",
-      "penalty" : "out",
+      "scale" : "out",
       "mem" : 1200000,
       "arrival" : 70531
    },
    {
       "tasks" : 16,
       "color" : "#f2c179",
-      "penalty" : "up",
+      "scale" : "up",
       "id" : "1302",
       "time" : 60,
       "mem" : 1200000,
@@ -4537,7 +4537,7 @@
    },
    {
       "id" : "1303",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 1919,
       "color" : "#9d79f2",
       "tasks" : 1,
@@ -4545,7 +4545,7 @@
       "mem" : 1200000
    },
    {
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "1304",
       "time" : 60,
       "color" : "#79f27a",
@@ -4555,7 +4555,7 @@
    },
    {
       "color" : "#f2799b",
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "1305",
       "time" : 1614,
       "tasks" : 1,
@@ -4565,7 +4565,7 @@
    {
       "id" : "1306",
       "time" : 1611,
-      "penalty" : "up",
+      "scale" : "up",
       "color" : "#79bff2",
       "tasks" : 1,
       "arrival" : 71106,
@@ -4575,7 +4575,7 @@
       "mem" : 1200000,
       "arrival" : 71272,
       "color" : "#e2f279",
-      "penalty" : "no",
+      "scale" : "no",
       "id" : "1307",
       "time" : 1606,
       "tasks" : 1
@@ -4586,7 +4586,7 @@
       "tasks" : 1,
       "id" : "1308",
       "time" : 1303,
-      "penalty" : "both",
+      "scale" : "both",
       "color" : "#df79f2"
    },
    {
@@ -4596,13 +4596,13 @@
       "color" : "#79f2bc",
       "time" : 77,
       "id" : "1309",
-      "penalty" : "out"
+      "scale" : "out"
    },
    {
       "mem" : 1200000,
       "arrival" : 71465,
       "color" : "#f29879",
-      "penalty" : "up",
+      "scale" : "up",
       "id" : "1310",
       "time" : 256,
       "tasks" : 8
@@ -4612,7 +4612,7 @@
       "color" : "#797df2",
       "time" : 2455,
       "id" : "1311",
-      "penalty" : "no",
+      "scale" : "no",
       "mem" : 800000,
       "arrival" : 71593
    },
@@ -4622,13 +4622,13 @@
       "tasks" : 16,
       "color" : "#a1f279",
       "id" : "1312",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 60
    },
    {
       "tasks" : 1,
       "color" : "#f279c4",
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "1313",
       "time" : 1747,
       "mem" : 1200000,
@@ -4639,7 +4639,7 @@
       "mem" : 1200000,
       "tasks" : 16,
       "id" : "1314",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 60,
       "color" : "#79e7f2"
    },
@@ -4647,7 +4647,7 @@
       "color" : "#f2da79",
       "id" : "1315",
       "time" : 60,
-      "penalty" : "no",
+      "scale" : "no",
       "tasks" : 16,
       "mem" : 1200000,
       "arrival" : 71900
@@ -4655,7 +4655,7 @@
    {
       "tasks" : 8,
       "color" : "#b679f2",
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "1316",
       "time" : 288,
       "mem" : 1200000,
@@ -4666,7 +4666,7 @@
       "arrival" : 72094,
       "color" : "#79f293",
       "id" : "1317",
-      "penalty" : "out",
+      "scale" : "out",
       "time" : 60,
       "tasks" : 8
    },
@@ -4674,14 +4674,14 @@
       "tasks" : 16,
       "id" : "1318",
       "time" : 60,
-      "penalty" : "up",
+      "scale" : "up",
       "color" : "#f27982",
       "arrival" : 72098,
       "mem" : 1200000
    },
    {
       "id" : "1319",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 60,
       "color" : "#79a6f2",
       "tasks" : 32,
@@ -4693,7 +4693,7 @@
       "arrival" : 72105,
       "tasks" : 21,
       "color" : "#c9f279",
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "1320",
       "time" : 60
    },
@@ -4702,14 +4702,14 @@
       "mem" : 1200000,
       "id" : "1321",
       "time" : 60,
-      "penalty" : "out",
+      "scale" : "out",
       "color" : "#f279ec",
       "tasks" : 8
    },
    {
       "color" : "#79f2d5",
       "id" : "1322",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 60,
       "tasks" : 16,
       "mem" : 1200000,
@@ -4720,7 +4720,7 @@
       "arrival" : 72178,
       "color" : "#f2b179",
       "id" : "1323",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 60,
       "tasks" : 32
    },
@@ -4730,7 +4730,7 @@
       "tasks" : 32,
       "color" : "#8e79f2",
       "id" : "1324",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 60
    },
    {
@@ -4739,13 +4739,13 @@
       "tasks" : 8,
       "time" : 60,
       "id" : "1325",
-      "penalty" : "out",
+      "scale" : "out",
       "color" : "#88f279"
    },
    {
       "tasks" : 16,
       "id" : "1326",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 60,
       "color" : "#f279ab",
       "arrival" : 72312,
@@ -4755,7 +4755,7 @@
       "tasks" : 32,
       "color" : "#79cef2",
       "id" : "1327",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 60,
       "mem" : 1200000,
       "arrival" : 72315
@@ -4764,7 +4764,7 @@
       "arrival" : 72319,
       "mem" : 1200000,
       "id" : "1328",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 60,
       "color" : "#f2f279",
       "tasks" : 21
@@ -4772,7 +4772,7 @@
    {
       "arrival" : 72683,
       "mem" : 1200000,
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "1329",
       "time" : 208,
       "color" : "#d079f2",
@@ -4784,7 +4784,7 @@
       "color" : "#79f2ac",
       "id" : "1330",
       "time" : 126,
-      "penalty" : "up",
+      "scale" : "up",
       "tasks" : 28
    },
    {
@@ -4794,12 +4794,12 @@
       "color" : "#f28979",
       "time" : 60,
       "id" : "1331",
-      "penalty" : "no"
+      "scale" : "no"
    },
    {
       "tasks" : 32,
       "id" : "1332",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 60,
       "color" : "#798df2",
       "arrival" : 74550,
@@ -4811,21 +4811,21 @@
       "color" : "#b0f279",
       "time" : 60,
       "id" : "1333",
-      "penalty" : "out",
+      "scale" : "out",
       "tasks" : 42
    },
    {
       "mem" : 1200000,
       "arrival" : 74777,
       "color" : "#f279d3",
-      "penalty" : "up",
+      "scale" : "up",
       "id" : "1334",
       "time" : 1439,
       "tasks" : 42
    },
    {
       "id" : "1335",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 60,
       "color" : "#79f2ee",
       "tasks" : 8,
@@ -4836,7 +4836,7 @@
       "arrival" : 75350,
       "mem" : 4000000,
       "tasks" : 4,
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "1336",
       "time" : 606,
       "color" : "#f2ca79"
@@ -4844,7 +4844,7 @@
    {
       "arrival" : 75356,
       "mem" : 4000000,
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "1337",
       "time" : 563,
       "color" : "#a779f2",
@@ -4854,7 +4854,7 @@
       "tasks" : 4,
       "id" : "1338",
       "time" : 701,
-      "penalty" : "up",
+      "scale" : "up",
       "color" : "#79f284",
       "arrival" : 75362,
       "mem" : 4000000
@@ -4862,7 +4862,7 @@
    {
       "tasks" : 4,
       "color" : "#f27992",
-      "penalty" : "no",
+      "scale" : "no",
       "id" : "1339",
       "time" : 695,
       "mem" : 4000000,
@@ -4871,7 +4871,7 @@
    {
       "id" : "1340",
       "time" : 656,
-      "penalty" : "both",
+      "scale" : "both",
       "color" : "#79b5f2",
       "tasks" : 4,
       "arrival" : 75374,
@@ -4880,7 +4880,7 @@
    {
       "time" : 557,
       "id" : "1341",
-      "penalty" : "out",
+      "scale" : "out",
       "color" : "#d9f279",
       "tasks" : 4,
       "arrival" : 75380,
@@ -4890,7 +4890,7 @@
       "arrival" : 75386,
       "mem" : 4000000,
       "tasks" : 4,
-      "penalty" : "up",
+      "scale" : "up",
       "id" : "1342",
       "time" : 580,
       "color" : "#e979f2"
@@ -4901,21 +4901,21 @@
       "color" : "#79f2c5",
       "time" : 641,
       "id" : "1343",
-      "penalty" : "no",
+      "scale" : "no",
       "tasks" : 4
    },
    {
       "arrival" : 75398,
       "mem" : 4000000,
       "id" : "1344",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 609,
       "color" : "#f2a279",
       "tasks" : 4
    },
    {
       "tasks" : 4,
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "1345",
       "time" : 584,
       "color" : "#7f79f2",
@@ -4926,7 +4926,7 @@
       "tasks" : 1,
       "color" : "#97f279",
       "id" : "1346",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 1987,
       "mem" : 1200000,
       "arrival" : 76392
@@ -4935,7 +4935,7 @@
       "color" : "#f279ba",
       "id" : "1347",
       "time" : 60,
-      "penalty" : "no",
+      "scale" : "no",
       "tasks" : 32,
       "mem" : 1200000,
       "arrival" : 78394
@@ -4943,7 +4943,7 @@
    {
       "tasks" : 21,
       "color" : "#79def2",
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "1348",
       "time" : 60,
       "mem" : 1200000,
@@ -4954,7 +4954,7 @@
       "arrival" : 79215,
       "color" : "#f2e379",
       "id" : "1349",
-      "penalty" : "out",
+      "scale" : "out",
       "time" : 60,
       "tasks" : 8
    },
@@ -4965,14 +4965,14 @@
       "color" : "#c079f2",
       "id" : "1350",
       "time" : 60,
-      "penalty" : "up"
+      "scale" : "up"
    },
    {
       "arrival" : 79270,
       "mem" : 1200000,
       "tasks" : 8,
       "id" : "1351",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 60,
       "color" : "#79f29d"
    },
@@ -4980,7 +4980,7 @@
       "arrival" : 79310,
       "mem" : 1200000,
       "tasks" : 8,
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "1352",
       "time" : 60,
       "color" : "#f27979"
@@ -4992,12 +4992,12 @@
       "color" : "#799cf2",
       "id" : "1353",
       "time" : 60,
-      "penalty" : "out"
+      "scale" : "out"
    },
    {
       "color" : "#c0f279",
       "id" : "1354",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 780,
       "tasks" : 8,
       "mem" : 1200000,
@@ -5007,7 +5007,7 @@
       "arrival" : 79413,
       "mem" : 1200000,
       "id" : "1355",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 668,
       "color" : "#f279e3",
       "tasks" : 8
@@ -5017,7 +5017,7 @@
       "arrival" : 79416,
       "color" : "#79f2de",
       "id" : "1356",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 667,
       "tasks" : 8
    },
@@ -5027,14 +5027,14 @@
       "color" : "#f2bb79",
       "time" : 668,
       "id" : "1357",
-      "penalty" : "out",
+      "scale" : "out",
       "tasks" : 8
    },
    {
       "tasks" : 21,
       "color" : "#9879f2",
       "id" : "1358",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 60,
       "mem" : 1200000,
       "arrival" : 79572
@@ -5043,7 +5043,7 @@
       "tasks" : 21,
       "color" : "#7ef279",
       "id" : "1359",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 60,
       "mem" : 1200000,
       "arrival" : 79722
@@ -5051,7 +5051,7 @@
    {
       "tasks" : 32,
       "id" : "1360",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 60,
       "color" : "#f279a1",
       "arrival" : 79817,
@@ -5061,7 +5061,7 @@
       "mem" : 1200000,
       "arrival" : 80124,
       "color" : "#79c5f2",
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "1361",
       "time" : 60,
       "tasks" : 32
@@ -5072,7 +5072,7 @@
       "tasks" : 32,
       "id" : "1362",
       "time" : 60,
-      "penalty" : "up",
+      "scale" : "up",
       "color" : "#e8f279"
    },
    {
@@ -5082,13 +5082,13 @@
       "color" : "#d979f2",
       "time" : 60,
       "id" : "1363",
-      "penalty" : "no"
+      "scale" : "no"
    },
    {
       "tasks" : 1,
       "color" : "#79f2b6",
       "id" : "1364",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 60,
       "mem" : 1200000,
       "arrival" : 81741
@@ -5099,12 +5099,12 @@
       "tasks" : 8,
       "time" : 60,
       "id" : "1365",
-      "penalty" : "out",
+      "scale" : "out",
       "color" : "#f29279"
    },
    {
       "color" : "#7983f2",
-      "penalty" : "up",
+      "scale" : "up",
       "id" : "1366",
       "time" : 977,
       "tasks" : 8,
@@ -5117,20 +5117,20 @@
       "tasks" : 8,
       "color" : "#a7f279",
       "id" : "1367",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 448
    },
    {
       "tasks" : 1,
       "color" : "#f279ca",
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "1368",
       "time" : 60,
       "mem" : 1200000,
       "arrival" : 82644
    },
    {
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "1369",
       "time" : 60,
       "color" : "#79edf2",
@@ -5143,7 +5143,7 @@
       "color" : "#f2d479",
       "id" : "1370",
       "time" : 206,
-      "penalty" : "up",
+      "scale" : "up",
       "mem" : 1200000,
       "arrival" : 83201
    },
@@ -5151,7 +5151,7 @@
       "arrival" : 83955,
       "mem" : 1200000,
       "tasks" : 1,
-      "penalty" : "no",
+      "scale" : "no",
       "id" : "1371",
       "time" : 60,
       "color" : "#b179f2"
@@ -5161,14 +5161,14 @@
       "color" : "#79f28d",
       "id" : "1372",
       "time" : 60,
-      "penalty" : "both",
+      "scale" : "both",
       "mem" : 1200000,
       "arrival" : 84163
    },
    {
       "time" : 121,
       "id" : "1373",
-      "penalty" : "out",
+      "scale" : "out",
       "color" : "#f27988",
       "tasks" : 16,
       "arrival" : 84644,
@@ -5177,7 +5177,7 @@
    {
       "tasks" : 16,
       "color" : "#79acf2",
-      "penalty" : "up",
+      "scale" : "up",
       "id" : "1374",
       "time" : 496,
       "mem" : 1200000,
@@ -5187,7 +5187,7 @@
       "tasks" : 16,
       "time" : 207,
       "id" : "1375",
-      "penalty" : "no",
+      "scale" : "no",
       "color" : "#cff279",
       "arrival" : 84646,
       "mem" : 1200000
@@ -5197,7 +5197,7 @@
       "arrival" : 84648,
       "color" : "#f279f2",
       "id" : "1376",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 1048,
       "tasks" : 16
    },
@@ -5206,14 +5206,14 @@
       "arrival" : 84649,
       "tasks" : 16,
       "color" : "#79f2cf",
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "1377",
       "time" : 71
    },
    {
       "color" : "#f2ab79",
       "id" : "1378",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 1261,
       "tasks" : 16,
       "mem" : 1200000,
@@ -5223,7 +5223,7 @@
       "color" : "#8879f2",
       "id" : "1379",
       "time" : 687,
-      "penalty" : "no",
+      "scale" : "no",
       "tasks" : 16,
       "mem" : 1200000,
       "arrival" : 84652
@@ -5232,7 +5232,7 @@
       "mem" : 1200000,
       "arrival" : 84653,
       "color" : "#8ef279",
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "1380",
       "time" : 557,
       "tasks" : 16
@@ -5243,7 +5243,7 @@
       "tasks" : 16,
       "color" : "#f279b1",
       "id" : "1381",
-      "penalty" : "out",
+      "scale" : "out",
       "time" : 531
    },
    {
@@ -5251,7 +5251,7 @@
       "mem" : 1200000,
       "id" : "1382",
       "time" : 752,
-      "penalty" : "up",
+      "scale" : "up",
       "color" : "#79d4f2",
       "tasks" : 16
    },
@@ -5261,14 +5261,14 @@
       "tasks" : 16,
       "color" : "#f2ed79",
       "id" : "1383",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 60
    },
    {
       "mem" : 1200000,
       "arrival" : 84659,
       "color" : "#ca79f2",
-      "penalty" : "both",
+      "scale" : "both",
       "id" : "1384",
       "time" : 60,
       "tasks" : 16
@@ -5278,14 +5278,14 @@
       "color" : "#79f2a6",
       "id" : "1385",
       "time" : 60,
-      "penalty" : "out",
+      "scale" : "out",
       "mem" : 1200000,
       "arrival" : 84900
    },
    {
       "tasks" : 8,
       "id" : "1386",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 67,
       "color" : "#f28379",
       "arrival" : 84912,
@@ -5297,7 +5297,7 @@
       "tasks" : 8,
       "color" : "#7993f2",
       "id" : "1387",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 178
    },
    {
@@ -5305,7 +5305,7 @@
       "mem" : 1200000,
       "tasks" : 1,
       "id" : "1388",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 1326,
       "color" : "#b6f279"
    },
@@ -5315,13 +5315,13 @@
       "color" : "#f279d9",
       "time" : 156,
       "id" : "1389",
-      "penalty" : "out",
+      "scale" : "out",
       "tasks" : 32
    },
    {
       "tasks" : 32,
       "id" : "1390",
-      "penalty" : "up",
+      "scale" : "up",
       "time" : 60,
       "color" : "#79f2e8",
       "arrival" : 85608,
@@ -5331,7 +5331,7 @@
       "arrival" : 85798,
       "mem" : 1200000,
       "id" : "1391",
-      "penalty" : "no",
+      "scale" : "no",
       "time" : 156,
       "color" : "#f2c479",
       "tasks" : 32
@@ -5340,7 +5340,7 @@
       "arrival" : 85902,
       "mem" : 1200000,
       "id" : "1392",
-      "penalty" : "both",
+      "scale" : "both",
       "time" : 173,
       "color" : "#a179f2",
       "tasks" : 32
@@ -5349,7 +5349,7 @@
       "mem" : 1200000,
       "arrival" : 85964,
       "color" : "#79f27e",
-      "penalty" : "out",
+      "scale" : "out",
       "id" : "1393",
       "time" : 175,
       "tasks" : 32
@@ -5359,7 +5359,7 @@
       "color" : "#f27998",
       "id" : "1394",
       "time" : 381,
-      "penalty" : "up",
+      "scale" : "up",
       "mem" : 1200000,
       "arrival" : 86223
    },
@@ -5369,7 +5369,7 @@
       "tasks" : 16,
       "time" : 60,
       "id" : "1395",
-      "penalty" : "no",
+      "scale" : "no",
       "color" : "#79bbf2"
    }
 ]
