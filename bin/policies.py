@@ -49,6 +49,7 @@ def sched_fcfs(config, curr, jobs, pending, free):
     step = config.getfloat("simulator", "step")
     digits = config.getint("simulator", "digits")
     compose = config.getfloat("composition", "compose")
+    backscale = config.getboolean("scheduler", "backscale")
 
     schedule = {}
 
@@ -56,13 +57,26 @@ def sched_fcfs(config, curr, jobs, pending, free):
         job = jobs[jid]
         family = free.keys()[0]
         num_cpus = job["tasks"]
-        num_nodes = 1 if job["scale"] == "up" else job["tasks"]
+        num_nodes = 1 if job["scale"] == "up" else num_cpus
         node_size = num_cpus / num_nodes
         time = job["time"]
+        backscaled = False
 
         alloc = allocate_nodes(config, free, family, num_nodes, node_size)
-        if alloc == None:
+        if alloc == None and not backscale:
             break
+
+        num_free = len(scorsa.list_free_cpus(free))
+        if alloc == None and num_free == 0:
+            break
+
+        if alloc == None:
+            num_cpus = num_free
+            num_nodes = 1 if job["scale"] == "up" else num_cpus
+            node_size = num_cpus / num_nodes
+            time = time * (1 / (float(num_cpus) / job["tasks"]))
+            alloc = allocate_nodes(config, free, family, num_nodes, node_size)
+            backscaled = True
 
         recomposed, nodes = alloc
         if recomposed:
@@ -76,6 +90,7 @@ def sched_fcfs(config, curr, jobs, pending, free):
         schedule[jid]["start"] = curr
         schedule[jid]["end"] = end
         schedule[jid]["reused"] = not recomposed
+        schedule[jid]["backscaled"] = backscaled
 
     for jid in schedule.keys():
         pending.remove(jid)

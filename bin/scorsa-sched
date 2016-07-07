@@ -93,24 +93,19 @@ for s in scorsa.rangef(0.0, length, step, digits):
     # normalized by number of CPUs
     cpus = scorsa.list_free_cpus(free)
     f = scorsa.fragmentation(layout, cpus) * len(cpus) / len(layout)
-    for jid in running:
-        cpus = scorsa.list_cpus(schedule[jid]["nodes"])
-        f += scorsa.fragmentation(layout, cpus) * len(cpus) / len(layout)
-
-    d = 0.0
+    r = d = b = 0.0
     for jid in running:
         cpus = scorsa.list_cpus(schedule[jid]["nodes"])
         job_dist = scorsa.distance(layout, min(cpus), max(cpus))
         min_dist = scorsa.distance(layout, 0, len(cpus) - 1)
+        ratio = len(cpus) / len(layout)
+        f += scorsa.fragmentation(layout, cpus) * len(cpus) / len(layout)
         d += job_dist - min_dist
+        r += ratio if schedule[jid]["reused"] else 0.0
+        b += ratio if schedule[jid]["backscaled"] else 0.0
     d = d / len(running) / max_dist if len(running) > 0 else d
 
-    r = 0.0
-    for jid in running:
-        cpus = scorsa.list_cpus(schedule[jid]["nodes"])
-        r += len(cpus) / len(layout) if schedule[jid]["reused"] else 0.0
-
-    stats.append({"time": s, "frag": f, "dist": d, "reuse": r})
+    stats.append({"time": s, "frag": f, "dist": d, "reuse": r, "backscale": b})
 
 with open("schedule.json", "w") as out:
     json.dump(schedule, out)
