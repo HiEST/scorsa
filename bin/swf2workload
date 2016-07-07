@@ -51,10 +51,10 @@ for line in sys.stdin:
     if entry["status"] != 0:
         continue
 
-    penalty = "no"
+    scale = "no"
     for k, v in assigned.iteritems():
         if len(jobs) and float(v) / len(jobs) < target[k]:
-            penalty = k
+            scale = k
             assigned[k] = v + 1
             break
 
@@ -67,7 +67,7 @@ for line in sys.stdin:
     job["tasks"] = entry["proc_request"]
     job["mem"] = entry["mem_request"]
     job["time"] = float(entry["run_time"])
-    job["penalty"] = penalty
+    job["scale"] = scale 
     job["color"] = matplotlib.colors.rgb2hex(plot.hsv2rgb(hue, 0.5, 0.95))
 
     jobs.append(job)
