@@ -48,11 +48,11 @@ def map_layout(data):
 def distance(layout, a, b):
     d = 0
     if a != b:
-	d += 1
+	d = 10
     if layout[a]["did"] != layout[b]["did"]:
-        d += 10
+        d = 100
     if layout[a]["rid"] != layout[b]["rid"]:
-        d += 100
+        d = 1000
     return d
 
 def fragmentation(layout, subset):
