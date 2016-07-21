@@ -4,8 +4,8 @@
 # swf2workload -- Convert SWF log to scorsa's workload
 #
 # Reads a SWF file from stdin, and writes a Scorsa workload in JSON format to
-# stdout. Penalties for each job are automatically assigned based on the
-# defined "target".
+# stdout. Scaling properties for each job are automatically assigned based on
+# the defined "target".
 #
 # Copyright © 2016 Jordà Polo <jorda.polo@bsc.es>
 
@@ -33,7 +33,9 @@ target = {
 }
 
 assigned = {k: 0 for k in target.keys()}
+
 jobs = []
+first = None
 hue = random.random()
 
 for line in sys.stdin:
@@ -51,6 +53,9 @@ for line in sys.stdin:
     if entry["status"] != 0:
         continue
 
+    if first == None:
+        first = entry
+
     scale = "no"
     for k, v in assigned.iteritems():
         if len(jobs) and float(v) / len(jobs) < target[k]:
@@ -63,7 +68,7 @@ for line in sys.stdin:
 
     job = {}
     job["id"] = str(entry["job_number"])
-    job["arrival"] = float(entry["submit_time"])
+    job["arrival"] = float(entry["submit_time"] - first["submit_time"])
     job["tasks"] = entry["proc_request"]
     job["mem"] = entry["mem_request"]
     job["time"] = float(entry["run_time"])
