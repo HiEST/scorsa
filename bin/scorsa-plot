@@ -16,6 +16,7 @@ import argparse
 import configparser
 import json
 import copy
+import math
 
 import numpy as np
 import matplotlib as mpl
@@ -43,7 +44,11 @@ config.read(args.c)
 length = config.getfloat("simulator", "length")
 step = config.getfloat("simulator", "step")
 digits = config.getint("simulator", "digits")
+window_min = config.getfloat("plot", "window_min")
+window_max = config.getfloat("plot", "window_max")
 families = json.loads(config.get("system", "families"))
+
+offset = int(math.floor(window_min / step))
 
 with open(args.w) as w:
     jobs = json.load(w)
@@ -68,7 +73,7 @@ _, ax = plt.subplots(len(families)+1, sharex=True, sharey=False, squeeze=False)
 ax[-1,0].set_xlabel('Time (s)')
 
 for a, f in enumerate(families):
-    ax[a,0].set_xlim(0.0, length)
+    ax[a,0].set_xlim(0.0, window_max - window_min)
 
     r = json.loads(config.get("system.%s" % f, "range"))
     ax[a,0].set_ylabel('Number of CPUs\n(%s)' % (f))
@@ -77,31 +82,34 @@ for a, f in enumerate(families):
     subs = [s for s in schedule.values() if s["family"] == f]
     order = []
     for i in sorted(subs, key=lambda k: k["end"], reverse=True):
-        order.append(i["id"])
+        if i["start"] <= window_max and i["end"] >= window_min:
+            order.append(i["id"])
 
-    x = np.array([i for i in scorsa.rangef(0.0, length, step, digits)])
+    x_steps = scorsa.rangef(0.0, window_max - window_min, step, digits)
+    x = np.array([i for i in x_steps])
 
     running = {}
     for jid in order:
-        start = schedule[jid]["start"]
-        end = schedule[jid]["end"]
+        start = max(schedule[jid]["start"], window_min)
+        end = min(schedule[jid]["end"], window_max)
+        cpus = scorsa.list_cpus(schedule[jid]["nodes"])
         running[jid] = np.zeros(len(x), dtype=np.int)
-        for i in scorsa.rangef(start, min(end, length), step, digits):
-            cpus = scorsa.list_cpus(schedule[jid]["nodes"])
-            running[jid][int(i / step)] = len(cpus)
+        for k in scorsa.rangef(start, end, step, digits):
+            p = int(k / step) - offset
+            running[jid][p] = len(cpus)
 
     # accumulate running CPUs to plot stepped figure
     arunning = copy.deepcopy(running)
 
     for m, i in enumerate(order):
+        start = max(schedule[i]["start"], window_min)
+        end = min(schedule[i]["end"], window_max)
         for n, j in enumerate(order):
             if n >= m:
                 break
-            start = schedule[i]["start"]
-            end = schedule[i]["end"]
-            for k in scorsa.rangef(start, min(end, length), step, digits):
-                k = int(k / step)
-                arunning[i][k] = arunning[i][k] + running[j][k]
+            for k in scorsa.rangef(start, end, step, digits):
+                p = int(k / step) - offset
+                arunning[i][p] = arunning[i][p] + running[j][p]
 
     # display submissions
     for jid in order:
