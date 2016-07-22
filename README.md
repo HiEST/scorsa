@@ -6,9 +6,9 @@ Architecture][rackscale].
 ## Tools
 
 - `bin/scorsa-sched`: Simulate the execution of a workload; requires a system
-  configuration, and a workload description.
+  configuration, a layout, and a workload description.
 - `bin/scorsa-plot`: Plot a workload schedule; requires a system
-  configuration, a workload description, and a schedule.
+  configuration, a workload description, a schedule file, and a stats file.
 - `bin/swf2workload`: Convert SWF log to scorsa's workload file format.
 
 ## Data
