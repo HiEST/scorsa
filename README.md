@@ -13,7 +13,8 @@ Architecture][rackscale].
 
 ## Data
 
-- `data/sample-workload.json`: Sample workload for testing.
+- `data/ricc-1272889970+1d.json`: Sample workload for testing, based on the
+  [RICC workload][ricc] from the Parallel Workloads Archive.
 
 ## Formats
 
@@ -99,3 +100,4 @@ Where:
 Jordà Polo `<jorda.polo@bsc.es>`, 2016.
 
 [rackscale]: http://www.intel.com/content/www/us/en/architecture-and-technology/intel-rack-scale-architecture.html "rackscale"
+[ricc]: http://www.cs.huji.ac.il/labs/parallel/workload/l_ricc/index.html "The RICC Log"
