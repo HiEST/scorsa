@@ -10,6 +10,9 @@ Architecture][rackscale].
 - `bin/scorsa-plot`: Plot a workload schedule; requires a system
   configuration, a workload description, a schedule file, and a stats file.
 - `bin/swf2workload`: Convert SWF log to scorsa's workload file format.
+- `bin/gen-layout`: Generate layout files.
+- `bin/test-distance`: Generate distance tables between CPUs for a given
+  layout.
 
 ## Data
 
