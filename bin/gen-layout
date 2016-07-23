@@ -1,0 +1,52 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+#
+# gen-layout -- Generate a layout file
+#
+# Given a number of sockets, racks, and drawers per rack, generate a layout of
+# a Rack Scale system to use as part of scorsa's simulator. A layout file is
+# basically a CSV file containing the CPUs in the system. Drawers are denoted
+# by rows containing "-", while racks are columns separated by «|».
+#
+# Copyright © 2016 Jordà Polo <jorda.polo@bsc.es>
+
+import argparse
+
+ap = argparse.ArgumentParser()
+ap.add_argument("-n", dest="n", required=True, help="Number of CPUs")
+ap.add_argument("-r", dest="r", required=True, help="Number of racks")
+ap.add_argument("-d", dest="d", required=True, help="Number of drawers/rack")
+args = ap.parse_args()
+
+n = int(args.n)
+r = int(args.r)
+dpr = int(args.d) # drawers per rack
+npr = n / r       # nodes per rack
+cpd = npr / dpr   # CPUs per drawer
+
+max_id_len = len(str(n))
+separator = "-" * max_id_len
+
+for i in range(dpr):
+    row = ""
+    for j in range(r):
+        cids = []
+        for k in range(cpd):
+            cid = (i * cpd) + (j * npr) + k
+            cids.append(str(cid).zfill(max_id_len))
+        row += ",".join(cids)
+        if j + 1 < r:
+            row += ",|,"
+
+    print row
+
+    if i + 1 == dpr:
+        break
+
+    row = ""
+    for j in range(r):
+        row += ",".join([separator for k in range(cpd)])
+        if j + 1 < r:
+            row += ",|,"
+
+    print row
