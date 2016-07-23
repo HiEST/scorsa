@@ -44,6 +44,7 @@ A JSON file containing an list of jobs with the following schema:
       "arrival" : ARRIVAL,
       "tasks" : TASKS,
       "mem" : MEM,
+      "scale" : SCALE,
       "color" : COLOR,
       "times" : TIME
    },
@@ -62,6 +63,9 @@ Where:
   number of CPUs that the job requires (generally one core per task).
 - MEM is an unsigned integer, e.g. `16`. It stands for the amount of memory
   that the job requires, in MiB.
+- SCALE is a string with one of the following values: `"no"` (job doesn't
+  scale), `"up"` (job scales-up), `"out"` (job scales-out), `"both"` (job
+  scales up and out).
 - COLOR is a color in hex code, e.g. `"#79F1F2"`.
 - TIME is a the execution times in seconds, e.g `3200.0`.
 
@@ -75,8 +79,7 @@ A JSON file containing a dict indexed by job IDs with the following schema:
       "start" : TIME,
       "end" : TIME,
       "family" : FAMILY,
-      "nodes" : INT,
-      "cpus" : [ CPU, CPU, ... ],
+      "nodes" : NODES
    },
    ...
 }
@@ -84,16 +87,15 @@ A JSON file containing a dict indexed by job IDs with the following schema:
 
 Where:
 
-- `"start"` and `"end"` denote the points in time in which a particular job
-  started running and completed its execution, respectively.  TIME can be a
-  float in the range between 0.0 and the simulator's maximum length as defined
-  in the configuration file, e.g. 4.0.
+- TIME can be a float in the range between 0.0 and the simulator's maximum
+  length as defined in the configuration file, e.g. 4.0. `"start"` and `"end"`
+  denote the points in time in which a particular job started running and
+  completed its execution, respectively.
 - FAMILY is a family name as defined by the configuration file, e.g.
   `xeon-e7-v2`.
-- `"nodes"` is an unsigned integer that denotes how many composed nodes were
-  used to run the job.
-- `"cpus"` is a list of the unique CPU identifiers that were assigned to the
-  job and make up the composed nodes.
+- NODES is a list of nodes containing the CPUs assigned to the job. Each node
+  is a list of unique CPU identifiers. E.g. `[ [CPU, CPU], [CPU, CPU], ...
+  ]`.
 
 ## Maintainers
 
