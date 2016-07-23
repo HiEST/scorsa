@@ -30,10 +30,10 @@ def map_layout(data):
         if value == "|":
             rack_id += 1
 
-        if value == "--" and y == 0:
+        if value.startswith("--") and y == 0:
             drawer_id += 1
 
-        if value in ["--", "|", "-1"]:
+        if value == "|" or value.startswith("-"):
             continue
 
         cid = int(value)
