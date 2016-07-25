@@ -29,9 +29,10 @@ Executing the simulator involves running `bin/scorsa-sched` as follows:
 ```
 
 Which ganerates two JSON files in the current directory: `schedule.json` and
-`stats.json`. These former contains the result of the simulation itself, and
-the latter additional stats collected during the simulation. These files can
-be used to visualize the simulation as follows:
+`stats.json`. The former contains the result of the scheduled simulation
+itself, while the latter contains additional stats of the system collected
+during the execution. These files can be used to visualize the simulation as
+follows:
 
 ```
 ./bin/scorsa-plot -c etc/sample-config.ini -w data/ricc-1272889970+1d.json \
