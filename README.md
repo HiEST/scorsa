@@ -19,6 +19,25 @@ Architecture][rackscale].
 - `data/ricc-1272889970+1d.json`: Sample workload for testing, based on the
   [RICC workload][ricc] from the Parallel Workloads Archive.
 
+## Usage
+
+Executing the simulator involves running `bin/scorsa-sched` as follows:
+
+```
+./bin/scorsa-sched -c etc/sample-config.ini -w data/ricc-1272889970+1d.json \
+    -l etc/layout-2r-064.csv
+```
+
+Which ganerates two JSON files in the current directory: `schedule.json` and
+`stats.json`. These former contains the result of the simulation itself, and
+the latter additional stats collected during the simulation. These files can
+be used to visualize the simulation as follows:
+
+```
+./bin/scorsa-plot -c etc/sample-config.ini -w data/ricc-1272889970+1d.json \
+    -s schedule.json -t stats.json
+```
+
 ## Formats
 
 ### Layout File
