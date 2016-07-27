@@ -7,7 +7,7 @@ import scorsa
 def allocate_nodes(config, free, family, num_nodes, node_size):
     reuse = config.getboolean("composition", "reuse")
     ff = free[family]
-    num_cpus = num_nodes * node_size
+    num_sockets = num_nodes * node_size
 
     # 1. Reuse node if available
     if reuse and node_size in ff.keys() and len(ff[node_size]) >= num_nodes:
@@ -23,22 +23,22 @@ def allocate_nodes(config, free, family, num_nodes, node_size):
             decomposable += [(l, node) for node in nodes]
             num_free += len(nodes) * l
 
-    # 2a. Not enough CPUs
-    if num_cpus > num_free:
+    # 2a. Not enough sockets
+    if num_sockets > num_free:
         return None
 
     # 2b. Decompose and compose new node
     freed = len(ff[1])
     for l, node in decomposable:
-        if freed >= num_cpus:
+        if freed >= num_sockets:
             break
         ff[l].remove(node)
         ff[1] += [[n] for n in node]
         freed += l
 
-    cpus = scorsa.list_cpus(ff[1][0:num_cpus])
-    nodes = [cpus[i:i+node_size] for i in range(0, len(cpus), node_size)]
-    ff[1] = ff[1][num_cpus:]
+    sockets = scorsa.list_sockets(ff[1][0:num_sockets])
+    nodes = [sockets[i:i+node_size] for i in range(0, len(sockets), node_size)]
+    ff[1] = ff[1][num_sockets:]
     return True, nodes
 
 def free_nodes(free, family, nodes):
@@ -56,9 +56,9 @@ def sched_fcfs(config, curr, jobs, pending, free):
     for jid in pending:
         job = jobs[jid]
         family = free.keys()[0]
-        num_cpus = job["tasks"]
-        num_nodes = 1 if job["scale"] == "up" else num_cpus
-        node_size = num_cpus / num_nodes
+        num_sockets = job["tasks"]
+        num_nodes = 1 if job["scale"] == "up" else num_sockets
+        node_size = num_sockets / num_nodes
         time = job["time"]
         backscaled = False
 
@@ -66,15 +66,15 @@ def sched_fcfs(config, curr, jobs, pending, free):
         if alloc == None and not backscale:
             break
 
-        num_free = len(scorsa.list_free_cpus(free))
+        num_free = len(scorsa.list_free_sockets(free))
         if alloc == None and num_free == 0:
             break
 
         if alloc == None:
-            num_cpus = num_free
-            num_nodes = 1 if job["scale"] == "up" else num_cpus
-            node_size = num_cpus / num_nodes
-            time = time * (1 / (float(num_cpus) / job["tasks"]))
+            num_sockets = num_free
+            num_nodes = 1 if job["scale"] == "up" else num_sockets
+            node_size = num_sockets / num_nodes
+            time = time * (1 / (float(num_sockets) / job["tasks"]))
             alloc = allocate_nodes(config, free, family, num_nodes, node_size)
             backscaled = True
 

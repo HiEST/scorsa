@@ -89,16 +89,16 @@ for i in scorsa.steps(0.0, length, period, digits):
     schedule.update(new)
 
     # measure fragmentation of free slots, and for each running job,
-    # normalized by number of CPUs
-    cpus = scorsa.list_free_cpus(free)
-    f = scorsa.fragmentation(layout, cpus) * len(cpus) / len(layout)
+    # normalized by number of sockets
+    sockets = scorsa.list_free_sockets(free)
+    f = scorsa.fragmentation(layout, sockets) * len(sockets) / len(layout)
     r = d = b = 0.0
     for jid in running:
-        cpus = scorsa.list_cpus(schedule[jid]["nodes"])
-        job_dist = scorsa.distance(layout, min(cpus), max(cpus))
-        min_dist = scorsa.distance(layout, 0, len(cpus) - 1)
-        ratio = len(cpus) / len(layout)
-        f += scorsa.fragmentation(layout, cpus) * len(cpus) / len(layout)
+        sockets = scorsa.list_sockets(schedule[jid]["nodes"])
+        job_dist = scorsa.distance(layout, min(sockets), max(sockets))
+        min_dist = scorsa.distance(layout, 0, len(sockets) - 1)
+        ratio = len(sockets) / len(layout)
+        f += scorsa.fragmentation(layout, sockets) * len(sockets) / len(layout)
         d += job_dist - min_dist
         r += ratio if schedule[jid]["reused"] else 0.0
         b += ratio if schedule[jid]["backscaled"] else 0.0

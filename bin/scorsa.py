@@ -38,12 +38,12 @@ def map_layout(data):
         if value == "|" or value.startswith("-"):
             continue
 
-        cid = int(value)
-        m[cid] = {}
-        m[cid]["x"] = x
-        m[cid]["y"] = y
-        m[cid]["rid"] = rack_id
-        m[cid]["did"] = drawer_id
+        sid = int(value)
+        m[sid] = {}
+        m[sid]["x"] = x
+        m[sid]["y"] = y
+        m[sid]["rid"] = rack_id
+        m[sid]["did"] = drawer_id
 
     return m
 
@@ -64,22 +64,22 @@ def fragmentation(layout, subset):
     if len(subset) == 0:
         return f
 
-    for cid in subset:
-        by_rack[layout[cid]['rid']].append(cid)
+    for sid in subset:
+        by_rack[layout[sid]['rid']].append(sid)
 
-    for rid, cids in by_rack.iteritems():
-        cids = sorted(cids)
+    for rid, sids in by_rack.iteritems():
+        sids = sorted(sids)
         fragments = []
-        for k, group in groupby(enumerate(cids), lambda (i, x): i - x):
+        for k, group in groupby(enumerate(sids), lambda (i, x): i - x):
             fragments.append(len(map(itemgetter(1), group)))
         f += 1 - max(fragments) / sum(fragments)
 
     return f / len(by_rack)
 
-def list_cpus(nodes):
+def list_sockets(nodes):
     return list(chain.from_iterable(nodes))
 
-def list_free_cpus(free):
+def list_free_sockets(free):
     nodes = []
     for f in free.values():
         for l, n in f.iteritems():

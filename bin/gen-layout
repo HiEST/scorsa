@@ -5,15 +5,15 @@
 #
 # Given a number of sockets, racks, and drawers per rack, generate a layout of
 # a Rack Scale system to use as part of scorsa's simulator. A layout file is
-# basically a CSV file containing the CPUs in the system. Drawers are denoted
-# by rows containing «-», while racks are columns separated by «|».
+# basically a CSV file containing the sockets in the system. Drawers are
+# denoted by rows containing «-», while racks are columns separated by «|».
 #
 # Copyright © 2016 Jordà Polo <jorda.polo@bsc.es>
 
 import argparse
 
 ap = argparse.ArgumentParser()
-ap.add_argument("-n", dest="n", required=True, help="Number of CPUs")
+ap.add_argument("-n", dest="n", required=True, help="Number of sockets")
 ap.add_argument("-r", dest="r", required=True, help="Number of racks")
 ap.add_argument("-d", dest="d", required=True, help="Number of drawers/rack")
 args = ap.parse_args()
@@ -22,21 +22,21 @@ n = int(args.n)
 r = int(args.r)
 dpr = int(args.d) # drawers per rack
 npr = n / r       # nodes per rack
-cpd = npr / dpr   # CPUs per drawer
+cpd = npr / dpr   # sockets per drawer
 
-# Ensure CPU ID length is at least 2, so as to support empty slots, which are
-# marked as "-1".
+# Ensure socket ID length is at least 2, so as to support empty slots, which
+# are marked as "-1".
 id_len = max(len(str(n)), 2)
 separator = "-" * id_len
 
 for i in range(dpr):
     row = ""
     for j in range(r):
-        cids = []
+        sids = []
         for k in range(cpd):
-            cid = (i * cpd) + (j * npr) + k
-            cids.append(str(cid).zfill(id_len))
-        row += ",".join(cids)
+            sid = (i * cpd) + (j * npr) + k
+            sids.append(str(sid).zfill(id_len))
+        row += ",".join(sids)
         if j + 1 < r:
             row += ",|,"
 

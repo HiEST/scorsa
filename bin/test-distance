@@ -1,10 +1,10 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# test-distance -- Generate distance table between CPUs
+# test-distance -- Generate distance table between sockets
 #
 # Given a system layout, display a table with the approximate distance penalty
-# between each pair of CPUs.
+# between each pair of sockets.
 #
 # Copyright © 2016 Jordà Polo <jorda.polo@bsc.es>
 

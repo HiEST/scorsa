@@ -11,7 +11,7 @@ Architecture][rackscale].
   configuration, a workload description, a schedule file, and a stats file.
 - `bin/swf2workload`: Convert SWF log to scorsa's workload file format.
 - `bin/gen-layout`: Generate layout files.
-- `bin/test-distance`: Generate distance tables between CPUs for a given
+- `bin/test-distance`: Generate distance tables between sockets for a given
   layout.
 
 ## Data
@@ -43,10 +43,10 @@ follows:
 
 ### Layout File
 
-A CSV file containing the layout of CPUs in the system. Each CPU has a unique
-integer identifier. Racks are denoted by columns separated by «`|`», while
-drawers are denoted by rows separated by «`--`». Empty slots are identified
-with a `-1`. E.g.:
+A CSV file containing the layout of sockets in the system. Each socket has a
+unique integer identifier. Racks are denoted by columns separated by «`|`»,
+while drawers are denoted by rows separated by «`--`». Empty slots are
+identified with a `-1`. E.g.:
 
 ```
 00,01,|,06,|,09
@@ -83,7 +83,7 @@ Where:
   length as defined in the configuration file, e.g. `2.0`.
 - TASKS is an unsigned integer, e.g. `64`. TASKS represents the number of
   tasks that the job can execute concurrently. It's used to determine the
-  number of CPUs that the job requires (generally one core per task).
+  number of sockets that the job requires (generally one core per task).
 - MEM is an unsigned integer, e.g. `16`. It stands for the amount of memory
   that the job requires, in MiB.
 - SCALE is a string with one of the following values: `"no"` (job doesn't
@@ -116,9 +116,9 @@ Where:
   completed its execution, respectively.
 - FAMILY is a family name as defined by the configuration file, e.g.
   `xeon-e7-v2`.
-- NODES is a list of nodes containing the CPUs assigned to the job. Each node
-  is a list of unique CPU identifiers. E.g. `[ [CPU, CPU], [CPU, CPU], ...
-  ]`.
+- NODES is a list of nodes containing the sockets assigned to the job. Each
+  node is a list of unique socket identifiers. E.g. `[ [SOCKET, SOCKET],
+  [SOCKET, SOCKET], ...  ]`.
 
 ## Maintainers
 
