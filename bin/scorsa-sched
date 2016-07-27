@@ -49,7 +49,6 @@ with open(args.w) as w:
     workload = json.load(w)
 
 jobs = {job["id"]: job for job in workload}
-system = {}
 
 arrivals = defaultdict(list) # job IDs indexed by arrival time
 completions = defaultdict(list) # job IDs indexed by completion time
