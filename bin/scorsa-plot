@@ -46,6 +46,7 @@ period = config.getfloat("simulator", "period")
 digits = config.getint("simulator", "digits")
 window_min = config.getfloat("plot", "window_min")
 window_max = config.getfloat("plot", "window_max")
+submissions = config.getboolean("plot", "submissions")
 families = json.loads(config.get("system", "families"))
 
 offset = int(math.floor(window_min / period))
@@ -112,10 +113,11 @@ for a, f in enumerate(families):
                 arunning[i][p] = arunning[i][p] + running[j][p]
 
     # display submissions
-    for jid in order:
-        arrival = jobs[jid]['arrival']
-        ax[a,0].axvline(arrival - arrival % period, linewidth=0.1,
-                        color='#666666', linestyle='dotted')
+    if submissions:
+        for jid in order:
+            arrival = jobs[jid]['arrival']
+            ax[a,0].axvline(arrival - arrival % period, linewidth=0.1,
+                            color='#666666', linestyle='dotted')
 
     for jid in reversed(order):
         y = np.array(arunning[jid])
