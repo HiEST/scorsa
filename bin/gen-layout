@@ -3,10 +3,13 @@
 #
 # gen-layout -- Generate a layout file
 #
-# Given a number of sockets, racks, and drawers per rack, generate a layout of
-# a Rack Scale system to use as part of scorsa's simulator. A layout file is
-# basically a CSV file containing the sockets in the system. Drawers are
-# denoted by rows containing «-», while racks are columns separated by «|».
+# Given a number of sockets, racks, drawers per rack, and sockets per sled,
+# generate a layout of a Rack Scale system to use as part of scorsa's
+# simulator. A layout file is basically a CSV file containing the location of
+# sockets in the system. Each socket is identified by a unique integer ID.
+# Sleds can be denoted as a set of sockets separated by «+». Drawers are
+# denoted by rows containing «--», while racks are columns separated by «|».
+# This generator is limited in that it doesn't generate multi-line drawers.
 #
 # Copyright © 2016 Jordà Polo <jorda.polo@bsc.es>
 
@@ -38,7 +41,7 @@ for i in range(dpr):
         for k in range(spd):
             base = (i * spd * sps) + (j * npr) + (k * sps)
             sled = [str(sid).zfill(id_len) for sid in range(base, base + sps)]
-            sleds.append("-".join(sled))
+            sleds.append("+".join(sled))
         row += ",".join(sleds)
         if j + 1 < r:
             row += ",|,"

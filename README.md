@@ -44,9 +44,10 @@ follows:
 ### Layout File
 
 A CSV file containing the layout of sockets in the system. Each socket has a
-unique integer identifier. Racks are denoted by columns separated by «`|`»,
-while drawers are denoted by rows separated by «`--`». Empty slots are
-identified with a `-1`. E.g.:
+unique integer identifier. Sleds can be denoted as a set of sockets separated
+by «`+`». Drawers are denoted by rows containing «`--`», while racks are
+denoted by columns separated by «`|`». Empty slots can be identified with a
+`-1`. E.g.:
 
 ```
 00,01,|,06,|,09
@@ -55,10 +56,23 @@ identified with a `-1`. E.g.:
 04,05,|,08,|,-1
 ```
 
+Generation of layouts can be automated using `bin/gen-layout`. A layout of 32
+sockets in 2 racks, with 4 drawers per rack, and 2 sockets per sled:
+
+```
+$ ./bin/gen-layout -n 32 -r 2 -d 4 -s 2
+00+01,02+03,|,16+17,18+19
+-----,-----,|,-----,-----
+04+05,06+07,|,20+21,22+23
+-----,-----,|,-----,-----
+08+09,10+11,|,24+25,26+27
+-----,-----,|,-----,-----
+12+13,14+15,|,28+29,30+31
+```
+
 ### Workload File
 
 A JSON file containing an list of jobs with the following schema:
-
 
 ```
 [
