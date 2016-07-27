@@ -22,8 +22,9 @@ def steps(start, stop, period, digits):
 
 def map_layout(data):
     m = {}
+    sled_id = 0
+    draw_id = 0
     rack_id = 0
-    drawer_id = 0
 
     for (x,y), value in np.ndenumerate(data):
         if y == 0:
@@ -33,27 +34,33 @@ def map_layout(data):
             rack_id += 1
 
         if value.startswith("--") and y == 0:
-            drawer_id += 1
+            draw_id += 1
 
         if value == "|" or value.startswith("-"):
             continue
 
-        sid = int(value)
-        m[sid] = {}
-        m[sid]["x"] = x
-        m[sid]["y"] = y
-        m[sid]["rid"] = rack_id
-        m[sid]["did"] = drawer_id
+        for sid in value.split("-"):
+            sid = int(sid)
+            m[sid] = {}
+            m[sid]["x"] = x
+            m[sid]["y"] = y
+            m[sid]["sled_id"] = sled_id
+            m[sid]["draw_id"] = draw_id
+            m[sid]["rack_id"] = rack_id
+
+        sled_id += 1
 
     return m
 
 def distance(layout, a, b):
     d = 0
     if a != b:
-	d = 10
-    if layout[a]["did"] != layout[b]["did"]:
+	d = 1
+    if layout[a]["sled_id"] != layout[b]["sled_id"]:
+        d = 10
+    if layout[a]["draw_id"] != layout[b]["draw_id"]:
         d = 100
-    if layout[a]["rid"] != layout[b]["rid"]:
+    if layout[a]["rack_id"] != layout[b]["rack_id"]:
         d = 1000
     return d
 
@@ -65,9 +72,9 @@ def fragmentation(layout, subset):
         return f
 
     for sid in subset:
-        by_rack[layout[sid]['rid']].append(sid)
+        by_rack[layout[sid]['rack_id']].append(sid)
 
-    for rid, sids in by_rack.iteritems():
+    for _, sids in by_rack.iteritems():
         sids = sorted(sids)
         fragments = []
         for k, group in groupby(enumerate(sids), lambda (i, x): i - x):
