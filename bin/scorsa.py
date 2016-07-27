@@ -6,17 +6,19 @@ from collections import defaultdict
 from itertools import groupby, chain
 from operator import itemgetter
 
-def f2step(f, step, digits):
-    s = f - (f % step)
-    s = s + step if f % step != 0 else s
+# Convert standard time in float format to discrete time in "step" format.
+def step(time, period, digits):
+    s = time - (time % period)
+    s = s + period if time % period != 0 else s
     return round(s, digits)
 
-# range with float support
-def rangef(start, stop, step, digits):
+# Generate list of time steps between the specified interval. Similar to
+# Python's range(), with float support.
+def steps(start, stop, period, digits):
     r = start
     while r < stop:
         yield round(r, digits)
-        r += step
+        r += period
 
 def map_layout(data):
     m = {}

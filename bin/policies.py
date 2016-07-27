@@ -46,7 +46,7 @@ def free_nodes(free, family, nodes):
         free[family][len(node)].append(node)
 
 def sched_fcfs(config, curr, jobs, pending, free):
-    step = config.getfloat("simulator", "step")
+    period = config.getfloat("simulator", "period")
     digits = config.getint("simulator", "digits")
     compose = config.getfloat("composition", "time")
     backscale = config.getboolean("scheduler", "backscale")
@@ -82,13 +82,11 @@ def sched_fcfs(config, curr, jobs, pending, free):
         if recomposed:
             time = time + compose
 
-        end = curr + scorsa.f2step(time, step, digits)
-
         schedule[jid] = {}
         schedule[jid]["family"] = family
         schedule[jid]["nodes"] = nodes
         schedule[jid]["start"] = curr
-        schedule[jid]["end"] = end
+        schedule[jid]["end"] = curr + scorsa.step(time, period, digits)
         schedule[jid]["reused"] = not recomposed
         schedule[jid]["backscaled"] = backscaled
 

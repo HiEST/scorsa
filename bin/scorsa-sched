@@ -38,7 +38,7 @@ config = configparser.ConfigParser(delimiters=("="))
 config.read(args.c)
 
 length = config.getfloat("simulator", "length")
-step = config.getfloat("simulator", "step")
+period = config.getfloat("simulator", "period")
 digits = config.getint("simulator", "digits")
 families = json.loads(config.get("system", "families"))
 
@@ -66,21 +66,21 @@ for f in families:
     free[f][1] = [[n] for n in range(r[0], r[1])]
 
 for jid, job in jobs.iteritems():
-    s = scorsa.f2step(float(job["arrival"]), step, digits)
-    arrivals[s].append(jid)
+    i = scorsa.step(float(job["arrival"]), period, digits)
+    arrivals[i].append(jid)
 
-for s in scorsa.rangef(0.0, length, step, digits):
-    if s in completions:
-        for jid in completions[s]:
+for i in scorsa.steps(0.0, length, period, digits):
+    if i in completions:
+        for jid in completions[i]:
             family = schedule[jid]["family"]
             nodes = schedule[jid]["nodes"]
             policies.free_nodes(free, family, nodes)
             running.remove(jid)
 
-    if s in arrivals:
-        pending = pending + arrivals[s]
+    if i in arrivals:
+        pending = pending + arrivals[i]
 
-    new = policies.sched_fcfs(config, s, jobs, pending, free)
+    new = policies.sched_fcfs(config, i, jobs, pending, free)
 
     for jid, sched in new.iteritems():
         running.append(jid)
@@ -104,7 +104,7 @@ for s in scorsa.rangef(0.0, length, step, digits):
         b += ratio if schedule[jid]["backscaled"] else 0.0
     d = d / len(running) / max_dist if len(running) > 0 else d
 
-    stats.append({"time": s, "frag": f, "dist": d, "reuse": r, "backscale": b})
+    stats.append({"time": i, "frag": f, "dist": d, "reuse": r, "backscale": b})
 
 with open("schedule.json", "w") as out:
     json.dump(schedule, out)

@@ -42,13 +42,13 @@ config = configparser.ConfigParser(delimiters=("="))
 config.read(args.c)
 
 length = config.getfloat("simulator", "length")
-step = config.getfloat("simulator", "step")
+period = config.getfloat("simulator", "period")
 digits = config.getint("simulator", "digits")
 window_min = config.getfloat("plot", "window_min")
 window_max = config.getfloat("plot", "window_max")
 families = json.loads(config.get("system", "families"))
 
-offset = int(math.floor(window_min / step))
+offset = int(math.floor(window_min / period))
 
 with open(args.w) as w:
     workload = json.load(w)
@@ -85,8 +85,8 @@ for a, f in enumerate(families):
         if i["start"] <= window_max and i["end"] >= window_min:
             order.append(i["id"])
 
-    x_steps = scorsa.rangef(0.0, window_max - window_min, step, digits)
-    x = np.array([i for i in x_steps])
+    steps = scorsa.steps(0.0, window_max - window_min, period, digits)
+    x = np.array([i for i in steps])
 
     running = {}
     for jid in order:
@@ -94,8 +94,8 @@ for a, f in enumerate(families):
         end = min(schedule[jid]["end"], window_max)
         cpus = scorsa.list_cpus(schedule[jid]["nodes"])
         running[jid] = np.zeros(len(x), dtype=np.int)
-        for k in scorsa.rangef(start, end, step, digits):
-            p = int(k / step) - offset
+        for k in scorsa.steps(start, end, period, digits):
+            p = int(k / period) - offset
             running[jid][p] = len(cpus)
 
     # accumulate running CPUs to plot stepped figure
@@ -107,14 +107,14 @@ for a, f in enumerate(families):
         for n, j in enumerate(order):
             if n >= m:
                 break
-            for k in scorsa.rangef(start, end, step, digits):
-                p = int(k / step) - offset
+            for k in scorsa.steps(start, end, period, digits):
+                p = int(k / period) - offset
                 arunning[i][p] = arunning[i][p] + running[j][p]
 
     # display submissions
     for jid in order:
         arrival = jobs[jid]['arrival']
-        ax[a,0].axvline(arrival - arrival % step, linewidth=0.1,
+        ax[a,0].axvline(arrival - arrival % period, linewidth=0.1,
                         color='#666666', linestyle='dotted')
 
     for jid in reversed(order):
