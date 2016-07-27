@@ -46,9 +46,9 @@ layout = scorsa.map_layout(np.genfromtxt(args.l, delimiter=',', dtype=None))
 max_dist = scorsa.distance(layout, 0, len(layout) - 1)
 
 with open(args.w) as w:
-    jobs = json.load(w)
+    workload = json.load(w)
 
-index = {job["id"]: job for job in jobs}
+jobs = {job["id"]: job for job in workload}
 system = {}
 
 arrivals = defaultdict(list) # job IDs indexed by arrival time
@@ -66,9 +66,9 @@ for f in families:
     free[f] = defaultdict(list)
     free[f][1] = [[n] for n in range(r[0], r[1])]
 
-for j in jobs:
-    s = scorsa.f2step(float(j["arrival"]), step, digits)
-    arrivals[s].append(j["id"])
+for jid, job in jobs.iteritems():
+    s = scorsa.f2step(float(job["arrival"]), step, digits)
+    arrivals[s].append(jid)
 
 for s in scorsa.rangef(0.0, length, step, digits):
     if s in completions:
@@ -81,7 +81,7 @@ for s in scorsa.rangef(0.0, length, step, digits):
     if s in arrivals:
         pending = pending + arrivals[s]
 
-    new = policies.sched_fcfs(config, s, index, pending, free)
+    new = policies.sched_fcfs(config, s, jobs, pending, free)
 
     for jid, sched in new.iteritems():
         running.append(jid)

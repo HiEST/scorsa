@@ -51,7 +51,7 @@ families = json.loads(config.get("system", "families"))
 offset = int(math.floor(window_min / step))
 
 with open(args.w) as w:
-    jobs = json.load(w)
+    workload = json.load(w)
 
 with open(args.s) as s:
     schedule = json.load(s)
@@ -59,7 +59,7 @@ with open(args.s) as s:
 with open(args.t) as t:
     stats = json.load(t)
 
-index = {job["id"]: job for job in jobs}
+jobs = {job["id"]: job for job in workload}
 
 for k, v in schedule.iteritems():
     schedule[k]["id"] = k
@@ -113,7 +113,7 @@ for a, f in enumerate(families):
 
     # display submissions
     for jid in order:
-        arrival = index[jid]['arrival']
+        arrival = jobs[jid]['arrival']
         ax[a,0].axvline(arrival - arrival % step, linewidth=0.1,
                         color='#666666', linestyle='dotted')
 
@@ -121,7 +121,7 @@ for a, f in enumerate(families):
         y = np.array(arunning[jid])
         ax[a,0].step(x, y, '-', linewidth=0.01, color='black', where='post')
         plot.fill_steps(ax[a,0], x, y, 0, step_where="post",
-                        facecolor=index[jid]['color'], linewidth=0.0)
+                        facecolor=jobs[jid]['color'], linewidth=0.0)
 
 a += 1
 x = [s["time"] for s in stats][:-offset or None]
