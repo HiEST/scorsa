@@ -48,7 +48,7 @@ def free_nodes(free, family, nodes):
 def sched_fcfs(config, curr, jobs, pending, free):
     step = config.getfloat("simulator", "step")
     digits = config.getint("simulator", "digits")
-    compose = config.getfloat("composition", "compose")
+    compose = config.getfloat("composition", "time")
     backscale = config.getboolean("scheduler", "backscale")
 
     schedule = {}
