@@ -116,7 +116,8 @@ A JSON file containing a dict indexed by job IDs with the following schema:
       "start" : TIME,
       "end" : TIME,
       "family" : FAMILY,
-      "nodes" : NODES
+      "nodes" : NODES,
+      "reused" : REUSED
    },
    ...
 }
@@ -133,6 +134,9 @@ Where:
 - NODES is a list of nodes containing the sockets assigned to the job. Each
   node is a list of unique socket identifiers. E.g. `[ [SOCKET, SOCKET],
   [SOCKET, SOCKET], ...  ]`.
+- REUSED is a boolean that is set to `false` when the nodes for the job are
+  created from scracth, and `true` when the nodes already existed and have
+  been reused.
 
 ## Maintainers
 
