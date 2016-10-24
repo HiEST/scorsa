@@ -41,8 +41,9 @@ length = config.getfloat("simulator", "length")
 period = config.getfloat("simulator", "period")
 digits = config.getint("simulator", "digits")
 families = json.loads(config.get("system", "families"))
+layout_info = defaultdict(list)
 
-layout = scorsa.map_layout(np.genfromtxt(args.l, delimiter=',', dtype=None))
+layout = scorsa.map_layout(np.genfromtxt(args.l, delimiter=',', dtype=None), layout_info)
 max_dist = scorsa.distance(layout, 0, len(layout) - 1)
 
 with open(args.w) as w:
@@ -91,14 +92,16 @@ for i in scorsa.steps(0.0, length, period, digits):
     # measure fragmentation of free slots, and for each running job,
     # normalized by number of sockets
     sockets = scorsa.list_free_sockets(free)
-    f = scorsa.fragmentation(layout, sockets) * len(sockets) / len(layout)
+    used_sockets = scorsa.list_used_sockets(sockets,layout)
+    # f = scorsa.fragmentation(layout, sockets) * len(sockets) / len(layout)
+    f = scorsa.system_fragmentation(layout, used_sockets, layout_info)
     r = d = b = 0.0
     for jid in running:
         sockets = scorsa.list_sockets(schedule[jid]["nodes"])
         job_dist = scorsa.distance(layout, min(sockets), max(sockets))
         min_dist = scorsa.distance(layout, 0, len(sockets) - 1)
         ratio = len(sockets) / len(layout)
-        f += scorsa.fragmentation(layout, sockets) * len(sockets) / len(layout)
+        # f += scorsa.fragmentation(layout, sockets) * len(sockets) / len(layout)
         d += job_dist - min_dist
         r += ratio if schedule[jid]["reused"] else 0.0
         b += ratio if schedule[jid]["backscaled"] else 0.0

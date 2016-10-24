@@ -13,12 +13,15 @@ import numpy as np
 
 import scorsa
 
+from collections import defaultdict
+
 ap = argparse.ArgumentParser()
 ap.add_argument("-l", "--layout", dest="l", required=True,
                 help="System layout file")
 args = ap.parse_args()
+layout_info = defaultdict(list)
 
-layout = scorsa.map_layout(np.genfromtxt(args.l, delimiter=',', dtype=None))
+layout = scorsa.map_layout(np.genfromtxt(args.l, delimiter=',', dtype=None), layout_info)
 
 pids = sorted(layout.keys())
 print "-", " ".join(str(pid) for pid in pids)

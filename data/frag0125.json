@@ -1,0 +1,38 @@
+[
+   {
+      "tasks" : 4,
+      "time" : 10,
+      "id" : "0",
+      "scale" : "up",
+      "color" : "#0000ff",
+      "arrival" : 0,
+      "mem" : 1
+   },
+   {
+      "tasks" : 4,
+      "time" : 15,
+      "id" : "1",
+      "scale" : "up",
+      "color" : "#ff0000",
+      "arrival" : 11,
+      "mem" : 1
+   },
+   {
+      "tasks" : 4,
+      "time" : 8,
+      "id" : "2",
+      "scale" : "up",
+      "color" : "#00ff00",
+      "arrival" : 0,
+      "mem" : 1
+   },
+   {
+      "tasks" : 4,
+      "time" : 10,
+      "id" : "3",
+      "scale" : "up",
+      "color" : "#ffff00",
+      "arrival" : 9,
+      "mem" : 1
+   }
+]
