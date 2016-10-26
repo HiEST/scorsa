@@ -129,13 +129,15 @@ a += 1
 x = [s["time"] for s in stats][:-offset or None]
 f = [s["frag"] for s in stats][offset:]
 fa = [s["frag_lookahead"] for s in stats][offset:]
+fw = [s["frag_workload"] for s in stats][offset:]
 d = [s["dist"] for s in stats][offset:]
 r = [s["reuse"] for s in stats][offset:]
 b = [s["backscale"] for s in stats][offset:]
 ax[a,0].set_ylabel('Metrics')
 ax[a,0].set_ylim(0.0, 1.0)
-ax[a,0].step(x, f, '-', where='post', label='Fragmentation')
-ax[a,0].step(x, fa, '-', where='post', label='Fragmentation lookahead')
+ax[a,0].step(x, f, '-', where='post', label='System fragmentation')
+ax[a,0].step(x, fa, '-', where='post', label='Sys. frag. lookahead')
+ax[a,0].step(x, fw, '-', where='post', label='Workload fragmentation')
 ax[a,0].step(x, d, '-', where='post', label='Distance')
 ax[a,0].step(x, r, '-', where='post', label='Reuse')
 ax[a,0].step(x, b, '-', where='post', label='Backscale')
