@@ -45,6 +45,7 @@ def free_nodes(free, family, nodes):
     for node in nodes:
         free[family][len(node)].append(node)
 
+
 def sched_fcfs(config, curr, jobs, pending, free):
     period = config.getfloat("simulator", "period")
     digits = config.getint("simulator", "digits")

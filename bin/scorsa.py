@@ -57,6 +57,7 @@ def map_layout(data,layout_info):
     layout_info["n_racks"] = rack_id+1
     layout_info["n_drawers"] = (draw_id+1)*layout_info["n_racks"]
     layout_info["sleds_drawer"] = (sled_id / layout_info["n_racks"])/(draw_id+1)
+    layout_info["n_sleds"] = sled_id
 
     return m
 
@@ -128,6 +129,45 @@ def system_fragmentation(layout, used, layout_info):
             f = (blocks_used - min_blocks) / blocks_total
 
         sum_f += f
+
+    if sum_f == 0:
+        return 0
+    else:
+        return sum_f / layout_info["n_racks"]
+
+
+def system_fragmentation_lookahead(layout, used, layout_info):
+    blocks_total = math.ceil(layout_info["n_drawers"]/layout_info["n_racks"])
+    blocks_resources = layout_info["sleds_drawer"]
+    resources_total = blocks_total * blocks_resources
+    resources_used = defaultdict(list)
+    blocks_seen = defaultdict(list)
+    mgaps = defaultdict(list)
+
+    #Determine which sids are used
+    for sid in used:
+        if layout[sid]["rack_id"] not in resources_used:
+            resources_used[layout[sid]["rack_id"]] = 1
+            blocks_seen[layout[sid]["rack_id"]] = []
+            mgaps[layout[sid]["rack_id"]] = blocks_resources - 1
+        else:
+            resources_used[layout[sid]["rack_id"]] += 1
+            mgaps[layout[sid]["rack_id"]] -= 1
+
+        if layout[sid]['draw_id'] not in blocks_seen[layout[sid]["rack_id"]]:
+            blocks_seen[layout[sid]["rack_id"]].append(layout[sid]['draw_id'])
+
+    sum_f = 0
+    for rf in resources_used:
+        f = 0
+        blocks_used = len(blocks_seen[rf])
+        min_blocks = math.ceil((resources_used[rf] / resources_total)*blocks_total)
+        ogap = (min_blocks - (resources_used[rf] / blocks_resources))*blocks_resources
+        mgap = mgaps[rf]
+        if mgap == ogap:
+            return 0
+
+        sum_f += 1 - (abs(mgap - ogap)/blocks_resources)
 
     if sum_f == 0:
         return 0

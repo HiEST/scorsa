@@ -93,8 +93,10 @@ for i in scorsa.steps(0.0, length, period, digits):
     # normalized by number of sockets
     sockets = scorsa.list_free_sockets(free)
     used_sockets = scorsa.list_used_sockets(sockets,layout)
+
     # f = scorsa.fragmentation(layout, sockets) * len(sockets) / len(layout)
     f = scorsa.system_fragmentation(layout, used_sockets, layout_info)
+    fa = scorsa.system_fragmentation_lookahead(layout, used_sockets, layout_info)
     r = d = b = 0.0
     for jid in running:
         sockets = scorsa.list_sockets(schedule[jid]["nodes"])
@@ -107,7 +109,7 @@ for i in scorsa.steps(0.0, length, period, digits):
         b += ratio if schedule[jid]["backscaled"] else 0.0
     d = d / len(running) / max_dist if len(running) > 0 else d
 
-    stats.append({"time": i, "frag": f, "dist": d, "reuse": r, "backscale": b})
+    stats.append({"time": i, "frag": f, "frag_lookahead": fa, "dist": d, "reuse": r, "backscale": b})
 
 with open("schedule.json", "w") as out:
     json.dump(schedule, out)
