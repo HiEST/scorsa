@@ -29,6 +29,7 @@ def map_layout(data,layout_info):
     sled_id = 0
     draw_id = 0
     rack_id = 0
+    sockets = 0
 
     for (x,y), value in np.ndenumerate(data):
         if y == 0:
@@ -43,14 +44,16 @@ def map_layout(data,layout_info):
         if value == "|" or value.startswith("-"):
             continue
 
-        for sid in value.split("-"):
-            sid = int(sid)
-            m[sid] = {}
-            m[sid]["x"] = x
-            m[sid]["y"] = y
-            m[sid]["sled_id"] = sled_id
-            m[sid]["draw_id"] = draw_id
-            m[sid]["rack_id"] = rack_id
+        for sled in value.split("-"):
+            for sid in sled.split("+"):
+                sid = int(sid)
+                m[sid] = {}
+                m[sid]["x"] = x
+                m[sid]["y"] = y
+                m[sid]["sled_id"] = sled_id
+                m[sid]["draw_id"] = draw_id
+                m[sid]["rack_id"] = rack_id
+                sockets += 1
 
         sled_id += 1
 
@@ -58,7 +61,8 @@ def map_layout(data,layout_info):
     layout_info["n_drawers"] = (draw_id+1)*layout_info["n_racks"]
     layout_info["sleds_drawer"] = (sled_id / layout_info["n_racks"])/(draw_id+1)
     layout_info["n_sleds"] = sled_id
-
+    layout_info["n_sockets"] = sockets
+    layout_info["sockets_sled"] = sockets / sled_id
     return m
 
 
@@ -96,44 +100,61 @@ def fragmentation(layout, subset):
 
 
 def system_fragmentation(layout, used, layout_info):
-    blocks_total = math.ceil(layout_info["n_drawers"]/layout_info["n_racks"])
-    blocks_resources = layout_info["sleds_drawer"]
-    resources_total = blocks_total * blocks_resources
-    resources_used = defaultdict(list)
-    blocks_seen = defaultdict(list)
-
-    #Determine which sids are used
+    racks_used = defaultdict(list)
+    drawers_used = defaultdict(list)
+    resources_drawer_used = defaultdict(list)
+    blocks_drawer_used = defaultdict(list)
+    blocks_rack_used = defaultdict(list)
     for sid in used:
-        if layout[sid]["rack_id"] not in resources_used:
-            resources_used[layout[sid]["rack_id"]] = 1
-            blocks_seen[layout[sid]["rack_id"]] = []
+        draw_id = layout[sid]["draw_id"]
+        rack_id = layout[sid]["rack_id"]
+        sled_id = layout[sid]["sled_id"]
+        if rack_id not in racks_used:
+            racks_used[rack_id] = []
+            blocks_rack_used[rack_id] = 0
+            drawers_used[rack_id] = defaultdict(list)
+
+        if draw_id not in drawers_used[rack_id]:
+            drawers_used[rack_id][draw_id] = []
+            blocks_rack_used[rack_id] += 1
+            blocks_drawer_used[draw_id] = defaultdict(list)
+            resources_drawer_used[draw_id] = 0
+
+        if sled_id not in blocks_drawer_used[draw_id]:
+            blocks_drawer_used[draw_id][sled_id] = 0
+
+        blocks_drawer_used[draw_id][sled_id] += 1
+        resources_drawer_used[draw_id] += 1
+
+    f_racks = 0
+    for rid in racks_used:
+        f_drawers = 0
+        f_rack = 0
+        resources_drawers_used = 0
+        for draw_id in drawers_used[rid]:
+            blocks_total = layout_info["sleds_drawer"]
+            resources_total = blocks_total * layout_info["sockets_sled"]
+            min_blocks = math.ceil((resources_drawer_used[draw_id] / resources_total)*blocks_total)
+            if min_blocks == 1 and len(blocks_drawer_used[draw_id]) == blocks_total:
+                f_drawers += 1
+            else:
+                f_drawers += (len(blocks_drawer_used[draw_id]) - min_blocks) / blocks_total
+
+            for sled in blocks_drawer_used[draw_id]:
+                resources_drawers_used += blocks_drawer_used[draw_id][sled]
+
+        blocks_total = layout_info["n_drawers"] / layout_info["n_racks"]
+        resources_total = blocks_total * layout_info["sleds_drawer"] * layout_info["sockets_sled"]
+        min_blocks = math.ceil((resources_drawers_used / resources_total)*blocks_total)
+        if min_blocks == 1 and len(drawers_used[rid]) == blocks_total:
+            f_rack += 1
         else:
-            resources_used[layout[sid]["rack_id"]] += 1
+            f_rack += (len(drawers_used[rid]) - min_blocks) / blocks_total
 
-        if layout[sid]['draw_id'] not in blocks_seen[layout[sid]["rack_id"]]:
-            blocks_seen[layout[sid]["rack_id"]].append(layout[sid]['draw_id'])
+        f_drawers /= blocks_total
+        f_racks += (f_rack + f_drawers) / 2
 
-    sum_f = 0
-    for rf in resources_used:
-        f = 0
-        blocks_used = len(blocks_seen[rf])
-        min_blocks = math.ceil((resources_used[rf] / resources_total)*blocks_total)
-
-        if min_blocks == 1 and blocks_used == blocks_total:
-            f = 1
-        elif min_blocks == 0:
-            f = 0
-        elif blocks_used == min_blocks:
-            f = 0
-        else:
-            f = (blocks_used - min_blocks) / blocks_total
-
-        sum_f += f
-
-    if sum_f == 0:
-        return 0
-    else:
-        return sum_f / layout_info["n_racks"]
+    return f_racks / layout_info["n_racks"]
 
 
 def system_fragmentation_lookahead(layout, used, layout_info):

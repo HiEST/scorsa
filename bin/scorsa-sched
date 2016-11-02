@@ -92,7 +92,7 @@ for i in scorsa.steps(0.0, length, period, digits):
     # measure fragmentation of free slots, and for each running job,
     # normalized by number of sockets
     sockets = scorsa.list_free_sockets(free)
-    used_sockets = scorsa.list_used_sockets(sockets,layout)
+    used_sockets = scorsa.list_used_sockets(sockets, layout)
 
     # f = scorsa.fragmentation(layout, sockets) * len(sockets) / len(layout)
     f = scorsa.system_fragmentation(layout, used_sockets, layout_info)
