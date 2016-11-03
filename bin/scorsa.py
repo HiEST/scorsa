@@ -158,42 +158,66 @@ def system_fragmentation(layout, used, layout_info):
 
 
 def system_fragmentation_lookahead(layout, used, layout_info):
-    blocks_total = math.ceil(layout_info["n_drawers"]/layout_info["n_racks"])
-    blocks_resources = layout_info["sleds_drawer"]
-    resources_total = blocks_total * blocks_resources
-    resources_used = defaultdict(list)
-    blocks_seen = defaultdict(list)
-    mgaps = defaultdict(list)
-
-    #Determine which sids are used
+    racks_used = defaultdict(list)
+    drawers_used = defaultdict(list)
+    resources_drawer_used = defaultdict(list)
+    blocks_drawer_used = defaultdict(list)
+    blocks_rack_used = defaultdict(list)
     for sid in used:
-        if layout[sid]["rack_id"] not in resources_used:
-            resources_used[layout[sid]["rack_id"]] = 1
-            blocks_seen[layout[sid]["rack_id"]] = []
-            mgaps[layout[sid]["rack_id"]] = blocks_resources - 1
-        else:
-            resources_used[layout[sid]["rack_id"]] += 1
-            mgaps[layout[sid]["rack_id"]] -= 1
+        draw_id = layout[sid]["draw_id"]
+        rack_id = layout[sid]["rack_id"]
+        sled_id = layout[sid]["sled_id"]
+        if rack_id not in racks_used:
+            racks_used[rack_id] = []
+            blocks_rack_used[rack_id] = 0
+            drawers_used[rack_id] = defaultdict(list)
 
-        if layout[sid]['draw_id'] not in blocks_seen[layout[sid]["rack_id"]]:
-            blocks_seen[layout[sid]["rack_id"]].append(layout[sid]['draw_id'])
+        if draw_id not in drawers_used[rack_id]:
+            drawers_used[rack_id][draw_id] = []
+            blocks_rack_used[rack_id] += 1
+            blocks_drawer_used[draw_id] = defaultdict(list)
+            resources_drawer_used[draw_id] = 0
 
-    sum_f = 0
-    for rf in resources_used:
-        f = 0
-        blocks_used = len(blocks_seen[rf])
-        min_blocks = math.ceil((resources_used[rf] / resources_total)*blocks_total)
-        ogap = (min_blocks - (resources_used[rf] / blocks_resources))*blocks_resources
-        mgap = mgaps[rf]
+        if sled_id not in blocks_drawer_used[draw_id]:
+            blocks_drawer_used[draw_id][sled_id] = 0
+
+        blocks_drawer_used[draw_id][sled_id] += 1
+        resources_drawer_used[draw_id] += 1
+
+    f_racks = 0
+    for rid in racks_used:
+        f_drawers = 0
+        f_rack = 0
+        resources_drawers_used = 0
+        for draw_id in drawers_used[rid]:
+            blocks_total = layout_info["sleds_drawer"]
+            resources_total = blocks_total * layout_info["sockets_sled"]
+            min_blocks = math.ceil((resources_drawer_used[draw_id] / resources_total)*blocks_total)
+            mgap = resources_drawer_used[draw_id] % resources_total
+            ogap = (min_blocks - (resources_drawer_used[draw_id] / layout_info["sockets_sled"]))*layout_info["sockets_sled"]
+            if mgap == ogap:
+                f_drawers += 0
+            else:
+                f_drawers += 1 - (abs(mgap - ogap) / layout_info["sockets_sled"])
+
+            for sled in blocks_drawer_used[draw_id]:
+                resources_drawers_used += blocks_drawer_used[draw_id][sled]
+
+        blocks_total = layout_info["n_drawers"] / layout_info["n_racks"]
+        block_resources = layout_info["sleds_drawer"] * layout_info["sockets_sled"]
+        resources_total = blocks_total * layout_info["sleds_drawer"] * layout_info["sockets_sled"]
+        min_blocks = math.ceil((resources_drawers_used / resources_total)*blocks_total)
+        mgap = resources_drawers_used % block_resources
+        ogap = (min_blocks - (resources_drawers_used / block_resources))*block_resources
         if mgap == ogap:
-            return 0
+            f_rack += 0
+        else:
+            f_rack += 1 - (abs(mgap - ogap) / block_resources)
 
-        sum_f += 1 - (abs(mgap - ogap)/blocks_resources)
+        f_drawers /= blocks_total
+        f_racks += (f_rack + f_drawers) / 2
 
-    if sum_f == 0:
-        return 0
-    else:
-        return sum_f / layout_info["n_racks"]
+    return f_racks / layout_info["n_racks"]
 
 
 def list_sockets(nodes):

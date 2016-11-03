@@ -110,7 +110,7 @@ for i in scorsa.steps(0.0, length, period, digits):
         r += ratio if schedule[jid]["reused"] else 0.0
         b += ratio if schedule[jid]["backscaled"] else 0.0
     d = d / len(running) / max_dist if len(running) > 0 else d
-    fw = (fw / len(running))
+    fw = (fw / len(running)) if len(running) > 0 else 0
 
     stats.append({"time": i, "frag": f, "frag_lookahead": fa, "frag_workload": fw, "dist": d, "reuse": r, "backscale": b})
 
