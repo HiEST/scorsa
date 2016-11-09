@@ -99,6 +99,64 @@ def fragmentation(layout, subset):
     return f / len(by_rack)
 
 
+def job_fragmentation(layout, used, layout_info):
+    racks_used = defaultdict(list)
+    drawers_used = defaultdict(list)
+    resources_drawer_used = defaultdict(list)
+    blocks_drawer_used = defaultdict(list)
+    blocks_rack_used = defaultdict(list)
+    for sid in used:
+        draw_id = layout[sid]["draw_id"]
+        rack_id = layout[sid]["rack_id"]
+        sled_id = layout[sid]["sled_id"]
+        if rack_id not in racks_used:
+            racks_used[rack_id] = []
+            blocks_rack_used[rack_id] = 0
+            drawers_used[rack_id] = defaultdict(list)
+
+        if draw_id not in drawers_used[rack_id]:
+            drawers_used[rack_id][draw_id] = []
+            blocks_rack_used[rack_id] += 1
+            blocks_drawer_used[draw_id] = defaultdict(list)
+            resources_drawer_used[draw_id] = 0
+
+        if sled_id not in blocks_drawer_used[draw_id]:
+            blocks_drawer_used[draw_id][sled_id] = 0
+
+        blocks_drawer_used[draw_id][sled_id] += 1
+        resources_drawer_used[draw_id] += 1
+
+    f_racks = 0
+    for rid in racks_used:
+        f_drawers = 0
+        f_rack = 0
+        resources_drawers_used = 0
+        for draw_id in drawers_used[rid]:
+            blocks_total = layout_info["sleds_drawer"]
+            resources_total = blocks_total * layout_info["sockets_sled"]
+            min_blocks = math.ceil((resources_drawer_used[draw_id] / resources_total)*blocks_total)
+            if min_blocks == 1 and len(blocks_drawer_used[draw_id]) == blocks_total:
+                f_drawers += 1
+            else:
+                f_drawers += (len(blocks_drawer_used[draw_id]) - min_blocks) / blocks_total
+
+            for sled in blocks_drawer_used[draw_id]:
+                resources_drawers_used += blocks_drawer_used[draw_id][sled]
+
+        blocks_total = layout_info["n_drawers"] / layout_info["n_racks"]
+        resources_total = blocks_total * layout_info["sleds_drawer"] * layout_info["sockets_sled"]
+        min_blocks = math.ceil((resources_drawers_used / resources_total)*blocks_total)
+        if min_blocks == 1 and len(drawers_used[rid]) == blocks_total:
+            f_rack += 1
+        else:
+            f_rack += (len(drawers_used[rid]) - min_blocks) / blocks_total
+
+        f_drawers /= blocks_total
+        f_racks += (f_rack + f_drawers) / 2
+
+    return f_racks / layout_info["n_racks"]
+
+
 def system_fragmentation(layout, used, layout_info):
     racks_used = defaultdict(list)
     drawers_used = defaultdict(list)
