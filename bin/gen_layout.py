@@ -1,5 +1,6 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
+
 #
 # gen-layout -- Generate a layout file
 #
@@ -46,7 +47,7 @@ for i in range(dpr):
         if j + 1 < r:
             row += ",|,"
 
-    print row
+    print(row)
 
     if i + 1 == dpr:
         break
@@ -57,4 +58,4 @@ for i in range(dpr):
         if j + 1 < r:
             row += ",|,"
 
-    print row
+    print(row)

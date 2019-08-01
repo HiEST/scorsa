@@ -1,0 +1,12 @@
+# To create the environment for the SCORSA simulator just run:
+# conda env create --file environment.yml
+# conda env update --file environment.yml
+name: scorsa
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.6
+  - numpy=1.16
+  - configparser=3.7
+  - matplotlib=3.0

@@ -5,13 +5,13 @@ Architecture][rackscale].
 
 ## Tools
 
-- `bin/scorsa-sched`: Simulate the execution of a workload; requires a system
+- `bin/scorsa_sched.py`: Simulate the execution of a workload; requires a system
   configuration, a layout, and a workload description.
-- `bin/scorsa-plot`: Plot a workload schedule; requires a system
+- `bin/scorsa_plot.py`: Plot a workload schedule; requires a system
   configuration, a workload description, a schedule file, and a stats file.
-- `bin/swf2workload`: Convert SWF log to scorsa's workload file format.
-- `bin/gen-layout`: Generate layout files.
-- `bin/test-distance`: Generate distance tables between sockets for a given
+- `bin/swf2workload.py`: Convert SWF log to scorsa's workload file format.
+- `bin/gen_layout.py`: Generate layout files.
+- `bin/test_distance.py`: Generate distance tables between sockets for a given
   layout.
 
 ## Data
@@ -21,23 +21,33 @@ Architecture][rackscale].
 
 ## Usage
 
-Executing the simulator involves running `bin/scorsa-sched` as follows:
+Executing the simulator involves running `bin/scorsa_sched.py` as follows:
 
 ```
-./bin/scorsa-sched -c etc/sample-config.ini -w data/ricc-1272889970+1d.json \
+./bin/scorsa_sched.py -c etc/sample-config.ini -w data/ricc-1272889970+1d.json \
     -l etc/layout-2r-064.csv
 ```
 
-Which ganerates two JSON files in the current directory: `schedule.json` and
-`stats.json`. The former contains the result of the scheduled simulation
-itself, while the latter contains additional stats of the system collected
-during the execution. These files can be used to visualize the simulation as
-follows:
+For convenience, you can achieve the same outcome of the above command line by just running the bash script `run.sh`:
 
 ```
-./bin/scorsa-plot -c etc/sample-config.ini -w data/ricc-1272889970+1d.json \
+source run.sh
+```
+
+Which ganerates three JSON files in the current directory: `metrics.json`, `schedule.json` and `stats.json`. The file `metrics.json` contains the distance and fragmentation summary of the simulation (the same information is printed on the console), `schedule.json` contains the result of the scheduled simulation itself, while the `stats.json` contains additional statistics of the system collected during the execution. These files can be used to visualize the simulation as follows:
+
+```
+./bin/scorsa_plot.py -c etc/sample-config.ini -w data/ricc-1272889970+1d.json \
     -s schedule.json -t stats.json
 ```
+
+For convenience, you can achieve the same outcome of the above command line by just running the bash script `plot.sh`:
+
+```
+source plot.sh
+```
+
+
 
 ## Formats
 
@@ -56,7 +66,7 @@ denoted by columns separated by «`|`». Empty slots can be identified with a
 04,05,|,08,|,-1
 ```
 
-Generation of layouts can be automated using `bin/gen-layout`. A layout of 32
+Generation of layouts can be automated using `bin/gen_layout.py`. A layout of 32
 sockets in 2 racks, with 4 drawers per rack, and 2 sockets per sled:
 
 ```
@@ -137,6 +147,16 @@ Where:
 - REUSED is a boolean that is set to `false` when the nodes for the job are
   created from scracth, and `true` when the nodes already existed and have
   been reused.
+
+## Environment
+
+SCORSA uses Python 3.6. [Conda](https://docs.conda.io/en/latest/) allows you to have different environments installed on your computer to access different versions of Python and different libraries. Sometimes libraries conflict which causes errors and packages not to work. To avoid conflicts, we created an environment specifically for this simulator that contains all of the libraries that you will need.
+
+To install the SCORSA environment, you will need to follow these steps:
+
+1. Fork and clone the Github repository. This repository contains a file called [environment.yml](environment.yml) that is needed for the installation. 
+2. Open the Terminal on your computer (e.g. Git Bash for Windows or Terminal on a Mac/Linux).
+3. In the Terminal, navigate to the SCORSA directory, then, type in the Terminal: ```conda env create -f environment.yml```
 
 ## Maintainers
 

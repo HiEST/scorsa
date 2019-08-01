@@ -1,1 +1,10 @@
+.ipynb_checkpoints
+
+*.json
+
+*.pdf
+
 *.pyc
+
+
+

@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
 # swf2workload -- Convert SWF log to scorsa's workload
@@ -32,7 +32,7 @@ target = {
     "no": 0.25
 }
 
-assigned = {k: 0 for k in target.keys()}
+assigned = {k: 0 for k in list(target.keys())}
 
 jobs = []
 first = None
@@ -47,7 +47,7 @@ for line in sys.stdin:
         continue
 
     entry = {}
-    for k, v in fields.iteritems():
+    for k, v in fields.items():
         entry[k] = int(line[v])
 
     if entry["status"] != 0:
@@ -57,7 +57,7 @@ for line in sys.stdin:
         first = entry
 
     scale = "no"
-    for k, v in assigned.iteritems():
+    for k, v in assigned.items():
         if len(jobs) and float(v) / len(jobs) < target[k]:
             scale = k
             assigned[k] = v + 1
@@ -77,4 +77,4 @@ for line in sys.stdin:
 
     jobs.append(job)
 
-print json.dumps(jobs)
+print(json.dumps(jobs))

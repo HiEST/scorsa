@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
 # test-distance -- Generate distance table between sockets
@@ -21,9 +21,9 @@ args = ap.parse_args()
 layout = scorsa.map_layout(np.genfromtxt(args.l, delimiter=',', dtype=None))
 
 pids = sorted(layout.keys())
-print "-", " ".join(str(pid) for pid in pids)
+print("-", " ".join(str(pid) for pid in pids))
 for i in pids:
-    print i,
+    print(i, end=' ')
     for j in pids:
-        print scorsa.distance(layout, i, j),
-    print ""
+        print(scorsa.distance(layout, i, j), end=' ')
+    print("")

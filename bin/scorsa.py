@@ -1,4 +1,4 @@
-from __future__ import division
+
 
 import numpy as np
 
@@ -7,6 +7,8 @@ from itertools import groupby, chain
 from operator import itemgetter
 
 # Convert standard time in float format to discrete time in "step" format.
+
+
 def step(time, period, digits):
     s = time - (time % period)
     s = s + period if time % period != 0 else s
@@ -14,11 +16,14 @@ def step(time, period, digits):
 
 # Generate list of time steps between the specified interval. Similar to
 # Python's range(), with float support.
+
+
 def steps(start, stop, period, digits):
     r = start
     while r < stop:
         yield round(r, digits)
         r += period
+
 
 def map_layout(data):
     m = {}
@@ -26,7 +31,7 @@ def map_layout(data):
     draw_id = 0
     rack_id = 0
 
-    for (x,y), value in np.ndenumerate(data):
+    for (x, y), value in np.ndenumerate(data):
         if y == 0:
             rack_id = 0
 
@@ -52,10 +57,11 @@ def map_layout(data):
 
     return m
 
+
 def distance(layout, a, b):
     d = 0
     if a != b:
-	d = 1
+        d = 1
     if layout[a]["sled_id"] != layout[b]["sled_id"]:
         d = 10
     if layout[a]["draw_id"] != layout[b]["draw_id"]:
@@ -63,6 +69,7 @@ def distance(layout, a, b):
     if layout[a]["rack_id"] != layout[b]["rack_id"]:
         d = 1000
     return d
+
 
 def fragmentation(layout, subset):
     f = 0.0
@@ -74,21 +81,23 @@ def fragmentation(layout, subset):
     for sid in subset:
         by_rack[layout[sid]['rack_id']].append(sid)
 
-    for _, sids in by_rack.iteritems():
+    for _, sids in by_rack.items():
         sids = sorted(sids)
         fragments = []
-        for k, group in groupby(enumerate(sids), lambda (i, x): i - x):
-            fragments.append(len(map(itemgetter(1), group)))
+        for k, group in groupby(enumerate(sids), lambda i_x: i_x[0] - i_x[1]):
+            fragments.append(len(list(map(itemgetter(1), group))))
         f += 1 - max(fragments) / sum(fragments)
 
     return f / len(by_rack)
 
+
 def list_sockets(nodes):
     return list(chain.from_iterable(nodes))
 
+
 def list_free_sockets(free):
     nodes = []
-    for f in free.values():
-        for l, n in f.iteritems():
+    for f in list(free.values()):
+        for l, n in f.items():
             nodes.append(n)
     return list(chain.from_iterable(chain.from_iterable(nodes)))
